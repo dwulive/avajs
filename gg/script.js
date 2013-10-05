@@ -37,7 +37,7 @@
 	var main = function() {
 
 		// globals
-
+		// <editor-fold desc="AvaInit>
 		function AvaInit() {
 			try {
 				var bossKill = [50, 300, 2000, 4000, 10000, 15000, 20000, 30000, 45000, 60000];
@@ -220,17 +220,19 @@
 							}
 						}
 					} catch(e) {
-						console.assert(0);
-						console.assert(0);
+						console.assert(false);
+
 					}
 				}
 
 				a.worldViewToolTip.addListener("appear", toolTipAppear, this);
 			} catch(e) {
-				console.assert(0);
-				console.assert(0);
+				console.assert(false);
+
 			}
 		}; // avainit
+		// </editor-fold>
+
 		var avaDebug = true;
 
 		function paDebug(e) {
@@ -243,7 +245,7 @@
 		function paError(e) {
 			if(window.console && typeof console.error == "function") {
 				console.error(e);
-				console.assert(0);
+				console.assert(false);
 			}
 		}
 
@@ -374,11 +376,10 @@
 			}
 
 			function findTextNode(text) {
-				var retVal;
-				var n,
+				var retVal,
 					walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-					n = walk.nextNode();
-				while(n ) {
+				var n = walk.nextNode();
+				while(n) {
 					if(n.data == text) {
 						retVal = n;
 					}
@@ -415,8 +416,8 @@
 							item.getLayoutParent().addAfter(btnRow, item);
 						}
 					}
+					}
 				}
-			}
 
 			function SetSelection(sel, value) {
 				if(value === null || value === undefined)
@@ -437,7 +438,7 @@
 					console.log(key + " == " + value.toString());
 					return SetSelection(sel, value);
 				}
-			}
+				}
 
 			{
 				var PLUNDER_ORDER_ID = 2;
@@ -605,41 +606,41 @@
 						if(!this.options.hasOwnProperty("hubTemplates")) {
 							this.options.hubTemplates = [
 								{
-									name: "Castle",
-									res:  {
-										wood:  100000,
-										stone: 200000,
-										iron:  300000,
-										food:  1000000
+										name: "Castle",
+										res:  {
+											wood:  100000,
+											stone: 200000,
+											iron:  300000,
+											food:  1000000
+										}
+									},
+									{
+										name: "Res City",
+										res:  {
+											wood:  100000,
+											stone: 100000,
+											iron:  0,
+											food:  0
+										}
+									},
+									{
+										name: "Hub",
+										res:  {
+											wood:  1000000,
+											stone: 1000000,
+											iron:  1000000,
+											food:  1000000
+										}
+									},
+									{
+										name: "Finished Res",
+										res:  {
+											wood:  0,
+											stone: 0,
+											iron:  0,
+											food:  0
+										}
 									}
-								},
-								{
-									name: "Res City",
-									res:  {
-										wood:  100000,
-										stone: 100000,
-										iron:  0,
-										food:  0
-									}
-								},
-								{
-									name: "Hub",
-									res:  {
-										wood:  1000000,
-										stone: 1000000,
-										iron:  1000000,
-										food:  1000000
-									}
-								},
-								{
-									name: "Finished Res",
-									res:  {
-										wood:  0,
-										stone: 0,
-										iron:  0,
-										food:  0
-									}
-								}
 							];
 						}
 						this.options.AvaToolsVersion = ava.Version.PAversion;
@@ -744,8 +745,7 @@
 							targetContainer.add(cityStatusRow);
 							// mkReq();  // @@@
 						} catch(e) {
-							console.assert(0);
-							console.assert(0);
+							console.assert(false);
 						}
 						try {
 							this.reportExtraInfo = ava.ui.RaidReporter.getInstance();
@@ -753,8 +753,7 @@
 							rep.origOnReport = rep._onReport;
 							rep._onReport = this.reportExtraInfo.interceptOnReport;
 						} catch(e) {
-							console.assert(0);
-							console.assert(0);
+							console.assert(false);
 						}
 						try {
 							this.cInfoView = this.app.getCityInfoView();
@@ -797,8 +796,7 @@
 							scrollBtn.addListener("click", this.scrollToBottom, false);
 							btnRow.add(scrollBtn);
 						} catch(e) {
-							console.assert(0);
-							console.assert(0);
+							console.assert(false);
 						}
 						/* (e) {
 						 console.log("Error");
@@ -836,7 +834,7 @@
 									localContainer.removeAt(this.RETURN_TIME_INDEX);
 								}
 							}
-						}
+							}
 
 						// Recalc return times where appropriate
 						this.calcReturnTimes();
@@ -849,7 +847,7 @@
 									break;
 								}
 							}
-						}
+							}
 						var commands = this.cCmdInfoView.getChildren()[this.CMD_LIST_INDEX].getChildren();
 						var orders = webfrontend.data.City.getInstance().getUnitOrders();
 
@@ -1227,12 +1225,10 @@
 								var commandManager = webfrontend.net.CommandManager.getInstance();
 								commandManager.sendCommand("OrderUnits", request, this, this.sentTroops);
 							} catch(err) {
-								console.assert(0);
-								console.assert(0);
+								console.assert(false);
 							}
 						} catch(e) {
-							console.assert(0);
-							console.assert(0);
+							console.assert(false);
 						}
 
 					},
@@ -1257,8 +1253,7 @@
 								}
 							}
 						} catch(e) {
-							console.assert(0);
-							console.assert(0);
+							console.assert(false);
 						}
 						/* (e) {
 						 console.log("Error");
@@ -1341,7 +1336,7 @@
 								if(ret != null)
 									return ret;
 							}
-						}
+							}
 						return null;
 					},
 					onTroopsSent:               function(ok, errorCode) {
@@ -1396,12 +1391,12 @@
 							this.app.worldMapConfig = new webfrontend.gui.WorldMapConfig().set({
 								width: 400
 							});
-							this.app.worldMapConfig.setLayoutProperties({
-								top:    187,
-								left:   0,
-								bottom: 0
-							});
-						}
+								this.app.worldMapConfig.setLayoutProperties({
+									top:    187,
+									left:   0,
+									bottom: 0
+								});
+							}
 						this.app.worldMapConfig.setMinHeight(0);
 						this.app.worldMapConfig.add(this.worldViewMinBtn);
 					},
@@ -1470,7 +1465,7 @@
 						}
 						this[p]._outputMsg.call(this, eY, fa, fb);
 					}
-				}
+					}
 			});
 			qx.Class.define("ava.Chat", {
 				type:      "singleton",
@@ -1506,7 +1501,7 @@
 						}
 						qx.core.Init.getApplication().chat._outputMsg(eN, 'SYSTEM', 7);
 					}
-				}
+					}
 			});
 
 			function checkTime(i) {
@@ -1537,7 +1532,7 @@
 				h = checkTime(h);
 				m = checkTime(m);
 				s = checkTime(s);
-				return day + ' ' + h + ':' + m + ':' + s;
+				return (day == 0 ? "" : day == 1 ? "tmrw" : "later" ) + ' ' + h + ':' + m + ':' + s;
 			}
 
 			function FormatTime(timeMs) {
@@ -1548,7 +1543,7 @@
 				timeMs -= hours * hourGain;
 				var mins = Math.floor(timeMs * (1.0 / minGain));
 				timeMs -= mins * minGain;
-				var sec = Math.floor(timeMs);
+				var sec = Math.floor(timeMs * (1.0 / secGain));
 
 				return checkTime(hours) + ":" + checkTime(mins) + ':' + checkTime(sec);
 			}
@@ -1582,7 +1577,7 @@
 				var serverDiff = webfrontend.data.ServerTime.getInstance().getDiff();
 				var timeZoneOffset = webfrontend.config.Config.getInstance().getTimeZoneOffset();
 				var serverOffset = webfrontend.data.ServerTime.getInstance().getServerOffset();
-				var localOffset = -new Date().getTimezoneOffset() * 60000;
+					var localOffset = -new Date().getTimezoneOffset() * 60000;
 				fortuneCheck = serverTime.getStepTime(tokenStep);
 				fortuneCheck.setTime(fortuneCheck.getTime() + serverOffset - localOffset);
 			}
@@ -1592,7 +1587,7 @@
 				var serverDiff = webfrontend.data.ServerTime.getInstance().getDiff();
 				var timeZoneOffset = webfrontend.config.Config.getInstance().getTimeZoneOffset();
 				var serverOffset = webfrontend.data.ServerTime.getInstance().getServerOffset();
-				var localOffset = -new Date().getTimezoneOffset() * 60000;
+					var localOffset = -new Date().getTimezoneOffset() * 60000;
 				nextFortune = serverTime.getStepTime(tokenStep);
 				nextFortune.setTime(nextFortune.getTime() + serverOffset - localOffset);
 				var h = nextFortune.getHours();
@@ -1793,13 +1788,13 @@
 					var mto = messageThisObj[msg];
 					var mp = messageParam[msg];
 					for(var ii = 0; m != null && ii < m.length; ++ii) {
-						if(m[ii] == func) {
-							m.splice(ii, 1);
-							mv.splice(ii, 1);
-							mto.splice(ii, 1);
-							mp.splice(ii, 1);
+							if(m[ii] == func) {
+								m.splice(ii, 1);
+								mv.splice(ii, 1);
+								mto.splice(ii, 1);
+								mp.splice(ii, 1);
+							}
 						}
-					}
 				}
 				var __msg = consumerMessages[msg];
 				var l = __msg.length;
@@ -1812,7 +1807,7 @@
 					checkMsgs();
 					started = true;
 				}
-			}
+				}
 
 			function removeConsumer(msg, func, _this) {
 				if(consumerMessages[msg]) {
@@ -1843,7 +1838,7 @@
 						if(done) break;
 					}
 				}
-			}
+				}
 
 			function checkMsgs() {
 				var sb = new qx.util.StringBuilder(2048);
@@ -1917,19 +1912,19 @@
 										} catch(ex) {
 											paDebug(type + ": " + ex);
 										}
+										}
 									}
 								}
-							}
 						} catch(ex) {
 							paDebug(ex);
 						}
-					}
+						}
 				} catch(ex) {
 					paDebug(ex);
 				} finally {
 					window.setTimeout(checkMsgs, 3000);
 				}
-			}
+				}
 
 			qx.Class.define("ava.ui.IncomingAttacksWindow", {
 				type:      "singleton",
@@ -2050,7 +2045,7 @@
 									 console.dir(e);
 									 } */
 								}
-							}
+								}
 						});
 					},
 					onOpen:               function() {
@@ -2124,7 +2119,10 @@
 						//firstRow.add(lbl);
 						this._contSelect.addListener("changeSelection", this.redrawGrid, this);
 						this._table = new qx.ui.table.model.Simple();
-						var columnNames = ["MG", "Internal", "Player", "Target", "Cont", "Coords", "Time", "Attacker", "Alliance", "Source", "AttCoords", "Spotted", "Baron", "Siege", "Infantry", "Cav", "Scout", "Ship", "allianceId", "Travel Time"];
+						var columnNames = ["MoondGate", "Internal", "Defender", "Target", "Cont", "Coords", "Arrival", "Attacker", "Alliance", "Source", // 10
+							"AttCoords", "Spotted",
+							"Baron", "Siege", "Infantry", "Cav", "Scout", "Ship", "allianceId",
+							"Travel Time", "Attacker TS", "Attacker Type", "Defender TS at Eta", "Defender TS Max", "Defender TS Mix"];
 						var columnIDs = columnNames;
 						this._table.setColumnIds(columnIDs);
 						this._table.setColumns(columnNames);
@@ -2141,6 +2139,9 @@
 						var mgStyle = new qx.ui.table.cellrenderer.Image();
 						var linkStyle = new qx.ui.table.cellrenderer.Default();
 						linkStyle.setDefaultCellStyle("text-decoration:underline;color:blue");
+						columnModel.setColumnVisible(0, false);
+						columnModel.setColumnVisible(1, false);
+
 						columnModel.setDataCellRenderer(0, mgStyle);
 						columnModel.setDataCellRenderer(2, linkStyle);
 						columnModel.setDataCellRenderer(3, linkStyle);
@@ -2185,7 +2186,7 @@
 									rf.showInfoPage(rf.getPlayerInfoPage(), {
 										name: spl
 									});
-								}
+									}
 									break;
 								case 8:
 								{
@@ -2256,7 +2257,7 @@
 											this.checkForShipAttack(sourceCid, targetX, targetY, sec, isOwn, aid);
 										}
 									}
-								}
+									}
 									break;
 							}
 						};
@@ -2302,7 +2303,7 @@
 									subNames[ii] = "";
 								}
 							}
-						}
+							}
 						if(hasNames) {
 							addConsumer("ALL_AT", checkForSubAttacks, this, "a");
 						} else {
@@ -2363,13 +2364,15 @@
 					 break;
 					 };
 					 */
-					redrawGrid:           function(e) {
+					redrawGrid:           function() {
+						console.log("redraw Grid enter");
 						try {
+							var _this = ava.ui.IncomingAttacksWindow.getInstance();
+							console.assert(_this == this);
 							var rowData = [];
 							var sortIx = this._table.getSortColumnIndex();
 							var dir = this._table.isSortAscending();
 							var mAid = aco.getId();
-
 							if(this._incomingAttacks != null) {
 								var selection = this._contSelect.getSelection();
 								var continent = ((selection && selection.length > 0) ? selection[0].getModel() : "-1");
@@ -2377,10 +2380,9 @@
 								var filterOwn = this._filterOwn.getValue();
 								for(var i = 0; i < this._incomingAttacks.length; i++) {
 									try {
-
+										var item = this._incomingAttacks[i];
 										var incomingStr = ["", "", "", "", "", ""];
 										var travelDurationMs = 0;
-										var item = this._incomingAttacks[i];
 										var cont = ava.CombatTools.cityIdToCont(item.tc);
 										var cont2 = ava.CombatTools.cityIdToCont(item.c);
 										if((continent == "-1" || cont == continent) && (!filterOwn || item.tpn == this.pName)) {
@@ -2402,8 +2404,10 @@
 											var typeCount = 5;
 											var IncomingShip = "?";
 											if(besieged) {
-												for(var i = 0; i < typeCount; ++i)
-													incomingStr[i] = "Siege";
+												for(var t = 0; t < incomingStr.length; ++t) {
+													incomingStr[t] = "Seige:" + item.cp;
+												}
+
 											} else {
 												try {
 													var gains = [8, 10, 20, 30, 40];
@@ -2445,7 +2449,7 @@
 												} catch(err) {
 													paError(err);
 												}
-											}
+												}
 											if((this.cities[item.tc] == 0) || (this.cities[item.c] == 0)) {
 												IncomingShip = "-";
 											}
@@ -2453,9 +2457,18 @@
 												for(var i = 0; i < typeCount; ++i)
 													incomingStr[i] = "?";
 											}
-											var isInternal = (mAid == item.a);
-											rowData.push([(item.m ? "webfrontend/world/icon_wm_city_moongate.png" : ""), (isInternal ? "Internal " : ""), item.tpn, item.tcn, cont, ava.CoordUtils.convertIdToCoodrinates(item.tc), formatIncomingDate(this.serverTime.getStepTime(item.es)), item.pn, item.an, item.cn, ava.CoordUtils.convertIdToCoodrinates(item.c), formatIncomingDate(this.serverTime.getStepTime(item.ds)), incomingStr[4], incomingStr[3], incomingStr[2], incomingStr[1], incomingStr[0], IncomingShip, item.a.toString(), FormatTime(travelDurationMs)]);
+											/*
 
+											 var columnNames = ["MG", "Internal", "Defender", "Target", "Cont", "Coords", "Time", "Attacker", "Alliance", "Source", // 10
+											 "AttCoords", "Spotted",
+											 "Baron", "Siege", "Infantry", "Cav", "Scout", "Ship", "allianceId", "Travel Time", "Attacker TS","Attacker Type, "Defender TS at Eta", "Defender TS Max", "Defender TS Mix];
+											 */
+											var isInternal = (mAid == item.a);
+											rowData.push([(item.m ? "webfrontend/world/icon_wm_city_moongate.png" : ""), (isInternal ? "Internal " : ""), item.tpn, item.tcn, cont, ava.CoordUtils.convertIdToCoodrinates(item.tc),
+												formatIncomingDate(this.serverTime.getStepTime(item.es)), item.pn, item.an, item.cn, ava.CoordUtils.convertIdToCoodrinates(item.c),
+												formatIncomingDate(this.serverTime.getStepTime(item.ds)), incomingStr[4],
+												incomingStr[3], incomingStr[2], incomingStr[1], incomingStr[0], IncomingShip, item.a.toString(), FormatTime(travelDurationMs), item.ts_attacker, "-", item.ts_defender, item.ts_defender, '-']);
+											console.debug("here3");
 
 										}
 									} catch(ex) {
@@ -2466,10 +2479,12 @@
 										this._table.sortByColumn(sortIx, dir);
 									}
 								}
-							}
+								}
 						} catch(ex1) {
 							paError(ex1);
 						}
+						console.log("redraw Grid leave");
+
 					},
 					safeGetProperty:      function(obj, prop) {
 						if(obj && obj.hasOwnProperty(prop))
@@ -2493,8 +2508,8 @@
 										break;
 									}
 								}
+								}
 							}
-						}
 						if(this.objData == "none" && this.worldData) {
 							for(var cluster in this.worldData.d) {
 								for(var key in this.worldData.d[cluster]) {
@@ -2515,7 +2530,7 @@
 								}
 								break;
 							}
-						}
+							}
 						console.log("WorldData");
 						console.log(this.playerData);
 						console.log(this.allianceData);
@@ -2551,13 +2566,13 @@
 											 console.dir(e);
 											 } */
 										}
+										}
 									}
 								}
-							}
 							if(distance != 0) {
 								break;
 							}
-						}
+							}
 						return distance;
 					},
 					isOnWater:            function(cityId, thisObj) {
@@ -2583,6 +2598,7 @@
 						if(results == null)
 							return;
 						var output = new qx.util.StringBuilder(2048);
+						console.log("dipatchResults");
 						try {
 							if(thisObj.cities == null) {
 								thisObj.cities = new Object();
@@ -2618,7 +2634,9 @@
 							thisObj._incomingAttacks = IncomingAttacks.slice(0);
 							var continents = "";
 							var hasChildren = thisObj._contSelect.hasChildren();
+							console.log("children" + hasChildren)
 							var children = thisObj._contSelect.getChildren();
+							console.log("childrenE" + children)
 							var sel = thisObj._contSelect.getSelection();
 							var ix = 0;
 							for(var i = 0; i < IncomingAttacks.length; ++i) {
@@ -2775,7 +2793,7 @@
 								} catch(ex1) {
 									paError(ex1);
 								}
-							}
+								}
 							thisObj._wcText.setValue(output.get());
 
 							//thisObj._table.setData(rowData);
@@ -2787,8 +2805,10 @@
 						 console.log("Error");
 						 console.dir(e);
 						 } */
+						console.log("dipatchResultsExit");
+
 					}
-				}
+					}
 			});
 			qx.Class.define("ava.ui.alerts", {
 				type:      "singleton",
@@ -2847,7 +2867,7 @@
 												send = true;
 											}
 										}
-									}
+										}
 									if(send) {
 										var re = new RegExp(oldPhrases, 'g');
 										var oldStr = oldPhrases.split('|');
@@ -2869,9 +2889,9 @@
 										var ts = webfrontend.Util.getDateTimeString(eO.getStepTime(eU), false, true) + ' ' + eN;
 										this.addChatAlertMessage(ts);
 									}
+									}
 								}
 							}
-						}
 					},
 					removeBBcode:        function(str) {
 						return str.replace(/\[\/?\w+\]/g, "");
@@ -2941,7 +2961,7 @@
 						}
 						qx.core.Init.getApplication().chat._outputMsg(eN, 'SYSTEM', 7);
 					}
-				}
+					}
 			});
 			qx.Class.define("ava.ui.RaidReporter", {
 				type:    "singleton",
@@ -3024,7 +3044,7 @@
 												itemImg.setScale(true);
 											}
 										}
-									}
+										}
 									if(fm.hasOwnProperty("a") && fm.a != null) {
 										for(var armyIndex = 0; armyIndex < fm.a.length; armyIndex++) {
 											var ku = 0;
@@ -3061,9 +3081,9 @@
 														dungCoords = ko.c[0].i;
 													}
 												}
+												}
 											}
 										}
-									}
 									var totalGain = resGain[0] + resGain[1] + resGain[2] + resGain[3] + resGain[4];
 									var totalLoss = resLoss[0] + resLoss[1] + resLoss[2] + resLoss[3] + resLoss[4];
 									var resOutput = new qx.ui.container.Composite();
@@ -3178,18 +3198,18 @@
 												info.n = 1;
 												info.l = maxLoot;
 												info.mx = maxLoot;
-												info.mn = maxLoot;
+													info.mn = maxLoot;
 												rw.dungeonLootInfo[dungCoords] = info;
 											}
 											rw.updateDungeonRaidInfo(dungCoords);
 										}
+										}
 									}
-								}
 								break;
+							}
 							}
 						}
 					}
-				}
 			});
 			qx.Class.define("ava.ui.LastLogin", {
 				type:      "singleton",
@@ -3327,15 +3347,15 @@
 							]);
 						}
 						if(rowData.length == 0) {
-							m.setData([
-								["No data."]
-							]);
+								m.setData([
+									["No data."]
+								]);
 						} else {
 							m.setData(rowData);
 							m.sortByColumn(4, true);
 						}
+						}
 					}
-				}
 			});
 
 			qx.Class.define("ava.ui.FillWithResourcesWindow", {
@@ -3383,13 +3403,13 @@
 					this.moveTo(400, 200);
 
 					var app = qx.core.Init.getApplication();
-					var cv = (app.cityDetailView || app.getCityDetailView());
+						var cv = (app.cityDetailView || app.getCityDetailView());
 					if(!cv.hasOwnProperty("originalSetCity1")) {
 						cv.originalSetCity1 = cv.setCity;
 						cv.fill = this;
 						cv.setCity = this.interceptSetCity;
 					}
-				},
+					},
 				members:   {
 					WOOD:                         1,
 					STONE:                        2,
@@ -3727,7 +3747,7 @@
 					},
 					_updateSendingProgress:       function() {
 					}
-				}
+					}
 			});
 
 			var distWantModifier = 0.675;
@@ -4784,1029 +4804,1029 @@
 								[1386450, 1335720]
 							]
 						],
-						[
 							[
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1],
-								[-1, -1]
-							],
-							[
-								[690, 690],
-								[703, 702],
-								[715, 712],
-								[729, 725],
-								[742, 737],
-								[755, 749],
-								[769, 761],
-								[783, 774],
-								[797, 787],
-								[811, 799],
-								[825, 812],
-								[839, 824],
-								[853, 837],
-								[867, 849],
-								[881, 862],
-								[895, 875],
-								[908, 887],
-								[922, 899],
-								[936, 912],
-								[950, 924],
-								[964, 937],
-								[978, 950],
-								[992, 962],
-								[1006, 975],
-								[1020, 987],
-								[1034, 1000],
-								[1048, 1012],
-								[1062, 1025],
-								[1076, 1038],
-								[1090, 1050],
-								[1104, 1063],
-								[1118, 1075],
-								[1132, 1088],
-								[1145, 1100],
-								[1159, 1113],
-								[1173, 1125],
-								[1187, 1137],
-								[1201, 1150],
-								[1215, 1163],
-								[1229, 1175],
-								[1243, 1188],
-								[1257, 1200],
-								[1271, 1213],
-								[1285, 1226],
-								[1299, 1238],
-								[1313, 1251],
-								[1327, 1263],
-								[1341, 1276],
-								[1355, 1289],
-								[1368, 1301],
-								[1358, 1297],
-								[1341, 1288],
-								[1322, 1278],
-								[1400, 1334],
-								[1396, 1334],
-								[1386, 1330],
-								[1363, 1317],
-								[1450, 1380],
-								[1476, 1401],
-								[1501, 1421],
-								[1519, 1436],
-								[1536, 1451],
-								[1550, 1464],
-								[1564, 1476],
-								[1578, 1489],
-								[1592, 1502],
-								[1605, 1514],
-								[1619, 1527],
-								[1633, 1539],
-								[1647, 1552],
-								[1661, 1564],
-								[1675, 1577],
-								[1689, 1589],
-								[1703, 1602],
-								[1717, 1615],
-								[1731, 1627],
-								[1745, 1640],
-								[1759, 1652],
-								[1773, 1665],
-								[1787, 1677],
-								[1801, 1690],
-								[1815, 1703],
-								[1828, 1715],
-								[1842, 1727],
-								[1798, 1695],
-								[1741, 1652],
-								[1674, 1602],
-								[1770, 1677],
-								[1728, 1644],
-								[1671, 1600],
-								[1863, 1754],
-								[1909, 1791],
-								[1950, 1825],
-								[1974, 1846],
-								[1976, 1860],
-								[1972, 1873],
-								[1966, 1885],
-								[2025, 1904],
-								[2070, 1931],
-								[2070, 1931]
-							],
-							[
-								[2970, 2835],
-								[3060, 3060],
-								[2988, 2917],
-								[2971, 2915],
-								[3051, 2964],
-								[3031, 2953],
-								[2922, 2870],
-								[3058, 2989],
-								[2945, 2900],
-								[3109, 3046],
-								[3078, 3027],
-								[3381, 3300],
-								[3476, 3393],
-								[3563, 3477],
-								[3626, 3541],
-								[3681, 3599],
-								[3732, 3654],
-								[3782, 3707],
-								[3831, 3759],
-								[3802, 3741],
-								[3757, 3707],
-								[3699, 3662],
-								[3942, 3892],
-								[4022, 3973],
-								[4099, 4051],
-								[4157, 4112],
-								[4210, 4167],
-								[4261, 4221],
-								[4310, 4274],
-								[4359, 4326],
-								[4407, 4378],
-								[4348, 4324],
-								[4266, 4248],
-								[4165, 4154],
-								[4487, 4474],
-								[4578, 4569],
-								[4666, 4659],
-								[4729, 4725],
-								[4787, 4783],
-								[4844, 4839],
-								[4900, 4892],
-								[4955, 4944],
-								[5010, 4996],
-								[5065, 5048],
-								[5096, 5078],
-								[5072, 5058],
-								[5033, 5024],
-								[5083, 5068],
-								[5274, 5244],
-								[5359, 5323],
-								[5435, 5394],
-								[5422, 5382],
-								[5341, 5311],
-								[5235, 5217],
-								[5428, 5400],
-								[5630, 5580],
-								[5734, 5675],
-								[5816, 5750],
-								[5881, 5811],
-								[5942, 5868],
-								[5999, 5922],
-								[6056, 5975],
-								[6112, 6027],
-								[6167, 6078],
-								[6222, 6130],
-								[6277, 6182],
-								[6333, 6233],
-								[6388, 6285],
-								[6443, 6336],
-								[6498, 6388],
-								[6553, 6439],
-								[6608, 6491],
-								[6663, 6542],
-								[6588, 6453],
-								[6484, 6331],
-								[6188, 6033],
-								[6370, 6257],
-								[6244, 6153],
-								[6782, 6653],
-								[6925, 6787],
-								[7053, 6907],
-								[7134, 6983],
-								[7131, 6993],
-								[7104, 6984],
-								[7062, 6964],
-								[7302, 7155],
-								[7313, 7174],
-								[7305, 7180],
-								[7267, 7163],
-								[7518, 7359],
-								[7607, 7434],
-								[7690, 7507],
-								[7755, 7566],
-								[7815, 7621],
-								[7873, 7675],
-								[7930, 7727],
-								[7990, 7784],
-								[8054, 7843],
-								[8154, 7937],
-								[8154, 7937]
-							],
-							[
-								[9990, 9378],
-								[9840, 9840],
-								[9864, 9600],
-								[10078, 9697],
-								[9976, 9608],
-								[9660, 9370],
-								[10299, 9865],
-								[10347, 9915],
-								[11035, 10534],
-								[11300, 10791],
-								[11543, 11030],
-								[11734, 11226],
-								[11911, 11410],
-								[12079, 11586],
-								[12244, 11759],
-								[12406, 11930],
-								[12569, 12102],
-								[12731, 12273],
-								[12893, 12444],
-								[13053, 12614],
-								[13215, 12785],
-								[13106, 12729],
-								[12936, 12622],
-								[12722, 12479],
-								[13442, 13124],
-								[13551, 13259],
-								[13627, 13369],
-								[14169, 13838],
-								[14406, 14068],
-								[14627, 14286],
-								[14542, 14241],
-								[14310, 14095],
-								[14012, 13897],
-								[14435, 14318],
-								[14168, 14028],
-								[13595, 13520],
-								[14149, 14025],
-								[15367, 15150],
-								[15807, 15570],
-								[16064, 15845],
-								[16193, 16009],
-								[16273, 16132],
-								[16450, 16272],
-								[16236, 16107],
-								[15947, 15877],
-								[16456, 16361],
-								[17032, 16896],
-								[16965, 16862],
-								[16761, 16705],
-								[16767, 16690],
-								[17700, 17574],
-								[18015, 17882],
-								[18297, 18163],
-								[18502, 18373],
-								[18687, 18565],
-								[18857, 18744],
-								[19023, 18919],
-								[19187, 19091],
-								[19349, 19262],
-								[19512, 19434],
-								[19674, 19605],
-								[19835, 19775],
-								[19997, 19946],
-								[20158, 20117],
-								[20320, 20288],
-								[20287, 20265],
-								[20212, 20198],
-								[19643, 19637],
-								[19743, 19736],
-								[19356, 19346],
-								[20796, 20774],
-								[20950, 20924],
-								[21020, 20991],
-								[20928, 20898],
-								[21766, 21713],
-								[22062, 21998],
-								[22161, 22096],
-								[22156, 22095],
-								[21892, 21849],
-								[22276, 22211],
-								[22237, 22176],
-								[23035, 22929],
-								[23328, 23206],
-								[23601, 23465],
-								[23888, 23760],
-								[24227, 24131],
-								[24574, 24374],
-								[24244, 23860],
-								[23788, 23164],
-								[23401, 23150],
-								[24195, 23956],
-								[23921, 23769],
-								[23611, 23550],
-								[24545, 24487],
-								[25464, 25360],
-								[25419, 25250],
-								[25390, 25224],
-								[25259, 25108],
-								[26542, 26258],
-								[26542, 26258]
-							],
-							[
-								[31410, 28396],
-								[32790, 29411],
-								[31479, 29157],
-								[30828, 29045],
-								[32639, 30205],
-								[32826, 30438],
-								[32424, 30434],
-								[31712, 30274],
-								[33379, 31452],
-								[34298, 32125],
-								[34022, 32113],
-								[34466, 32427],
-								[33808, 32622],
-								[33767, 32753],
-								[33132, 31828],
-								[34956, 32975],
-								[34952, 33408],
-								[33097, 32271],
-								[34084, 33205],
-								[35102, 34028],
-								[34618, 34281],
-								[35075, 34850],
-								[37385, 36924],
-								[38544, 37702],
-								[40497, 39323],
-								[40073, 39719],
-								[39941, 39732],
-								[40784, 40698],
-								[40168, 39966],
-								[42031, 41656],
-								[41844, 40781],
-								[43110, 41879],
-								[43852, 42031],
-								[43318, 42475],
-								[45235, 44106],
-								[46359, 44538],
-								[45835, 44296],
-								[47395, 45816],
-								[46485, 45522],
-								[46840, 45707],
-								[46582, 45724],
-								[46088, 45771],
-								[46791, 46332],
-								[48698, 47657],
-								[50963, 49166],
-								[50469, 48873],
-								[50842, 50036],
-								[49292, 48556],
-								[50109, 49855],
-								[50205, 50067],
-								[51380, 51321],
-								[52582, 52263],
-								[53680, 52738],
-								[54120, 52437],
-								[55695, 53946],
-								[54966, 53548],
-								[55847, 53547],
-								[56011, 54237],
-								[56189, 53579],
-								[56632, 55055],
-								[57935, 56276],
-								[56673, 55849],
-								[56050, 55646],
-								[57917, 57390],
-								[56646, 55829],
-								[58919, 57861],
-								[57540, 56945],
-								[60484, 59427],
-								[64009, 62095],
-								[65459, 63309],
-								[66512, 64219],
-								[66837, 64758],
-								[67177, 65364],
-								[67442, 65945],
-								[69045, 67085],
-								[68834, 67182],
-								[69029, 67662],
-								[70209, 68161],
-								[70832, 68669],
-								[70289, 68288],
-								[69422, 67707],
-								[68634, 66832],
-								[71353, 68620],
-								[71258, 68390],
-								[69383, 68280],
-								[71958, 70818],
-								[71524, 70158],
-								[71541, 70357],
-								[70023, 69360],
-								[72996, 72220],
-								[76730, 75143],
-								[79122, 77246],
-								[80453, 77582],
-								[78052, 76469],
-								[76033, 75200],
-								[73655, 72399],
-								[76354, 74114],
-								[79211, 76141],
-								[81666, 79508],
-								[81666, 79508]
-							],
-							[
-								[72150, 62745],
-								[71580, 65594],
-								[70122, 64150],
-								[72488, 65902],
-								[72167, 66872],
-								[70873, 66606],
-								[70106, 67454],
-								[69416, 67732],
-								[71800, 69316],
-								[73346, 69597],
-								[76113, 72200],
-								[76934, 73490],
-								[77509, 72721],
-								[73898, 71076],
-								[76393, 72836],
-								[77642, 73777],
-								[77912, 74597],
-								[83166, 78625],
-								[82859, 79247],
-								[85301, 81830],
-								[86659, 80960],
-								[90887, 84468],
-								[90823, 85467],
-								[91590, 87462],
-								[93798, 87831],
-								[92049, 88028],
-								[95764, 90854],
-								[94373, 91709],
-								[96679, 93288],
-								[101653, 96358],
-								[100838, 97552],
-								[100406, 95351],
-								[101545, 96640],
-								[106456, 98636],
-								[105942, 98736],
-								[102908, 97908],
-								[103275, 99703],
-								[103416, 100912],
-								[107339, 104077],
-								[110891, 106425],
-								[107986, 106630],
-								[105802, 103839],
-								[108601, 105683],
-								[112300, 107937],
-								[110532, 108064],
-								[114671, 110225],
-								[118901, 111920],
-								[118299, 111505],
-								[119796, 113283],
-								[123921, 115090],
-								[123867, 117468],
-								[122182, 118270],
-								[123869, 119430],
-								[124628, 119337],
-								[121497, 118048],
-								[122644, 118018],
-								[127180, 120955],
-								[124289, 119359],
-								[130969, 122961],
-								[128399, 121491],
-								[132604, 124865],
-								[132888, 127860],
-								[138820, 132968],
-								[139812, 136682],
-								[144251, 139759],
-								[147168, 139315],
-								[149721, 141320],
-								[152735, 146297],
-								[155812, 152206],
-								[155320, 151321],
-								[156127, 149867],
-								[157662, 152083],
-								[157518, 148024],
-								[158980, 148610],
-								[161105, 149546],
-								[159759, 148800],
-								[158245, 148925],
-								[155110, 151035],
-								[159515, 155125],
-								[163217, 159250],
-								[160026, 154362],
-								[157858, 155185],
-								[161650, 158509],
-								[166125, 162931],
-								[166437, 161438],
-								[170273, 164241],
-								[171249, 167922],
-								[171083, 167527],
-								[167712, 165255],
-								[168288, 163865],
-								[172980, 164756],
-								[174049, 165158],
-								[178031, 167312],
-								[179813, 168597],
-								[181430, 169882],
-								[182763, 171071],
-								[184147, 172365],
-								[185509, 173672],
-								[187590, 175685],
-								[187590, 175685]
-							],
-							[
-								[145710, 127730],
-								[140070, 126769],
-								[144371, 130483],
-								[144207, 130695],
-								[146255, 132804],
-								[146665, 134693],
-								[146795, 137116],
-								[143822, 136576],
-								[148042, 138368],
-								[148800, 141032],
-								[150498, 141711],
-								[149642, 141583],
-								[150211, 144438],
-								[156875, 149117],
-								[157527, 152442],
-								[156813, 152040],
-								[159172, 156134],
-								[165871, 161840],
-								[170659, 163448],
-								[169844, 164317],
-								[167378, 160132],
-								[164127, 161902],
-								[170705, 168108],
-								[178973, 173999],
-								[180128, 169853],
-								[187498, 174142],
-								[193295, 179362],
-								[196368, 183399],
-								[195268, 184526],
-								[207634, 193285],
-								[210539, 197725],
-								[209742, 200356],
-								[210523, 199238],
-								[201932, 196230],
-								[200750, 198229],
-								[195568, 194057],
-								[207282, 203569],
-								[218282, 209060],
-								[228606, 212521],
-								[230939, 214089],
-								[227960, 213556],
-								[230049, 216383],
-								[225688, 216744],
-								[236271, 226305],
-								[233449, 230240],
-								[231414, 229433],
-								[230423, 227134],
-								[235372, 227421],
-								[246151, 233154],
-								[245367, 232888],
-								[241152, 230529],
-								[256080, 239515],
-								[258987, 241433],
-								[267397, 248504],
-								[271160, 251838],
-								[271990, 252690],
-								[271654, 252576],
-								[271994, 255361],
-								[283687, 268426],
-								[287394, 276595],
-								[288272, 273521],
-								[285192, 275009],
-								[297038, 282194],
-								[291670, 279609],
-								[296385, 280902],
-								[296706, 283534],
-								[299131, 291097],
-								[303994, 292761],
-								[315149, 305951],
-								[309924, 297918],
-								[299318, 293641],
-								[294709, 286389],
-								[310548, 296340],
-								[315072, 301206],
-								[318195, 306689],
-								[320608, 314137],
-								[324046, 314351],
-								[326545, 309898],
-								[328210, 311049],
-								[329587, 312929],
-								[332009, 319492],
-								[336885, 323083],
-								[337278, 328224],
-								[334005, 322438],
-								[331121, 322983],
-								[340180, 329089],
-								[346011, 335715],
-								[346311, 342791],
-								[343086, 340190],
-								[335322, 330022],
-								[344729, 333338],
-								[354913, 337817],
-								[359791, 340729],
-								[364843, 344581],
-								[369343, 348469],
-								[372247, 353324],
-								[369932, 354017],
-								[370078, 357371],
-								[378846, 357643],
-								[378846, 357643]
-							],
-							[
-								[258540, 227156],
-								[249240, 230153],
-								[261488, 236793],
-								[260876, 238118],
-								[260779, 238515],
-								[264906, 243864],
-								[268628, 246620],
-								[273111, 250992],
-								[275097, 252534],
-								[273836, 253411],
-								[269533, 255038],
-								[275436, 260915],
-								[279053, 261725],
-								[279384, 264317],
-								[274154, 265831],
-								[283966, 270899],
-								[301940, 281602],
-								[316956, 295582],
-								[316548, 300568],
-								[311680, 294320],
-								[306369, 291714],
-								[315489, 295940],
-								[323445, 302232],
-								[331389, 309774],
-								[340846, 320402],
-								[341632, 324343],
-								[347007, 336355],
-								[349151, 340812],
-								[347876, 341738],
-								[354072, 344913],
-								[364209, 349982],
-								[366434, 345181],
-								[375584, 351389],
-								[377136, 351528],
-								[369629, 351840],
-								[385742, 365158],
-								[386872, 370706],
-								[389352, 375787],
-								[391922, 375606],
-								[403010, 386323],
-								[417986, 390789],
-								[419262, 392446],
-								[416741, 393905],
-								[417678, 393727],
-								[429614, 404720],
-								[428090, 405554],
-								[423179, 405864],
-								[436625, 410361],
-								[439079, 412515],
-								[440200, 413374],
-								[451790, 430293],
-								[471884, 449564],
-								[487167, 470323],
-								[484845, 465768],
-								[516205, 483151],
-								[522808, 488230],
-								[533592, 496995],
-								[531086, 504807],
-								[529870, 503512],
-								[536445, 510052],
-								[544713, 508752],
-								[539450, 507386],
-								[531600, 501479],
-								[534760, 506015],
-								[543376, 512706],
-								[543131, 519624],
-								[532167, 519846],
-								[532948, 520257],
-								[522783, 511311],
-								[545611, 525305],
-								[548746, 524354],
-								[549672, 525353],
-								[539701, 520255],
-								[553100, 530676],
-								[551982, 541695],
-								[556419, 539853],
-								[574787, 550703],
-								[582987, 554501],
-								[575104, 554528],
-								[589189, 562223],
-								[593549, 570852],
-								[586992, 568597],
-								[586402, 562258],
-								[579435, 557618],
-								[575985, 560483],
-								[597593, 577412],
-								[612490, 588463],
-								[625331, 597910],
-								[636646, 595656],
-								[625469, 592591],
-								[619053, 592009],
-								[603071, 587103],
-								[617444, 602726],
-								[609112, 597369],
-								[627426, 611200],
-								[621712, 600676],
-								[646196, 608305],
-								[666435, 624376],
-								[672204, 636036],
-								[672204, 636036]
-							],
-							[
-								[428430, 370853],
-								[419670, 373273],
-								[426662, 381635],
-								[431352, 384942],
-								[431378, 385825],
-								[432531, 389181],
-								[433143, 393249],
-								[439538, 398137],
-								[448237, 402754],
-								[457258, 407415],
-								[459156, 410786],
-								[460132, 416257],
-								[471887, 428306],
-								[487026, 437487],
-								[497560, 446644],
-								[506570, 454565],
-								[509542, 462047],
-								[511843, 467453],
-								[515373, 470645],
-								[517025, 474310],
-								[531752, 485823],
-								[551939, 498533],
-								[564951, 511734],
-								[564948, 520289],
-								[567245, 520761],
-								[570058, 522621],
-								[581542, 531409],
-								[598736, 542385],
-								[600545, 548790],
-								[605240, 556574],
-								[607854, 557672],
-								[618284, 566943],
-								[628603, 570867],
-								[628852, 575625],
-								[624468, 580764],
-								[617939, 578101],
-								[617410, 578831],
-								[623700, 585206],
-								[654577, 602115],
-								[665006, 611523],
-								[673682, 615225],
-								[672685, 621843],
-								[685634, 634440],
-								[718296, 664528],
-								[759770, 689841],
-								[775566, 711870],
-								[782975, 718029],
-								[793308, 725070],
-								[796268, 738206],
-								[807724, 754367],
-								[833366, 776146],
-								[851929, 775989],
-								[860615, 778039],
-								[857288, 774788],
-								[846961, 776490],
-								[838022, 775328],
-								[852692, 787752],
-								[868791, 800842],
-								[861979, 803808],
-								[862188, 800473],
-								[843629, 801044],
-								[854989, 810280],
-								[846878, 807305],
-								[865805, 817357],
-								[887740, 827375],
-								[914472, 835929],
-								[923173, 842036],
-								[926047, 853638],
-								[914561, 859298],
-								[920235, 857584],
-								[903520, 850133],
-								[923978, 860354],
-								[931475, 867511],
-								[925158, 867772],
-								[932749, 883989],
-								[950076, 908216],
-								[943870, 907505],
-								[931448, 894375],
-								[964690, 905548],
-								[977741, 922290],
-								[994629, 949955],
-								[1003301, 968944],
-								[993584, 947871],
-								[985230, 933555],
-								[988968, 940311],
-								[977098, 944041],
-								[1005972, 960242],
-								[1017161, 965089],
-								[1019684, 975408],
-								[1009552, 969064],
-								[1011257, 977525],
-								[1015073, 983210],
-								[1047988, 996586],
-								[1052590, 1005194],
-								[1041338, 990914],
-								[1052111, 1005714],
-								[1096654, 1022537],
-								[1102263, 1025920],
-								[1113918, 1038388],
-								[1113918, 1038388]
-							],
-							[
-								[656160, 582434],
-								[579390, 535504],
-								[615839, 576340],
-								[631357, 588023],
-								[657902, 609625],
-								[651402, 613625],
-								[657924, 619713],
-								[653784, 607233],
-								[662378, 616073],
-								[708418, 649532],
-								[711964, 653876],
-								[729296, 670121],
-								[702157, 659912],
-								[691110, 666931],
-								[719991, 693491],
-								[781600, 740155],
-								[796464, 765542],
-								[802766, 761966],
-								[796893, 769165],
-								[813642, 786468],
-								[828058, 794264],
-								[815045, 804123],
-								[809163, 793965],
-								[864091, 833627],
-								[893752, 835898],
-								[913516, 847869],
-								[917386, 854920],
-								[916624, 861956],
-								[902521, 866137],
-								[928490, 881368],
-								[922390, 888120],
-								[943581, 899461],
-								[935636, 903967],
-								[951560, 914874],
-								[997940, 936774],
-								[1017085, 949911],
-								[1033562, 962324],
-								[1046421, 973602],
-								[1059191, 984732],
-								[1071537, 995702],
-								[1085381, 1016484],
-								[1092072, 1043556],
-								[1110070, 1091633],
-								[1135305, 1115720],
-								[1181790, 1146925],
-								[1197503, 1140750],
-								[1190137, 1140576],
-								[1209994, 1167859],
-								[1194087, 1126266],
-								[1211389, 1143635],
-								[1221512, 1164146],
-								[1181985, 1161709],
-								[1164626, 1145465],
-								[1189317, 1157961],
-								[1217612, 1158822],
-								[1233713, 1167461],
-								[1247505, 1176536],
-								[1242971, 1178405],
-								[1236148, 1187848],
-								[1226778, 1198172],
-								[1282417, 1242204],
-								[1294695, 1232817],
-								[1310675, 1242683],
-								[1307169, 1243701],
-								[1299744, 1244891],
-								[1289284, 1245137],
-								[1345154, 1279194],
-								[1368953, 1299083],
-								[1392995, 1319581],
-								[1391623, 1317703],
-								[1401059, 1326622],
-								[1410073, 1335455],
-								[1420194, 1345470],
-								[1410758, 1344295],
-								[1397098, 1340765],
-								[1380327, 1335469],
-								[1441424, 1375284],
-								[1467426, 1391542],
-								[1494282, 1407577],
-								[1517429, 1420947],
-								[1510967, 1429941],
-								[1500381, 1430022],
-								[1466536, 1416915],
-								[1427064, 1399887],
-								[1452494, 1424276],
-								[1511552, 1468928],
-								[1525621, 1487703],
-								[1557653, 1502204],
-								[1555453, 1512999],
-								[1557712, 1533775],
-								[1555642, 1520577],
-								[1604274, 1543761],
-								[1621920, 1554506],
-								[1638316, 1566530],
-								[1650989, 1577455],
-								[1662698, 1588280],
-								[1674955, 1600135],
-								[1687228, 1612209],
-								[1706015, 1630814],
-								[1706015, 1630814]
+								[
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1],
+									[-1, -1]
+								],
+								[
+									[690, 690],
+									[703, 702],
+									[715, 712],
+									[729, 725],
+									[742, 737],
+									[755, 749],
+									[769, 761],
+									[783, 774],
+									[797, 787],
+									[811, 799],
+									[825, 812],
+									[839, 824],
+									[853, 837],
+									[867, 849],
+									[881, 862],
+									[895, 875],
+									[908, 887],
+									[922, 899],
+									[936, 912],
+									[950, 924],
+									[964, 937],
+									[978, 950],
+									[992, 962],
+									[1006, 975],
+									[1020, 987],
+									[1034, 1000],
+									[1048, 1012],
+									[1062, 1025],
+									[1076, 1038],
+									[1090, 1050],
+									[1104, 1063],
+									[1118, 1075],
+									[1132, 1088],
+									[1145, 1100],
+									[1159, 1113],
+									[1173, 1125],
+									[1187, 1137],
+									[1201, 1150],
+									[1215, 1163],
+									[1229, 1175],
+									[1243, 1188],
+									[1257, 1200],
+									[1271, 1213],
+									[1285, 1226],
+									[1299, 1238],
+									[1313, 1251],
+									[1327, 1263],
+									[1341, 1276],
+									[1355, 1289],
+									[1368, 1301],
+									[1358, 1297],
+									[1341, 1288],
+									[1322, 1278],
+									[1400, 1334],
+									[1396, 1334],
+									[1386, 1330],
+									[1363, 1317],
+									[1450, 1380],
+									[1476, 1401],
+									[1501, 1421],
+									[1519, 1436],
+									[1536, 1451],
+									[1550, 1464],
+									[1564, 1476],
+									[1578, 1489],
+									[1592, 1502],
+									[1605, 1514],
+									[1619, 1527],
+									[1633, 1539],
+									[1647, 1552],
+									[1661, 1564],
+									[1675, 1577],
+									[1689, 1589],
+									[1703, 1602],
+									[1717, 1615],
+									[1731, 1627],
+									[1745, 1640],
+									[1759, 1652],
+									[1773, 1665],
+									[1787, 1677],
+									[1801, 1690],
+									[1815, 1703],
+									[1828, 1715],
+									[1842, 1727],
+									[1798, 1695],
+									[1741, 1652],
+									[1674, 1602],
+									[1770, 1677],
+									[1728, 1644],
+									[1671, 1600],
+									[1863, 1754],
+									[1909, 1791],
+									[1950, 1825],
+									[1974, 1846],
+									[1976, 1860],
+									[1972, 1873],
+									[1966, 1885],
+									[2025, 1904],
+									[2070, 1931],
+									[2070, 1931]
+								],
+								[
+									[2970, 2835],
+									[3060, 3060],
+									[2988, 2917],
+									[2971, 2915],
+									[3051, 2964],
+									[3031, 2953],
+									[2922, 2870],
+									[3058, 2989],
+									[2945, 2900],
+									[3109, 3046],
+									[3078, 3027],
+									[3381, 3300],
+									[3476, 3393],
+									[3563, 3477],
+									[3626, 3541],
+									[3681, 3599],
+									[3732, 3654],
+									[3782, 3707],
+									[3831, 3759],
+									[3802, 3741],
+									[3757, 3707],
+									[3699, 3662],
+									[3942, 3892],
+									[4022, 3973],
+									[4099, 4051],
+									[4157, 4112],
+									[4210, 4167],
+									[4261, 4221],
+									[4310, 4274],
+									[4359, 4326],
+									[4407, 4378],
+									[4348, 4324],
+									[4266, 4248],
+									[4165, 4154],
+									[4487, 4474],
+									[4578, 4569],
+									[4666, 4659],
+									[4729, 4725],
+									[4787, 4783],
+									[4844, 4839],
+									[4900, 4892],
+									[4955, 4944],
+									[5010, 4996],
+									[5065, 5048],
+									[5096, 5078],
+									[5072, 5058],
+									[5033, 5024],
+									[5083, 5068],
+									[5274, 5244],
+									[5359, 5323],
+									[5435, 5394],
+									[5422, 5382],
+									[5341, 5311],
+									[5235, 5217],
+									[5428, 5400],
+									[5630, 5580],
+									[5734, 5675],
+									[5816, 5750],
+									[5881, 5811],
+									[5942, 5868],
+									[5999, 5922],
+									[6056, 5975],
+									[6112, 6027],
+									[6167, 6078],
+									[6222, 6130],
+									[6277, 6182],
+									[6333, 6233],
+									[6388, 6285],
+									[6443, 6336],
+									[6498, 6388],
+									[6553, 6439],
+									[6608, 6491],
+									[6663, 6542],
+									[6588, 6453],
+									[6484, 6331],
+									[6188, 6033],
+									[6370, 6257],
+									[6244, 6153],
+									[6782, 6653],
+									[6925, 6787],
+									[7053, 6907],
+									[7134, 6983],
+									[7131, 6993],
+									[7104, 6984],
+									[7062, 6964],
+									[7302, 7155],
+									[7313, 7174],
+									[7305, 7180],
+									[7267, 7163],
+									[7518, 7359],
+									[7607, 7434],
+									[7690, 7507],
+									[7755, 7566],
+									[7815, 7621],
+									[7873, 7675],
+									[7930, 7727],
+									[7990, 7784],
+									[8054, 7843],
+									[8154, 7937],
+									[8154, 7937]
+								],
+								[
+									[9990, 9378],
+									[9840, 9840],
+									[9864, 9600],
+									[10078, 9697],
+									[9976, 9608],
+									[9660, 9370],
+									[10299, 9865],
+									[10347, 9915],
+									[11035, 10534],
+									[11300, 10791],
+									[11543, 11030],
+									[11734, 11226],
+									[11911, 11410],
+									[12079, 11586],
+									[12244, 11759],
+									[12406, 11930],
+									[12569, 12102],
+									[12731, 12273],
+									[12893, 12444],
+									[13053, 12614],
+									[13215, 12785],
+									[13106, 12729],
+									[12936, 12622],
+									[12722, 12479],
+									[13442, 13124],
+									[13551, 13259],
+									[13627, 13369],
+									[14169, 13838],
+									[14406, 14068],
+									[14627, 14286],
+									[14542, 14241],
+									[14310, 14095],
+									[14012, 13897],
+									[14435, 14318],
+									[14168, 14028],
+									[13595, 13520],
+									[14149, 14025],
+									[15367, 15150],
+									[15807, 15570],
+									[16064, 15845],
+									[16193, 16009],
+									[16273, 16132],
+									[16450, 16272],
+									[16236, 16107],
+									[15947, 15877],
+									[16456, 16361],
+									[17032, 16896],
+									[16965, 16862],
+									[16761, 16705],
+									[16767, 16690],
+									[17700, 17574],
+									[18015, 17882],
+									[18297, 18163],
+									[18502, 18373],
+									[18687, 18565],
+									[18857, 18744],
+									[19023, 18919],
+									[19187, 19091],
+									[19349, 19262],
+									[19512, 19434],
+									[19674, 19605],
+									[19835, 19775],
+									[19997, 19946],
+									[20158, 20117],
+									[20320, 20288],
+									[20287, 20265],
+									[20212, 20198],
+									[19643, 19637],
+									[19743, 19736],
+									[19356, 19346],
+									[20796, 20774],
+									[20950, 20924],
+									[21020, 20991],
+									[20928, 20898],
+									[21766, 21713],
+									[22062, 21998],
+									[22161, 22096],
+									[22156, 22095],
+									[21892, 21849],
+									[22276, 22211],
+									[22237, 22176],
+									[23035, 22929],
+									[23328, 23206],
+									[23601, 23465],
+									[23888, 23760],
+									[24227, 24131],
+									[24574, 24374],
+									[24244, 23860],
+									[23788, 23164],
+									[23401, 23150],
+									[24195, 23956],
+									[23921, 23769],
+									[23611, 23550],
+									[24545, 24487],
+									[25464, 25360],
+									[25419, 25250],
+									[25390, 25224],
+									[25259, 25108],
+									[26542, 26258],
+									[26542, 26258]
+								],
+								[
+									[31410, 28396],
+									[32790, 29411],
+									[31479, 29157],
+									[30828, 29045],
+									[32639, 30205],
+									[32826, 30438],
+									[32424, 30434],
+									[31712, 30274],
+									[33379, 31452],
+									[34298, 32125],
+									[34022, 32113],
+									[34466, 32427],
+									[33808, 32622],
+									[33767, 32753],
+									[33132, 31828],
+									[34956, 32975],
+									[34952, 33408],
+									[33097, 32271],
+									[34084, 33205],
+									[35102, 34028],
+									[34618, 34281],
+									[35075, 34850],
+									[37385, 36924],
+									[38544, 37702],
+									[40497, 39323],
+									[40073, 39719],
+									[39941, 39732],
+									[40784, 40698],
+									[40168, 39966],
+									[42031, 41656],
+									[41844, 40781],
+									[43110, 41879],
+									[43852, 42031],
+									[43318, 42475],
+									[45235, 44106],
+									[46359, 44538],
+									[45835, 44296],
+									[47395, 45816],
+									[46485, 45522],
+									[46840, 45707],
+									[46582, 45724],
+									[46088, 45771],
+									[46791, 46332],
+									[48698, 47657],
+									[50963, 49166],
+									[50469, 48873],
+									[50842, 50036],
+									[49292, 48556],
+									[50109, 49855],
+									[50205, 50067],
+									[51380, 51321],
+									[52582, 52263],
+									[53680, 52738],
+									[54120, 52437],
+									[55695, 53946],
+									[54966, 53548],
+									[55847, 53547],
+									[56011, 54237],
+									[56189, 53579],
+									[56632, 55055],
+									[57935, 56276],
+									[56673, 55849],
+									[56050, 55646],
+									[57917, 57390],
+									[56646, 55829],
+									[58919, 57861],
+									[57540, 56945],
+									[60484, 59427],
+									[64009, 62095],
+									[65459, 63309],
+									[66512, 64219],
+									[66837, 64758],
+									[67177, 65364],
+									[67442, 65945],
+									[69045, 67085],
+									[68834, 67182],
+									[69029, 67662],
+									[70209, 68161],
+									[70832, 68669],
+									[70289, 68288],
+									[69422, 67707],
+									[68634, 66832],
+									[71353, 68620],
+									[71258, 68390],
+									[69383, 68280],
+									[71958, 70818],
+									[71524, 70158],
+									[71541, 70357],
+									[70023, 69360],
+									[72996, 72220],
+									[76730, 75143],
+									[79122, 77246],
+									[80453, 77582],
+									[78052, 76469],
+									[76033, 75200],
+									[73655, 72399],
+									[76354, 74114],
+									[79211, 76141],
+									[81666, 79508],
+									[81666, 79508]
+								],
+								[
+									[72150, 62745],
+									[71580, 65594],
+									[70122, 64150],
+									[72488, 65902],
+									[72167, 66872],
+									[70873, 66606],
+									[70106, 67454],
+									[69416, 67732],
+									[71800, 69316],
+									[73346, 69597],
+									[76113, 72200],
+									[76934, 73490],
+									[77509, 72721],
+									[73898, 71076],
+									[76393, 72836],
+									[77642, 73777],
+									[77912, 74597],
+									[83166, 78625],
+									[82859, 79247],
+									[85301, 81830],
+									[86659, 80960],
+									[90887, 84468],
+									[90823, 85467],
+									[91590, 87462],
+									[93798, 87831],
+									[92049, 88028],
+									[95764, 90854],
+									[94373, 91709],
+									[96679, 93288],
+									[101653, 96358],
+									[100838, 97552],
+									[100406, 95351],
+									[101545, 96640],
+									[106456, 98636],
+									[105942, 98736],
+									[102908, 97908],
+									[103275, 99703],
+									[103416, 100912],
+									[107339, 104077],
+									[110891, 106425],
+									[107986, 106630],
+									[105802, 103839],
+									[108601, 105683],
+									[112300, 107937],
+									[110532, 108064],
+									[114671, 110225],
+									[118901, 111920],
+									[118299, 111505],
+									[119796, 113283],
+									[123921, 115090],
+									[123867, 117468],
+									[122182, 118270],
+									[123869, 119430],
+									[124628, 119337],
+									[121497, 118048],
+									[122644, 118018],
+									[127180, 120955],
+									[124289, 119359],
+									[130969, 122961],
+									[128399, 121491],
+									[132604, 124865],
+									[132888, 127860],
+									[138820, 132968],
+									[139812, 136682],
+									[144251, 139759],
+									[147168, 139315],
+									[149721, 141320],
+									[152735, 146297],
+									[155812, 152206],
+									[155320, 151321],
+									[156127, 149867],
+									[157662, 152083],
+									[157518, 148024],
+									[158980, 148610],
+									[161105, 149546],
+									[159759, 148800],
+									[158245, 148925],
+									[155110, 151035],
+									[159515, 155125],
+									[163217, 159250],
+									[160026, 154362],
+									[157858, 155185],
+									[161650, 158509],
+									[166125, 162931],
+									[166437, 161438],
+									[170273, 164241],
+									[171249, 167922],
+									[171083, 167527],
+									[167712, 165255],
+									[168288, 163865],
+									[172980, 164756],
+									[174049, 165158],
+									[178031, 167312],
+									[179813, 168597],
+									[181430, 169882],
+									[182763, 171071],
+									[184147, 172365],
+									[185509, 173672],
+									[187590, 175685],
+									[187590, 175685]
+								],
+								[
+									[145710, 127730],
+									[140070, 126769],
+									[144371, 130483],
+									[144207, 130695],
+									[146255, 132804],
+									[146665, 134693],
+									[146795, 137116],
+									[143822, 136576],
+									[148042, 138368],
+									[148800, 141032],
+									[150498, 141711],
+									[149642, 141583],
+									[150211, 144438],
+									[156875, 149117],
+									[157527, 152442],
+									[156813, 152040],
+									[159172, 156134],
+									[165871, 161840],
+									[170659, 163448],
+									[169844, 164317],
+									[167378, 160132],
+									[164127, 161902],
+									[170705, 168108],
+									[178973, 173999],
+									[180128, 169853],
+									[187498, 174142],
+									[193295, 179362],
+									[196368, 183399],
+									[195268, 184526],
+									[207634, 193285],
+									[210539, 197725],
+									[209742, 200356],
+									[210523, 199238],
+									[201932, 196230],
+									[200750, 198229],
+									[195568, 194057],
+									[207282, 203569],
+									[218282, 209060],
+									[228606, 212521],
+									[230939, 214089],
+									[227960, 213556],
+									[230049, 216383],
+									[225688, 216744],
+									[236271, 226305],
+									[233449, 230240],
+									[231414, 229433],
+									[230423, 227134],
+									[235372, 227421],
+									[246151, 233154],
+									[245367, 232888],
+									[241152, 230529],
+									[256080, 239515],
+									[258987, 241433],
+									[267397, 248504],
+									[271160, 251838],
+									[271990, 252690],
+									[271654, 252576],
+									[271994, 255361],
+									[283687, 268426],
+									[287394, 276595],
+									[288272, 273521],
+									[285192, 275009],
+									[297038, 282194],
+									[291670, 279609],
+									[296385, 280902],
+									[296706, 283534],
+									[299131, 291097],
+									[303994, 292761],
+									[315149, 305951],
+									[309924, 297918],
+									[299318, 293641],
+									[294709, 286389],
+									[310548, 296340],
+									[315072, 301206],
+									[318195, 306689],
+									[320608, 314137],
+									[324046, 314351],
+									[326545, 309898],
+									[328210, 311049],
+									[329587, 312929],
+									[332009, 319492],
+									[336885, 323083],
+									[337278, 328224],
+									[334005, 322438],
+									[331121, 322983],
+									[340180, 329089],
+									[346011, 335715],
+									[346311, 342791],
+									[343086, 340190],
+									[335322, 330022],
+									[344729, 333338],
+									[354913, 337817],
+									[359791, 340729],
+									[364843, 344581],
+									[369343, 348469],
+									[372247, 353324],
+									[369932, 354017],
+									[370078, 357371],
+									[378846, 357643],
+									[378846, 357643]
+								],
+								[
+									[258540, 227156],
+									[249240, 230153],
+									[261488, 236793],
+									[260876, 238118],
+									[260779, 238515],
+									[264906, 243864],
+									[268628, 246620],
+									[273111, 250992],
+									[275097, 252534],
+									[273836, 253411],
+									[269533, 255038],
+									[275436, 260915],
+									[279053, 261725],
+									[279384, 264317],
+									[274154, 265831],
+									[283966, 270899],
+									[301940, 281602],
+									[316956, 295582],
+									[316548, 300568],
+									[311680, 294320],
+									[306369, 291714],
+									[315489, 295940],
+									[323445, 302232],
+									[331389, 309774],
+									[340846, 320402],
+									[341632, 324343],
+									[347007, 336355],
+									[349151, 340812],
+									[347876, 341738],
+									[354072, 344913],
+									[364209, 349982],
+									[366434, 345181],
+									[375584, 351389],
+									[377136, 351528],
+									[369629, 351840],
+									[385742, 365158],
+									[386872, 370706],
+									[389352, 375787],
+									[391922, 375606],
+									[403010, 386323],
+									[417986, 390789],
+									[419262, 392446],
+									[416741, 393905],
+									[417678, 393727],
+									[429614, 404720],
+									[428090, 405554],
+									[423179, 405864],
+									[436625, 410361],
+									[439079, 412515],
+									[440200, 413374],
+									[451790, 430293],
+									[471884, 449564],
+									[487167, 470323],
+									[484845, 465768],
+									[516205, 483151],
+									[522808, 488230],
+									[533592, 496995],
+									[531086, 504807],
+									[529870, 503512],
+									[536445, 510052],
+									[544713, 508752],
+									[539450, 507386],
+									[531600, 501479],
+									[534760, 506015],
+									[543376, 512706],
+									[543131, 519624],
+									[532167, 519846],
+									[532948, 520257],
+									[522783, 511311],
+									[545611, 525305],
+									[548746, 524354],
+									[549672, 525353],
+									[539701, 520255],
+									[553100, 530676],
+									[551982, 541695],
+									[556419, 539853],
+									[574787, 550703],
+									[582987, 554501],
+									[575104, 554528],
+									[589189, 562223],
+									[593549, 570852],
+									[586992, 568597],
+									[586402, 562258],
+									[579435, 557618],
+									[575985, 560483],
+									[597593, 577412],
+									[612490, 588463],
+									[625331, 597910],
+									[636646, 595656],
+									[625469, 592591],
+									[619053, 592009],
+									[603071, 587103],
+									[617444, 602726],
+									[609112, 597369],
+									[627426, 611200],
+									[621712, 600676],
+									[646196, 608305],
+									[666435, 624376],
+									[672204, 636036],
+									[672204, 636036]
+								],
+								[
+									[428430, 370853],
+									[419670, 373273],
+									[426662, 381635],
+									[431352, 384942],
+									[431378, 385825],
+									[432531, 389181],
+									[433143, 393249],
+									[439538, 398137],
+									[448237, 402754],
+									[457258, 407415],
+									[459156, 410786],
+									[460132, 416257],
+									[471887, 428306],
+									[487026, 437487],
+									[497560, 446644],
+									[506570, 454565],
+									[509542, 462047],
+									[511843, 467453],
+									[515373, 470645],
+									[517025, 474310],
+									[531752, 485823],
+									[551939, 498533],
+									[564951, 511734],
+									[564948, 520289],
+									[567245, 520761],
+									[570058, 522621],
+									[581542, 531409],
+									[598736, 542385],
+									[600545, 548790],
+									[605240, 556574],
+									[607854, 557672],
+									[618284, 566943],
+									[628603, 570867],
+									[628852, 575625],
+									[624468, 580764],
+									[617939, 578101],
+									[617410, 578831],
+									[623700, 585206],
+									[654577, 602115],
+									[665006, 611523],
+									[673682, 615225],
+									[672685, 621843],
+									[685634, 634440],
+									[718296, 664528],
+									[759770, 689841],
+									[775566, 711870],
+									[782975, 718029],
+									[793308, 725070],
+									[796268, 738206],
+									[807724, 754367],
+									[833366, 776146],
+									[851929, 775989],
+									[860615, 778039],
+									[857288, 774788],
+									[846961, 776490],
+									[838022, 775328],
+									[852692, 787752],
+									[868791, 800842],
+									[861979, 803808],
+									[862188, 800473],
+									[843629, 801044],
+									[854989, 810280],
+									[846878, 807305],
+									[865805, 817357],
+									[887740, 827375],
+									[914472, 835929],
+									[923173, 842036],
+									[926047, 853638],
+									[914561, 859298],
+									[920235, 857584],
+									[903520, 850133],
+									[923978, 860354],
+									[931475, 867511],
+									[925158, 867772],
+									[932749, 883989],
+									[950076, 908216],
+									[943870, 907505],
+									[931448, 894375],
+									[964690, 905548],
+									[977741, 922290],
+									[994629, 949955],
+									[1003301, 968944],
+									[993584, 947871],
+									[985230, 933555],
+									[988968, 940311],
+									[977098, 944041],
+									[1005972, 960242],
+									[1017161, 965089],
+									[1019684, 975408],
+									[1009552, 969064],
+									[1011257, 977525],
+									[1015073, 983210],
+									[1047988, 996586],
+									[1052590, 1005194],
+									[1041338, 990914],
+									[1052111, 1005714],
+									[1096654, 1022537],
+									[1102263, 1025920],
+									[1113918, 1038388],
+									[1113918, 1038388]
+								],
+								[
+									[656160, 582434],
+									[579390, 535504],
+									[615839, 576340],
+									[631357, 588023],
+									[657902, 609625],
+									[651402, 613625],
+									[657924, 619713],
+									[653784, 607233],
+									[662378, 616073],
+									[708418, 649532],
+									[711964, 653876],
+									[729296, 670121],
+									[702157, 659912],
+									[691110, 666931],
+									[719991, 693491],
+									[781600, 740155],
+									[796464, 765542],
+									[802766, 761966],
+									[796893, 769165],
+									[813642, 786468],
+									[828058, 794264],
+									[815045, 804123],
+									[809163, 793965],
+									[864091, 833627],
+									[893752, 835898],
+									[913516, 847869],
+									[917386, 854920],
+									[916624, 861956],
+									[902521, 866137],
+									[928490, 881368],
+									[922390, 888120],
+									[943581, 899461],
+									[935636, 903967],
+									[951560, 914874],
+									[997940, 936774],
+									[1017085, 949911],
+									[1033562, 962324],
+									[1046421, 973602],
+									[1059191, 984732],
+									[1071537, 995702],
+									[1085381, 1016484],
+									[1092072, 1043556],
+									[1110070, 1091633],
+									[1135305, 1115720],
+									[1181790, 1146925],
+									[1197503, 1140750],
+									[1190137, 1140576],
+									[1209994, 1167859],
+									[1194087, 1126266],
+									[1211389, 1143635],
+									[1221512, 1164146],
+									[1181985, 1161709],
+									[1164626, 1145465],
+									[1189317, 1157961],
+									[1217612, 1158822],
+									[1233713, 1167461],
+									[1247505, 1176536],
+									[1242971, 1178405],
+									[1236148, 1187848],
+									[1226778, 1198172],
+									[1282417, 1242204],
+									[1294695, 1232817],
+									[1310675, 1242683],
+									[1307169, 1243701],
+									[1299744, 1244891],
+									[1289284, 1245137],
+									[1345154, 1279194],
+									[1368953, 1299083],
+									[1392995, 1319581],
+									[1391623, 1317703],
+									[1401059, 1326622],
+									[1410073, 1335455],
+									[1420194, 1345470],
+									[1410758, 1344295],
+									[1397098, 1340765],
+									[1380327, 1335469],
+									[1441424, 1375284],
+									[1467426, 1391542],
+									[1494282, 1407577],
+									[1517429, 1420947],
+									[1510967, 1429941],
+									[1500381, 1430022],
+									[1466536, 1416915],
+									[1427064, 1399887],
+									[1452494, 1424276],
+									[1511552, 1468928],
+									[1525621, 1487703],
+									[1557653, 1502204],
+									[1555453, 1512999],
+									[1557712, 1533775],
+									[1555642, 1520577],
+									[1604274, 1543761],
+									[1621920, 1554506],
+									[1638316, 1566530],
+									[1650989, 1577455],
+									[1662698, 1588280],
+									[1674955, 1600135],
+									[1687228, 1612209],
+									[1706015, 1630814],
+									[1706015, 1630814]
+								]
 							]
-						]
-					],
+						],
 					buildUI:             function() {
 						console.log("build ui raiding 0");
 						var worldDataRoot = webfrontend.net.UpdateManager.getInstance().requester["WORLD"].obj;
@@ -5817,7 +5837,7 @@
 									break;
 								}
 							}
-						}
+							}
 						var CI = webfrontend.data.City.getInstance();
 						var app = qx.core.Init.getApplication();
 						this.setLayout(new qx.ui.layout.VBox(2));
@@ -5844,9 +5864,14 @@
 						webfrontend.gui.Util.formatWinClose(this);
 						console.log("build ui raiding 2");
 						this.setCaption(CI.getName() + "  " + webfrontend.gui.Util.formatCityCoordsFromId(CI.getId(), true));
+						console.log("build ui raiding 2.5");
 						this.tabview = new qx.ui.tabview.TabView();
 						this.tabview.add(this.createDungeonPage());
+						console.log("build ui raiding 6");
+
 						this.tabview.add(this.createBossPage());
+						console.log("build ui raiding 7");
+
 						this.tabview.add(this.createIdleUnitsPage());
 						console.log("build ui raiding 3");
 						this.tabview.add(this.createPvpPage());
@@ -5986,7 +6011,7 @@
 									m.removeRows(id, 1);
 								}
 							}
-						}
+							}
 
 						console.log("Rows Pre: " + m.getRowCount());
 						m.addRows([row], 0);
@@ -6011,7 +6036,7 @@
 									}
 									found = true;
 								}
-							}
+								}
 							if(!found) {
 								var CI = webfrontend.data.City.getInstance();
 								var cId = CI.getId();
@@ -6132,7 +6157,7 @@
 								this.targetContainer.add(subcontainer);
 								this.updateDungeonRaidInfo(d.get_Coordinates());
 							}
-						}
+							}
 						return retVal;
 					},
 					dungProgressType:    function(dungType) {
@@ -6151,8 +6176,8 @@
 							if(resMain.dungeonLevels[i].t < title - 1) {
 								retVal = title > 5 ? (i + 1) : i;
 								break;
+								}
 							}
-						}
 						return retVal;
 					},
 					pickBossRaider:      function() {
@@ -6173,9 +6198,9 @@
 										s: uspeed
 									};
 									break;
+									}
 								}
 							}
-						}
 						return retVal;
 					},
 					formatNumber:        function(str) {
@@ -6221,10 +6246,10 @@
 									if(worldDataRoot[key].hasOwnProperty("d") && worldDataRoot[key].hasOwnProperty("c")) {
 										this.worldData = worldDataRoot[key];
 										break;
+										}
 									}
 								}
 							}
-						}
 						if(this.objData == "none" && this.worldData) {
 							for(var cluster in this.worldData.d) {
 								for(var key in this.worldData.d[cluster]) {
@@ -6369,14 +6394,14 @@
 													break;
 											}
 										}
+										}
 									}
 								}
 							}
-						}
 						m.sortByColumn(4, true);
 					},
 
-					createIdleUnitsPage:    function() {
+					createIdleUnitsPage:  function() {
 						var idleUnitsPage = new qx.ui.tabview.Page("Lazy Troops");
 						idleUnitsPage.setLayout(new qx.ui.layout.VBox(2));
 						var container = new qx.ui.container.Composite();
@@ -6492,10 +6517,10 @@
 						btn.autoUpdate = this.autoUpdate;
 						return idleUnitsPage;
 					},
-					cityGroupSelected:      function(e) {
+					cityGroupSelected:    function(e) {
 						paDebug("Execute button: " + this.getLabel());
 					},
-					createBossPage:         function() {
+					createBossPage:       function() {
 						var bossPage = new qx.ui.tabview.Page("Boss Raiding");
 						bossPage.setLayout(new qx.ui.layout.VBox(2));
 						var container = new qx.ui.container.Composite();
@@ -6572,8 +6597,8 @@
 													break;
 												}
 											}
+											}
 										}
-									}
 									break;
 								case 6:
 									break;
@@ -6590,7 +6615,7 @@
 						});
 						return bossPage;
 					},
-					createPvpPage:          function() {
+					createPvpPage:        function() {
 
 						var pvpPage = new qx.ui.tabview.Page("Cache/Pvp");
 						pvpPage.setLayout(new qx.ui.layout.VBox(2));
@@ -6822,8 +6847,8 @@
 											c:  tmpCount
 										});
 									}
+									}
 								}
-							}
 							var sendTime = this.pvp.getDelay5sOffsetTime();
 							var commandManager = webfrontend.net.CommandManager.getInstance();
 							var secs = 0;
@@ -6832,36 +6857,36 @@
 									var rpt = parseInt(data[ii][7]);
 									for(b = rpt; b > 0; --b) {
 										var sndUnits = [];
-										for(var a = 0; a < units.length; ++a) {
-											if(units[a].c > 0) {
-												sndUnits.push({
-													t: units[a].t,
-													c: units[a].c
-												});
-												var amt = Math.floor(units[a].c / lossDivisor);
-												units[a].c = Math.max(0, amt);
+											for(var a = 0; a < units.length; ++a) {
+												if(units[a].c > 0) {
+													sndUnits.push({
+														t: units[a].t,
+														c: units[a].c
+													});
+													var amt = Math.floor(units[a].c / lossDivisor);
+													units[a].c = Math.max(0, amt);
+												}
 											}
-										}
-										var request = {
-											cityid:                     cid,
-											units:                      sndUnits,
-											targetPlayer:               data[ii][0],
-											targetCity:                 data[ii][4],
-											order:                      2,
-											transport:                  1,
-											createCity:                 "",
-											timeReferenceType:          sendMode,
-											referenceTimeUTCMillis:     sendTime + 1000,
-											raidTimeReferenceType:      0,
-											raidReferenceTimeUTCMillis: 0,
-											iUnitOrderOptions:          0,
-											iOrderCountRaid:            0
-										};
-										commandManager.sendCommand("OrderUnits", request, null, function() {
-										});
-										var tcid = Number(String(data[ii][3]).replace(',', ''));
-										var cx = tcid & 0xFFFF;
-										var cy = tcid >> 16;
+											var request = {
+												cityid:                     cid,
+												units:                      sndUnits,
+												targetPlayer:               data[ii][0],
+												targetCity:                 data[ii][4],
+												order:                      2,
+												transport:                  1,
+												createCity:                 "",
+												timeReferenceType:          sendMode,
+												referenceTimeUTCMillis:     sendTime + 1000,
+												raidTimeReferenceType:      0,
+												raidReferenceTimeUTCMillis: 0,
+												iUnitOrderOptions:          0,
+												iOrderCountRaid:            0
+											};
+											commandManager.sendCommand("OrderUnits", request, null, function() {
+											});
+											var tcid = Number(String(data[ii][3]).replace(',', ''));
+											var cx = tcid & 0xFFFF;
+											var cy = tcid >> 16;
 										var dist = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy));
 										secs += Math.ceil(5 + (speed * 2 * dist));
 										var hours = Math.floor(secs / (60 * 60));
@@ -6871,8 +6896,8 @@
 										var seconds = Math.ceil(divisor_for_seconds);
 										sendTime = this.pvp.getDelayWithOffsetTime(hours, minutes, seconds);
 									}
+									}
 								}
-							}
 							var remainingTs = 0;
 							for(var a = 0; a < units.length; ++a) {
 								if(units[a].c > 0) {
@@ -6972,7 +6997,7 @@
 						pvpPage.add(this.pvpTroopContainer);
 						return pvpPage;
 					},
-					GetDungeonModifier:     function(dungeonType) {
+					GetDungeonModifier:   function(dungeonType) {
 						var rv = 1;
 						if(this.wantWood.getValue() && dungeonType == 5)
 							rv *= distWantModifier;
@@ -6982,509 +7007,527 @@
 
 						return rv;
 					},
-					createDungeonPage:      function() {
-						var dungeonPage = new qx.ui.tabview.Page("Dungeons");
-						dungeonPage.setLayout(new qx.ui.layout.Dock());
+					createDungeonPage:    function() {
+						try {
+							var dungeonPage = new qx.ui.tabview.Page("Dungeons");
+							dungeonPage.setLayout(new qx.ui.layout.Dock());
 
-						var layoutContainer = new qx.ui.container.Composite();
-						layoutContainer.setLayout(new qx.ui.layout.VBox());
+							console.assert(false);
+							var layoutContainer = new qx.ui.container.Composite();
+							layoutContainer.setLayout(new qx.ui.layout.VBox());
 
-						layoutContainer.add(new qx.ui.basic.Label("Targets"));
+							layoutContainer.add(new qx.ui.basic.Label("Targets"));
 
-						var container = new qx.ui.container.Composite();
-						container.setLayout(new qx.ui.layout.Basic());
-						container.add(new qx.ui.basic.Label("Type").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 80
-						});
-						container.add(new qx.ui.basic.Label("Prog").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 130
-						});
-						container.add(new qx.ui.basic.Label("Coords").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 180
-						});
-						container.add(new qx.ui.basic.Label("Dist").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 230
-						});
-						container.add(new qx.ui.basic.Label("Max").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 280
-						});
-						container.add(new qx.ui.basic.Label("Avg").set({
-							alignY: "middle"
-						}), {
-							top:  0,
-							left: 330
-						});
-						var sel = new qx.ui.form.SelectBox().set({
-							width:         77,
-							alignY:        "middle",
-							paddingLeft:   4,
-							paddingRight:  4,
-							paddingTop:    0,
-							paddingBottom: 0
-						});
-						sel.add(new qx.ui.form.ListItem("Max+90%"));
-						sel.add(new qx.ui.form.ListItem("Max+60%"));
-						sel.add(new qx.ui.form.ListItem("Max+30%"));
-						sel.add(new qx.ui.form.ListItem("Max+15%"));
-						sel.add(new qx.ui.form.ListItem("Max"));
+							var container = new qx.ui.container.Composite();
+							container.setLayout(new qx.ui.layout.Basic());
+							container.add(new qx.ui.basic.Label("Type").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 80
+							});
+							container.add(new qx.ui.basic.Label("Prog").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 130
+							});
+							container.add(new qx.ui.basic.Label("Coords").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 180
+							});
+							container.add(new qx.ui.basic.Label("Dist").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 230
+							});
+							container.add(new qx.ui.basic.Label("Max").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 280
+							});
+							container.add(new qx.ui.basic.Label("Avg").set({
+								alignY: "middle"
+							}), {
+								top:  0,
+								left: 330
+							});
+							console.debug("DP 0");
+							var sel = new qx.ui.form.SelectBox().set({
+								width:         77,
+								alignY:        "middle",
+								paddingLeft:   4,
+								paddingRight:  4,
+								paddingTop:    0,
+								paddingBottom: 0
+							});
+							sel.add(new qx.ui.form.ListItem("Max+90%"));
+							sel.add(new qx.ui.form.ListItem("Max+60%"));
+							sel.add(new qx.ui.form.ListItem("Max+30%"));
+							sel.add(new qx.ui.form.ListItem("Max+15%"));
+							sel.add(new qx.ui.form.ListItem("Max"));
 
-						//sel.add( new qx.ui.form.ListItem( "Mavg" ) );
-						//sel.add( new qx.ui.form.ListItem( "Avg" ) );
-						//sel.add( new qx.ui.form.ListItem( "Split" ) );
-						sel.setSelection([sel.getChildren()[3]]);
-						this.raidAddType = sel;
-						container.add(sel, {
-							top:  0,
-							left: 0
-						});
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__addType", e.getData()[0].getLabel());
-						});
-						SelectFromStorage("mm__addType", sel);
+							console.debug("DP 1");
+							//sel.add( new qx.ui.form.ListItem( "Mavg" ) );
+							//sel.add( new qx.ui.form.ListItem( "Avg" ) );
+							//sel.add( new qx.ui.form.ListItem( "Split" ) );
+							sel.setSelection([sel.getChildren()[3]]);
+							this.raidAddType = sel;
+							container.add(sel, {
+								top:  0,
+								left: 0
+							});
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__addType", e.getData()[0].getLabel());
+							});
+							SelectFromStorage("mm__addType", sel);
 
-						//container.add( new qx.ui.basic.Label("Min"),    {top: 0, left: 350} );
-						this.targetContainer = new qx.ui.container.Composite();
-						this.targetContainer.setLayout(new qx.ui.layout.VBox().set({
-							spacing: 3
-						}));
-						var scrollContainer = new qx.ui.container.Scroll();
-						scrollContainer.add(this.targetContainer);
-						scrollContainer.setMaxHeight(250);
-						var btn = new qx.ui.form.Button("X").set({
-							paddingLeft:   5,
-							paddingRight:  5,
-							paddingTop:    0,
-							paddingBottom: 0
-						});
-						btn.targetContainer = this.targetContainer;
-						btn.addListener("click", function() {
-							this.targetContainer.removeAll();
-						});
-						container.add(btn, {
-							top:  0,
-							left: 460
-						});
-						layoutContainer.add(container);
-						layoutContainer.add(new qx.ui.core.Widget().set({
-							backgroundColor: "#c4a77b",
-							height:          2,
-							allowGrowX:      true,
-							marginTop:       4,
-							marginBottom:    2
-						}));
-						dungeonPage.add(layoutContainer, {
-							edge: "north"
-						});
-						dungeonPage.add(scrollContainer, {
-							edge:  "center",
-							width: "100%"
-						});
-						container = new qx.ui.container.Composite();
-						container.setLayout(new qx.ui.layout.VBox());
-						container.add(new qx.ui.core.Widget().set({
-							backgroundColor: "#c4a77b",
-							height:          2,
-							allowGrowX:      true,
-							marginTop:       4,
-							marginBottom:    4
-						}));
-						var subContainer = new qx.ui.container.Composite();
-						subContainer.setLayout(new qx.ui.layout.HBox().set({
-							spacing: 4
-						}));
-						subContainer.add(new qx.ui.basic.Label("Troops").set({
-							alignY: "middle"
-						}));
-						this.split = new qx.ui.form.CheckBox("Split").set({
-							marginLeft: 5
-						});
-						this.split.setToolTipText("If checked, adds as many groups as possible at around the level indicated.");
-						this.split.initValue(false);
-						subContainer.add(this.split);
-						this.wantWood = new qx.ui.form.CheckBox("wantWood").set({
-							marginLeft: 5
-						});
-						this.wantWood.setToolTipText("If checked, forests are favoured when dungeontype is flexible.\nCan be used with wantStone.\nExample:  If a the best mountain is up to 5 away and the best forest is 7 away, it will choose the forest.\nIf the mountain is closer or the forest farther, it will choose the mountain.\nThe setting will have no effect if there a many close forest dungeons.");
-						this.wantWood.initValue(localStorage.getItem("mm__wantWood"));
-						subContainer.add(this.wantWood);
-						this.wantStone = new qx.ui.form.CheckBox("wantStone").set({
-							marginLeft: 5
-						});
-						this.wantStone.setToolTipText("See 'getWood'.\n");
-						this.wantStone.initValue(localStorage.getItem("mm__wantStone") ? true : false);
-						subContainer.add(this.wantStone);
+							//container.add( new qx.ui.basic.Label("Min"),    {top: 0, left: 350} );
+							this.targetContainer = new qx.ui.container.Composite();
+							this.targetContainer.setLayout(new qx.ui.layout.VBox().set({
+								spacing: 3
+							}));
+							var scrollContainer = new qx.ui.container.Scroll();
+							scrollContainer.add(this.targetContainer);
+							scrollContainer.setMaxHeight(250);
+							var btn = new qx.ui.form.Button("X").set({
+								paddingLeft:   5,
+								paddingRight:  5,
+								paddingTop:    0,
+								paddingBottom: 0
+							});
+							console.debug("DP 0");
 
-						subContainer.add(new qx.ui.core.Spacer(), {
-							flex: 1
-						});
+							btn.targetContainer = this.targetContainer;
+							btn.addListener("click", function() {
+								this.targetContainer.removeAll();
+							});
+							container.add(btn, {
+								top:  0,
+								left: 460
+							});
+							layoutContainer.add(container);
+							layoutContainer.add(new qx.ui.core.Widget().set({
+								backgroundColor: "#c4a77b",
+								height:          2,
+								allowGrowX:      true,
+								marginTop:       4,
+								marginBottom:    2
+							}));
+							dungeonPage.add(layoutContainer, {
+								edge: "north"
+							});
+							dungeonPage.add(scrollContainer, {
+								edge:  "center",
+								width: "100%"
+							});
+							console.debug("DP 0");
+							container = new qx.ui.container.Composite();
+							container.setLayout(new qx.ui.layout.VBox());
+							container.add(new qx.ui.core.Widget().set({
+								backgroundColor: "#c4a77b",
+								height:          2,
+								allowGrowX:      true,
+								marginTop:       4,
+								marginBottom:    4
+							}));
+							var subContainer = new qx.ui.container.Composite();
+							subContainer.setLayout(new qx.ui.layout.HBox().set({
+								spacing: 4
+							}));
+							subContainer.add(new qx.ui.basic.Label("Troops").set({
+								alignY: "middle"
+							}));
+							this.split = new qx.ui.form.CheckBox("Split").set({
+								marginLeft: 5
+							});
+							this.split.setToolTipText("If checked, adds as many groups as possible at around the level indicated.");
+							this.split.initValue(false);
+							subContainer.add(this.split);
+							this.wantWood = new qx.ui.form.CheckBox("wantWood").set({
+								marginLeft: 5
+							});
+							this.wantWood.setToolTipText("If checked, forests are favoured when dungeontype is flexible.\nCan be used with wantStone.\nExample:  If a the best mountain is up to 5 away and the best forest is 7 away, it will choose the forest.\nIf the mountain is closer or the forest farther, it will choose the mountain.\nThe setting will have no effect if there a many close forest dungeons.");
+							this.wantWood.initValue(localStorage.getItem("mm__wantWood"));
+							subContainer.add(this.wantWood);
+							this.wantStone = new qx.ui.form.CheckBox("wantStone").set({
+								marginLeft: 5
+							});
+							this.wantStone.setToolTipText("See 'getWood'.\n");
+							this.wantStone.initValue(localStorage.getItem("mm__wantStone") ? true : false);
+							subContainer.add(this.wantStone);
 
-						subContainer.add(new qx.ui.basic.Label("Raid:").set({
-							alignY: "middle"
-						}));
-						sel = new qx.ui.form.SelectBox().set({
-							width:  80,
-							alignY: "middle"
-						});
+							subContainer.add(new qx.ui.core.Spacer(), {
+								flex: 1
+							});
+							console.debug("DP 0");
 
-						sel.add(new qx.ui.form.ListItem("Manual"));
-						sel.add(new qx.ui.form.ListItem("AvaRaid"));
-						sel.add(new qx.ui.form.ListItem("null"));
-						sel.add(new qx.ui.form.ListItem("really null")); // don't use this
-						sel.add(new qx.ui.form.ListItem("undefined"));
-						sel.add(new qx.ui.form.ListItem("NaN"));
-						sel.add(new qx.ui.form.ListItem("404"));
-						sel.add(new qx.ui.form.ListItem("+0.0"));
+							subContainer.add(new qx.ui.basic.Label("Raid:").set({
+								alignY: "middle"
+							}));
+							sel = new qx.ui.form.SelectBox().set({
+								width:  80,
+								alignY: "middle"
+							});
 
-						sel.setSelection([sel.getChildren()[0]]);
+							sel.add(new qx.ui.form.ListItem("Manual"));
+							sel.add(new qx.ui.form.ListItem("AvaRaid"));
+							sel.add(new qx.ui.form.ListItem("null"));
+							sel.add(new qx.ui.form.ListItem("really null")); // don't use this
+							sel.add(new qx.ui.form.ListItem("undefined"));
+							sel.add(new qx.ui.form.ListItem("NaN"));
+							sel.add(new qx.ui.form.ListItem("404"));
+							sel.add(new qx.ui.form.ListItem("+0.0"));
+							console.debug("DP 0");
 
-						//	sel.setToolTipText("Send to the dungeons you have selected.");
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__raidMode", e.getData()[0].getLabel());
+							sel.setSelection([sel.getChildren()[0]]);
 
-							if(e.getData()[0].getLabel() == "NaN") {
-								// polite
+							//	sel.setToolTipText("Send to the dungeons you have selected.");
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__raidMode", e.getData()[0].getLabel());
 
-								this.AvaRaidMode = 3;
-							} else if(e.getData()[0].getLabel() == "AvaRaid") {
-								sel.setToolTipText("Selects dungeons and raids to send");
+								if(e.getData()[0].getLabel() == "NaN") {
+									// polite
 
-								this.AvaRaidMode = 1;
-							} else if(e.getData()[0].getLabel() == "+0.0") {
+									this.AvaRaidMode = 3;
+								} else if(e.getData()[0].getLabel() == "AvaRaid") {
+									sel.setToolTipText("Selects dungeons and raids to send");
 
-								this.AvaRaidMode = 2;
-							} else {
-								// default
-								sel.setToolTipText("Manual, tedius mode.");
-								this.AvaRaidMode = 0;
+									this.AvaRaidMode = 1;
+								} else if(e.getData()[0].getLabel() == "+0.0") {
+
+									this.AvaRaidMode = 2;
+								} else {
+									// default
+									sel.setToolTipText("Manual, tedius mode.");
+									this.AvaRaidMode = 0;
+								}
+							}, this);
+							console.debug("DP 0");
+
+							// set the initial raid mode
+
+							subContainer.add(sel);
+							this.raidModeSel = sel;
+							SetSelectionFromStore(sel, "mm__raidMode");
+							subContainer.add(new qx.ui.basic.Label("Ratio:").set({
+								alignY: "middle"
+							}));
+							sel = new qx.ui.form.SelectBox().set({
+								width:  80,
+								alignY: "middle"
+							});
+							sel.add(new qx.ui.form.ListItem("Available"));
+							sel.add(new qx.ui.form.ListItem("Total"));
+							sel.add(new qx.ui.form.ListItem("None"));
+							if(this.ratioMode == "total")
+								sel.setSelection([sel.getChildren()[1]]);
+							else if(this.ratioMode == "none")
+								sel.setSelection([sel.getChildren()[2]]);
+
+							subContainer.add(sel);
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__ratioOpts", e.getData()[0].getLabel());
+								var readOnly = false;
+								if(e.getData()[0].getLabel() == "Available")
+									this.ratioMode = "count";
+								else if(e.getData()[0].getLabel() == "Total")
+									this.ratioMode = "total";
+								else {
+									this.ratioMode = "none";
+									readOnly = true;
+								}
+								this.setTotalsReadOnly(readOnly);
+							});
+							container.add(subContainer);
+							SetSelectionFromStore(sel, "mm__ratioOpts");
+
+							this.troopContainer = new qx.ui.container.Composite();
+							this.troopContainer.setLayout(new qx.ui.layout.HBox().set({
+								spacing: 4
+							}));
+							container.add(this.troopContainer);
+							container.add(new qx.ui.core.Widget().set({
+								backgroundColor: "#c4a77b",
+								height:          2,
+								allowGrowX:      true,
+								marginTop:       4,
+								marginBottom:    4
+							}));
+							this.commandContainer = new qx.ui.container.Composite();
+							this.commandContainer.setLayout(new qx.ui.layout.VBox().set({
+								spacing: 2
+							}));
+							var defVis = "hidden";
+							subContainer = new qx.ui.container.Composite();
+							subContainer.setLayout(new qx.ui.layout.HBox().set({
+								spacing: 2
+							}));
+							sel = new qx.ui.form.SelectBox().set({
+								width:    80,
+								alignY:   "middle",
+								tabIndex: 1
+							});
+							var _sendTime = sel;
+							sel.add(new qx.ui.form.ListItem("Arrive", null, webfrontend.gui.SendArmyWindow.timings.arrive));
+							sel.add(new qx.ui.form.ListItem("Depart", null, webfrontend.gui.SendArmyWindow.timings.depart));
+							sel.add(new qx.ui.form.ListItem("Delay 5s", null, 100));
+							sel.add(new qx.ui.form.ListItem("Now", null, webfrontend.gui.SendArmyWindow.timings.now));
+							sel.setSelection([sel.getChildren()[3]]);
+							//   sel.rw = this;
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__timingOpts", e.getData()[0].getLabel());
+								var ch = this.getLayoutParent().getChildren();
+								var vis = "visible";
+								if(e.getData()[0].getLabel() == "Now" || e.getData()[0].getLabel() == "Delay 5s")
+									vis = "hidden";
+								for(var i = 1; i <= 6; i++)
+									ch[i].setVisibility(vis);
+								this.updateAvailableUnits();
+							});
+							subContainer.add(sel);
+							subContainer.add(this.createHMSTextField(defVis, 2));
+							subContainer.add(new qx.ui.basic.Label(":").set({
+								visibility: defVis,
+								alignY:     "middle"
+							}));
+							subContainer.add(this.createHMSTextField(defVis, 3));
+							subContainer.add(new qx.ui.basic.Label(":").set({
+								visibility: defVis,
+								alignY:     "middle"
+							}));
+							subContainer.add(this.createHMSTextField(defVis, 4));
+							sel = new qx.ui.form.SelectBox().set({
+								width:      100,
+								visibility: defVis,
+								alignY:     "middle",
+								tabIndex:   5
+							});
+							console.debug("DP 3");
+							var _sendDay = sel;
+							sel.add(new qx.ui.form.ListItem("7 days", null, 7));
+							sel.add(new qx.ui.form.ListItem("6 days", null, 6));
+							sel.add(new qx.ui.form.ListItem("5 days", null, 5));
+							sel.add(new qx.ui.form.ListItem("4 days", null, 4));
+							sel.add(new qx.ui.form.ListItem("3 days", null, 3));
+							sel.add(new qx.ui.form.ListItem("2 days", null, 2));
+							sel.add(new qx.ui.form.ListItem("Tomorrow", null, 1));
+							sel.add(new qx.ui.form.ListItem("Today", null, 0));
+							sel.setSelection([sel.getChildren()[7]]);
+							subContainer.add(sel);
+							subContainer.add(new qx.ui.core.Spacer(), {
+								flex: 1
+							});
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__delayDayOpts", e.getData()[0].getLabel());
+							});
+							SetSelectionFromStore(sel, "mm__delayDayOpts");
+							if(value != null) {
+								var opts = sel.getChildren();
+								for(var ii = 0; ii < opts.length; ++ii) {
+									if(opts[ii].getLabel() == value) {
+										sel.setSelection([opts[ii]]);
+										break;
+									}
+								}
 							}
-						}, this);
 
-						// set the initial raid mode
+							this.departOptions = new qx.ui.form.SelectBox().set({
+								width:    88,
+								alignY:   "middle",
+								tabIndex: 6
+							});
+							this.departOptions.add(new qx.ui.form.ListItem("Stagger opt", null, 0));
+							this.departOptions.add(new qx.ui.form.ListItem("1 min", null, 1));
+							this.departOptions.add(new qx.ui.form.ListItem("2 min", null, 2));
+							this.departOptions.add(new qx.ui.form.ListItem("5 min", null, 5));
+							this.departOptions.add(new qx.ui.form.ListItem("10 min", null, 10));
+							this.departOptions.add(new qx.ui.form.ListItem("20 min", null, 20));
+							this.departOptions.add(new qx.ui.form.ListItem("30 min", null, 30));
+							this.departOptions.add(new qx.ui.form.ListItem("45 min", null, 45));
+							this.departOptions.add(new qx.ui.form.ListItem("60 min", null, 60));
+							subContainer.add(this.departOptions);
+							value = localStorage.getItem("mm__departOpts");
+							if(value != null) {
+								var opts = this.departOptions.getChildren();
+								for(var ii = 0; ii < opts.length; ++ii) {
+									if(opts[ii].getLabel() == value) {
+										this.departOptions.setSelection([opts[ii]]);
+										break;
+									}
+								}
+							}
+							console.debug("DP 5");
 
-						subContainer.add(sel);
-						this.raidModeSel = sel;
-						SetSelectionFromStore(sel, "mm__raidMode");
-						subContainer.add(new qx.ui.basic.Label("Ratio:").set({
-							alignY: "middle"
-						}));
-						sel = new qx.ui.form.SelectBox().set({
-							width:  80,
-							alignY: "middle"
-						});
-						sel.add(new qx.ui.form.ListItem("Available"));
-						sel.add(new qx.ui.form.ListItem("Total"));
-						sel.add(new qx.ui.form.ListItem("None"));
-						if(this.ratioMode == "total")
-							sel.setSelection([sel.getChildren()[1]]);
-						else if(this.ratioMode == "none")
+							this.departOptions.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__departOpts", e.getData()[0].getLabel());
+							});
+							this.nextIdleCityButton = new webfrontend.ui.SoundButton(null, "webfrontend/theme/scrollbar/scrollbar-right.png").set({
+								paddingLeft:   8,
+								paddingRight:  8,
+								paddingTop:    2,
+								paddingBottom: 2,
+								marginLeft:    15,
+								marginRight:   15,
+								alignY:        "center",
+								enabled:       false,
+								toolTipText:   "Next idle city"
+							});
+							this.nextIdleCityButton.addListener("click", this.nextIdleRaidCity);
+							subContainer.add(this.nextIdleCityButton);
+
+							btn = new qx.ui.form.Button("GO").set({
+								paddingLeft:   4,
+								paddingRight:  4,
+								paddingTop:    2,
+								paddingBottom: 2,
+								alignY:        "center",
+								enabled:       true
+							});
+							this.autoRaidButton = btn;
+							this.goButton = btn;
+							btn.setToolTipText("AvaRaid yay!");
+							btn.addListener("execute", this.autoRaidPleaseToggle, this);
+							subContainer.add(btn);
+							this.commandContainer.add(subContainer);
+
+							// detect when user is idle
+							window.addEventListener('mousemove', function() {
+								ava.ui.RaidingWindow.getInstance().lastMouseMoveTime = webfrontend.Util.getCurrentTime().getTime();
+							}, false);
+
+							subContainer = new qx.ui.container.Composite();
+							subContainer.setLayout(new qx.ui.layout.HBox().set({
+								spacing: 2
+							}));
+							sel = new qx.ui.form.SelectBox().set({
+								width:    80,
+								alignY:   "middle",
+								tabIndex: 6
+							});
+							sel.add(new qx.ui.form.ListItem("Once", null, webfrontend.gui.SendArmyWindow.timings.once - webfrontend.gui.SendArmyWindow.timings.once));
+							sel.add(new qx.ui.form.ListItem("Return", null, webfrontend.gui.SendArmyWindow.timings.latest - webfrontend.gui.SendArmyWindow.timings.once));
+							sel.add(new qx.ui.form.ListItem("Complete", null, webfrontend.gui.SendArmyWindow.timings.completed - webfrontend.gui.SendArmyWindow.timings.once));
+							sel.add(new qx.ui.form.ListItem("24 Hours", null, 8));
+							sel.add(new qx.ui.form.ListItem("72 Hours", null, 7));
 							sel.setSelection([sel.getChildren()[2]]);
-
-						subContainer.add(sel);
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__ratioOpts", e.getData()[0].getLabel());
-							var readOnly = false;
-							if(e.getData()[0].getLabel() == "Available")
-								this.ratioMode = "count";
-							else if(e.getData()[0].getLabel() == "Total")
-								this.ratioMode = "total";
-							else {
-								this.ratioMode = "none";
-								readOnly = true;
-							}
-							this.setTotalsReadOnly(readOnly);
-						});
-						container.add(subContainer);
-						SetSelectionFromStore(sel, "mm__ratioOpts");
-
-						this.troopContainer = new qx.ui.container.Composite();
-						this.troopContainer.setLayout(new qx.ui.layout.HBox().set({
-							spacing: 4
-						}));
-						container.add(this.troopContainer);
-						container.add(new qx.ui.core.Widget().set({
-							backgroundColor: "#c4a77b",
-							height:          2,
-							allowGrowX:      true,
-							marginTop:       4,
-							marginBottom:    4
-						}));
-						this.commandContainer = new qx.ui.container.Composite();
-						this.commandContainer.setLayout(new qx.ui.layout.VBox().set({
-							spacing: 2
-						}));
-						var defVis = "hidden";
-						subContainer = new qx.ui.container.Composite();
-						subContainer.setLayout(new qx.ui.layout.HBox().set({
-							spacing: 2
-						}));
-						sel = new qx.ui.form.SelectBox().set({
-							width:    80,
-							alignY:   "middle",
-							tabIndex: 1
-						});
-						var _sendTime = sel;
-						sel.add(new qx.ui.form.ListItem("Arrive", null, webfrontend.gui.SendArmyWindow.timings.arrive));
-						sel.add(new qx.ui.form.ListItem("Depart", null, webfrontend.gui.SendArmyWindow.timings.depart));
-						sel.add(new qx.ui.form.ListItem("Delay 5s", null, 100));
-						sel.add(new qx.ui.form.ListItem("Now", null, webfrontend.gui.SendArmyWindow.timings.now));
-						sel.setSelection([sel.getChildren()[3]]);
-						//   sel.rw = this;
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__timingOpts", e.getData()[0].getLabel());
-							var ch = this.getLayoutParent().getChildren();
-							var vis = "visible";
-							if(e.getData()[0].getLabel() == "Now" || e.getData()[0].getLabel() == "Delay 5s")
-								vis = "hidden";
-							for(var i = 1; i <= 6; i++)
-								ch[i].setVisibility(vis);
-							this.updateAvailableUnits();
-						});
-						subContainer.add(sel);
-						subContainer.add(this.createHMSTextField(defVis, 2));
-						subContainer.add(new qx.ui.basic.Label(":").set({
-							visibility: defVis,
-							alignY:     "middle"
-						}));
-						subContainer.add(this.createHMSTextField(defVis, 3));
-						subContainer.add(new qx.ui.basic.Label(":").set({
-							visibility: defVis,
-							alignY:     "middle"
-						}));
-						subContainer.add(this.createHMSTextField(defVis, 4));
-						sel = new qx.ui.form.SelectBox().set({
-							width:      100,
-							visibility: defVis,
-							alignY:     "middle",
-							tabIndex:   5
-						});
-						var _sendDay = sel;
-						sel.add(new qx.ui.form.ListItem("7 days", null, 7));
-						sel.add(new qx.ui.form.ListItem("6 days", null, 6));
-						sel.add(new qx.ui.form.ListItem("5 days", null, 5));
-						sel.add(new qx.ui.form.ListItem("4 days", null, 4));
-						sel.add(new qx.ui.form.ListItem("3 days", null, 3));
-						sel.add(new qx.ui.form.ListItem("2 days", null, 2));
-						sel.add(new qx.ui.form.ListItem("Tomorrow", null, 1));
-						sel.add(new qx.ui.form.ListItem("Today", null, 0));
-						sel.setSelection([sel.getChildren()[7]]);
-						subContainer.add(sel);
-						subContainer.add(new qx.ui.core.Spacer(), {
-							flex: 1
-						});
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__delayDayOpts", e.getData()[0].getLabel());
-						});
-						SetSelectionFromStore(sel, "mm__delayDayOpts");
-						if(value != null) {
-							var opts = sel.getChildren();
-							for(var ii = 0; ii < opts.length; ++ii) {
-								if(opts[ii].getLabel() == value) {
-									sel.setSelection([opts[ii]]);
-									break;
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__retOpts", e.getData()[0].getLabel());
+								var ch = this.getLayoutParent().getChildren();
+								var vis = "hidden";
+								if(e.getData()[0].getLabel() == "Return")
+									vis = "visible";
+								for(var i = 1; i <= 6; i++)
+									ch[i].setVisibility(vis);
+							});
+							sel.addListenerOnce("appear", function() {
+								SetSelectionFromStore(sel, "mm__retOpts");
+							}, sel);
+							subContainer.add(sel);
+							var tf = this.createHMSTextField(defVis, 7);
+							tf.addListenerOnce("appear", function() {
+								var value = localStorage.getItem("mm__retHr");
+								this.setValue(value != null ? value : "0");
+								if(this.getValue().length == 0) {
+									this.setValue("0");
 								}
-							}
-						}
+							}, tf);
 
-						this.departOptions = new qx.ui.form.SelectBox().set({
-							width:    88,
-							alignY:   "middle",
-							tabIndex: 6
-						});
-						this.departOptions.add(new qx.ui.form.ListItem("Stagger opt", null, 0));
-						this.departOptions.add(new qx.ui.form.ListItem("1 min", null, 1));
-						this.departOptions.add(new qx.ui.form.ListItem("2 min", null, 2));
-						this.departOptions.add(new qx.ui.form.ListItem("5 min", null, 5));
-						this.departOptions.add(new qx.ui.form.ListItem("10 min", null, 10));
-						this.departOptions.add(new qx.ui.form.ListItem("20 min", null, 20));
-						this.departOptions.add(new qx.ui.form.ListItem("30 min", null, 30));
-						this.departOptions.add(new qx.ui.form.ListItem("45 min", null, 45));
-						this.departOptions.add(new qx.ui.form.ListItem("60 min", null, 60));
-						subContainer.add(this.departOptions);
-						value = localStorage.getItem("mm__departOpts");
-						if(value != null) {
-							var opts = this.departOptions.getChildren();
-							for(var ii = 0; ii < opts.length; ++ii) {
-								if(opts[ii].getLabel() == value) {
-									this.departOptions.setSelection([opts[ii]]);
-									break;
+							console.warn("1");
+							tf.addListener("input", function() {
+								localStorage.setItem("mm__retHr", this.getValue());
+							}, tf);
+							subContainer.add(tf);
+							subContainer.add(new qx.ui.basic.Label(":").set({
+								visibility: defVis,
+								alignY:     "middle"
+							}));
+							console.warn("2");
+							var tf = this.createHMSTextField(defVis, 8);
+							tf.addListenerOnce("appear", function() {
+								var value = localStorage.getItem("mm__retMin");
+								this.setValue(value != null ? value : "0");
+								if(this.getValue().length == 0) {
+									this.setValue("0");
 								}
-							}
+							}, tf);
+							tf.addListener("input", function() {
+								localStorage.setItem("mm__retMin", this.getValue());
+							}, tf);
+							subContainer.add(tf);
+							subContainer.add(new qx.ui.basic.Label(":").set({
+								visibility: defVis,
+								alignY:     "middle"
+							}));
+							console.warn("3");
+
+							var tf = this.createHMSTextField(defVis, 9);
+							tf.addListenerOnce("appear", function() {
+								var value = localStorage.getItem("mm__retSec");
+								this.setValue(value != null ? value : "0");
+								if(this.getValue().length == 0) {
+									this.setValue("0");
+								}
+							}, tf);
+							tf.addListener("input", function() {
+								localStorage.setItem("mm__retSec", this.getValue());
+							}, tf);
+							subContainer.add(tf);
+							sel = new qx.ui.form.SelectBox().set({
+								width:      100,
+								visibility: defVis,
+								alignY:     "middle",
+								tabIndex:   10
+							});
+							sel.add(new qx.ui.form.ListItem("7 days", null, 7));
+							sel.add(new qx.ui.form.ListItem("6 days", null, 6));
+							sel.add(new qx.ui.form.ListItem("5 days", null, 5));
+							sel.add(new qx.ui.form.ListItem("4 days", null, 4));
+							sel.add(new qx.ui.form.ListItem("3 days", null, 3));
+							sel.add(new qx.ui.form.ListItem("2 days", null, 2));
+							sel.add(new qx.ui.form.ListItem("Tomorrow", null, 1));
+							sel.add(new qx.ui.form.ListItem("Today", null, 0));
+							sel.setSelection([sel.getChildren()[7]]);
+							subContainer.add(sel);
+							sel.addListener("changeSelection", function(e) {
+								localStorage.setItem("mm__retDayOpts", e.getData()[0].getLabel());
+							});
+							SetSelectionFromStore(sel, "mm__retDayOpts");
+							var btn = new qx.ui.form.Button("Refresh").set({
+								paddingLeft:   5,
+								paddingRight:  5,
+								paddingTop:    0,
+								paddingBottom: 0
+							});
+							btn.addListener("click", this.findDungeons, this);
+							console.debug("DP 9");
+
+							subContainer.add(btn);
+							var btn = new qx.ui.form.Button("Refresh All Types").set({
+								paddingLeft:   5,
+								paddingRight:  5,
+								paddingTop:    0,
+								paddingBottom: 0
+							});
+							btn.rw = this;
+							btn.addListener("click", ava.ui.RaidingWindow.findAllDungeons);
+							subContainer.add(btn);
+							this.commandContainer.add(subContainer);
+							container.add(this.commandContainer);
+							dungeonPage.add(container, {
+								edge: "south"
+							});
+							return dungeonPage;
+						} catch(e) {
+							console.debug(e);
+							console.assert(false);
 						}
-						this.departOptions.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__departOpts", e.getData()[0].getLabel());
-						});
-						this.nextIdleCityButton = new webfrontend.ui.SoundButton(null, "webfrontend/theme/scrollbar/scrollbar-right.png").set({
-							paddingLeft:   8,
-							paddingRight:  8,
-							paddingTop:    2,
-							paddingBottom: 2,
-							marginLeft:    15,
-							marginRight:   15,
-							alignY:        "center",
-							enabled:       false,
-							toolTipText:   "Next idle city"
-						});
-						this.nextIdleCityButton.addListener("click", this.nextIdleRaidCity);
-						subContainer.add(this.nextIdleCityButton);
-
-						btn = new qx.ui.form.Button("GO").set({
-							paddingLeft:   4,
-							paddingRight:  4,
-							paddingTop:    2,
-							paddingBottom: 2,
-							alignY:        "center",
-							enabled:       true
-						});
-						this.autoRaidButton = btn;
-						this.goButton = btn;
-						btn.setToolTipText("AvaRaid yay!");
-						btn.addListener("execute", this.autoRaidPleaseToggle, this);
-						subContainer.add(btn);
-						this.commandContainer.add(subContainer);
-
-						// detect when user is idle
-						window.addEventListener('mousemove', function() {
-							ava.ui.RaidingWindow.getInstance().lastMouseMoveTime = webfrontend.Util.getCurrentTime().getTime();
-						}, false);
-
-						subContainer = new qx.ui.container.Composite();
-						subContainer.setLayout(new qx.ui.layout.HBox().set({
-							spacing: 2
-						}));
-						sel = new qx.ui.form.SelectBox().set({
-							width:    80,
-							alignY:   "middle",
-							tabIndex: 6
-						});
-						sel.add(new qx.ui.form.ListItem("Once", null, webfrontend.gui.SendArmyWindow.timings.once - webfrontend.gui.SendArmyWindow.timings.once));
-						sel.add(new qx.ui.form.ListItem("Return", null, webfrontend.gui.SendArmyWindow.timings.latest - webfrontend.gui.SendArmyWindow.timings.once));
-						sel.add(new qx.ui.form.ListItem("Complete", null, webfrontend.gui.SendArmyWindow.timings.completed - webfrontend.gui.SendArmyWindow.timings.once));
-						sel.add(new qx.ui.form.ListItem("24 Hours", null, 8));
-						sel.add(new qx.ui.form.ListItem("72 Hours", null, 7));
-						sel.setSelection([sel.getChildren()[2]]);
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__retOpts", e.getData()[0].getLabel());
-							var ch = this.getLayoutParent().getChildren();
-							var vis = "hidden";
-							if(e.getData()[0].getLabel() == "Return")
-								vis = "visible";
-							for(var i = 1; i <= 6; i++)
-								ch[i].setVisibility(vis);
-						});
-						sel.addListenerOnce("appear", function() {
-							SetSelectionFromStore(sel, "mm__retOpts");
-						}, sel);
-						subContainer.add(sel);
-						var tf = this.createHMSTextField(defVis, 7);
-						tf.addListenerOnce("appear", function() {
-							var value = localStorage.getItem("mm__retHr");
-							this.setValue(value != null ? value : "0");
-							if(this.getValue().length == 0) {
-								this.setValue("0");
-							}
-						}, tf);
-
-						console.warn("1");
-						tf.addListener("input", function() {
-							localStorage.setItem("mm__retHr", this.getValue());
-						}, tf);
-						subContainer.add(tf);
-						subContainer.add(new qx.ui.basic.Label(":").set({
-							visibility: defVis,
-							alignY:     "middle"
-						}));
-						console.warn("2");
-						var tf = this.createHMSTextField(defVis, 8);
-						tf.addListenerOnce("appear", function() {
-							var value = localStorage.getItem("mm__retMin");
-							this.setValue(value != null ? value : "0");
-							if(this.getValue().length == 0) {
-								this.setValue("0");
-							}
-						}, tf);
-						tf.addListener("input", function() {
-							localStorage.setItem("mm__retMin", this.getValue());
-						}, tf);
-						subContainer.add(tf);
-						subContainer.add(new qx.ui.basic.Label(":").set({
-							visibility: defVis,
-							alignY:     "middle"
-						}));
-						console.warn("3");
-
-						var tf = this.createHMSTextField(defVis, 9);
-						tf.addListenerOnce("appear", function() {
-							var value = localStorage.getItem("mm__retSec");
-							this.setValue(value != null ? value : "0");
-							if(this.getValue().length == 0) {
-								this.setValue("0");
-							}
-						}, tf);
-						tf.addListener("input", function() {
-							localStorage.setItem("mm__retSec", this.getValue());
-						}, tf);
-						subContainer.add(tf);
-						sel = new qx.ui.form.SelectBox().set({
-							width:      100,
-							visibility: defVis,
-							alignY:     "middle",
-							tabIndex:   10
-						});
-						sel.add(new qx.ui.form.ListItem("7 days", null, 7));
-						sel.add(new qx.ui.form.ListItem("6 days", null, 6));
-						sel.add(new qx.ui.form.ListItem("5 days", null, 5));
-						sel.add(new qx.ui.form.ListItem("4 days", null, 4));
-						sel.add(new qx.ui.form.ListItem("3 days", null, 3));
-						sel.add(new qx.ui.form.ListItem("2 days", null, 2));
-						sel.add(new qx.ui.form.ListItem("Tomorrow", null, 1));
-						sel.add(new qx.ui.form.ListItem("Today", null, 0));
-						sel.setSelection([sel.getChildren()[7]]);
-						subContainer.add(sel);
-						sel.addListener("changeSelection", function(e) {
-							localStorage.setItem("mm__retDayOpts", e.getData()[0].getLabel());
-						});
-						SetSelectionFromStore(sel, "mm__retDayOpts");
-						var btn = new qx.ui.form.Button("Refresh").set({
-							paddingLeft:   5,
-							paddingRight:  5,
-							paddingTop:    0,
-							paddingBottom: 0
-						});
-						btn.addListener("click", this.findDungeons, this);
-
-						subContainer.add(btn);
-						var btn = new qx.ui.form.Button("Refresh All Types").set({
-							paddingLeft:   5,
-							paddingRight:  5,
-							paddingTop:    0,
-							paddingBottom: 0
-						});
-						btn.rw = this;
-						btn.addListener("click", ava.ui.RaidingWindow.findAllDungeons);
-						subContainer.add(btn);
-						this.commandContainer.add(subContainer);
-						container.add(this.commandContainer);
-						dungeonPage.add(container, {
-							edge: "south"
-						});
-						return dungeonPage;
 					},
-					GetRaidGain:            function() {
+					GetRaidGain:          function() {
 						var atype = this.raidAddType.getSelection()[0].getLabel();
 						var mul = 1;
 						if(this.ratioMode == "none")
@@ -7502,7 +7545,7 @@
 						}
 						return mul;
 					},
-					getTotalCarry:          function(dType) {
+					getTotalCarry:        function(dType) {
 						var CI = webfrontend.data.City.getInstance();
 						var bS = webfrontend.res.Main.getInstance();
 						var totalCarry = 0;
@@ -7517,23 +7560,23 @@
 										}
 										delayedOrders[CI.unitOrders[ii].units[jj].type] += CI.unitOrders[ii].units[jj].count;
 									}
+									}
 								}
-							}
 							for(var key in CI.units) {
 								var carry = bS.units[key].c;
-								if(carry > 0 && ((bS.units[key].ls && dType != 2) || (!bS.units[key].ls && dType == 2))) {
-									var uinfo = CI.getUnitTypeInfo(key);
-									var cnt = uinfo[this.ratioMode] - this.getAllocatedUnits(key);
-									if((this.ratioMode != "total") && delayedOrders.hasOwnProperty(key)) {
-										cnt -= delayedOrders[parseInt(key)];
+									if(carry > 0 && ((bS.units[key].ls && dType != 2) || (!bS.units[key].ls && dType == 2))) {
+										var uinfo = CI.getUnitTypeInfo(key);
+										var cnt = uinfo[this.ratioMode] - this.getAllocatedUnits(key);
+										if((this.ratioMode != "total") && delayedOrders.hasOwnProperty(key)) {
+											cnt -= delayedOrders[parseInt(key)];
+										}
+										totalCarry = totalCarry + cnt * carry;
 									}
-									totalCarry = totalCarry + cnt * carry;
 								}
 							}
-						}
 						return totalCarry;
 					},
-					getTotalDefenseCarry:   function(dType) {
+					getTotalDefenseCarry: function(dType) {
 						var CI = webfrontend.data.City.getInstance();
 						var bS = webfrontend.res.Main.getInstance();
 						var totalCarry = 0;
@@ -7566,35 +7609,10 @@
 						}
 						return totalCarry;
 					},
-					isUnitDefense:          function(type) {
+					isUnitDefense:        function(type) {
 						var retVal = true;
 						switch(type) {
 							case "1":
-							case "2":
-							case "3":
-							case "4":
-							case "5":
-							case "8":
-							case "9":
-							case "10":
-							case "13":
-							case "14":
-							case "15":
-							case "16":
-							case "19":
-							case "77":
-								break;
-							default:
-								retVal = false;
-								break;
-						}
-						return retVal;
-					},
-					isDefense:              function() {
-						var retVal = true;
-						for(var key in CI.units) {
-							switch(key) {
-								case "1":
 								case "2":
 								case "3":
 								case "4":
@@ -7613,14 +7631,25 @@
 									retVal = false;
 									break;
 							}
-						}
 						return retVal;
 					},
-					getUnitBonus:           function(unitType) {
+					isDefense:            function() {
+						var retVal = true;
+						for(var i = 0; i < CI.units.length; ++i) {
+							if(!isUnitDefense(CI.units(i)))
+								return false;
+
+						}
+
+						return       true;
+
+					},
+					getUnitBonus:         function(unitType) {
 						var research = webfrontend.data.Tech.getInstance().getBonus("unitDamage", webfrontend.data.Tech.research, Number(unitType));
 						var shrine = webfrontend.data.Tech.getInstance().getBonus("unitDamage", webfrontend.data.Tech.shrine, Number(unitType));
 						return (research + shrine) / 100;
 					},
+
 					getRemainingTs:         function(dType) {
 						var CI = webfrontend.data.City.getInstance();
 						var bS = webfrontend.res.Main.getInstance();
@@ -7862,7 +7891,7 @@
 											} else {
 												dArray.push([o.DungeonType, o.DungeonLevel, o.Progress, cordCont, dist, x, y, coord]);
 											}
-										}
+							}
 										// break;
 									}
 								}
@@ -7945,7 +7974,7 @@
 											ch[i].setReadOnly(readOnly);
 											ch[i].setEnabled(!readOnly);
 										}
-									}
+						}
 								}
 							}
 						}
@@ -7981,7 +8010,7 @@
 											}
 											totalCarry = totalCarry + (cnt * bS.units[hch[k].unitType].c);
 										}
-									}
+						}
 								}
 								for(var k = 0; k < hch.length; k++) {
 									if(hch[k] instanceof qx.ui.form.TextField) {
@@ -7994,7 +8023,7 @@
 											var cnt = Math.floor((lootToCarry / totalCarry) * tcnt);
 											hch[k].setValue(cnt.toString());
 										}
-									}
+						}
 								}
 							}
 						} else {
@@ -8024,7 +8053,7 @@
 											}
 											lootTotal = lootTotal + cnt * bS.units[hch[k].unitType].c;
 										}
-									}
+						}
 								}
 							}
 						}
@@ -8385,7 +8414,7 @@
 										if(hch[k].unitType == unitType) {
 											total += Number(hch[k].getValue());
 										}
-									}
+						}
 								}
 							}
 						}
@@ -8405,8 +8434,8 @@
 										if(Number(hch[k].getValue()) > 0) {
 											total++;
 											break;
-										}
-									}
+							}
+						}
 								}
 							}
 						}
@@ -8586,7 +8615,7 @@
 												c: Number(ch[i].getValue())
 											});
 										}
-									}
+						}
 								}
 
 								var updateManager = webfrontend.net.UpdateManager.getInstance();
@@ -8984,7 +9013,6 @@
 					}
 				}
 			});
-			;
 
 			function refreshItems() {
 				var dialog = ava.ui.PalaceItemsWindow.getInstance();
