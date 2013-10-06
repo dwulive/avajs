@@ -1,4 +1,4 @@
-///<reference path="C:/source/Avajs/qxEaTrim.js" />
+///<reference path="C:/source/Avajs/qxEa.js" />
 //"use strict";
 // ==UserScript==
 // @name           Ava Tools
@@ -43,8 +43,9 @@
 				var bossKill = [50, 300, 2000, 4000, 10000, 15000, 20000, 30000, 45000, 60000];
 				var dungeonKill = [10, 100, 450, 1500, 3500, 6000, 13000, 20000, 35000, 60000];
 				var l = qx.locale.Manager.getInstance().getLocale();
-				if(l != "en" || l != "de" || l != "pl")
+				if(l != "en" || l != "de" || l != "pl") {
 					l = "en";
+				}
 				var tr = {
 					"en": {
 						"weak": "Weakness"
@@ -377,8 +378,8 @@
 				var retVal;
 				var n,
 					walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
-					n = walk.nextNode();
-				while(n ) {
+				n = walk.nextNode();
+				while(n) {
 					if(n.data == text) {
 						retVal = n;
 					}
@@ -1714,6 +1715,25 @@
 				win.open();
 			}
 
+			var urlTest = [
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_const.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_LocalizedStrings.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_gui_SummaryPage.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_gui_ResourcesFillerWidget.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_BatchResourcesFiller.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_ResourcesFiller.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_Server.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_Storage.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_net_CommandManager.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_Tweaks.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_Main.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_SharestringConverter.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_Utils.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_CityTypes.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_City.js",
+				"http://conanloxley.github.com/lou-extensions/release/louBos/bos_gui_TradeOrdersPage.js",
+			];
+
 			function checkFortune() {
 				if(null == nfTime) {
 					setNextFortuneTime();
@@ -2055,6 +2075,7 @@
 					},
 					onOpen:               function() {
 						this.getAllianceBonuses();
+						console.debug("dispatch for riading?");
 						addConsumer("ALL_AT", this.dispatchResults, this, "a");
 					},
 					buildUI:              function() {
@@ -2293,6 +2314,7 @@
 						var sub = this._subText.getValue();
 						localStorage.setItem("mt__subValues", sub);
 						if(sub.length > 0) {
+							//noinspection ReuseOfLocalVariableJS
 							subNames = sub.split(/[,;]/g);
 							for(var ii = 0; ii < subNames.length; ++ii) {
 								subNames[ii] = subNames[ii].trim().toLowerCase();
@@ -2304,6 +2326,8 @@
 							}
 						}
 						if(hasNames) {
+							console.debug("me for attacking");
+
 							addConsumer("ALL_AT", checkForSubAttacks, this, "a");
 						} else {
 							removeConsumer("ALL_AT", checkForSubAttacks, this);
@@ -7711,8 +7735,7 @@
 							for(var key in CI.units) {
 								switch(key) {
 									case "1":
-									case "19":
-										break;
+
 									case "8":
 										break;
 									case "9":
@@ -7895,7 +7918,8 @@
 									found = true;
 							}
 							if(!found) {
-								var d = new dung(dArray[ii][0], dArray[ii][1], dArray[ii][2], dArray[ii][7], dArray[ii][4])
+								var d = new dung(dArray[ii][0], dArray[ii][1], dArray[ii][2], dArray[ii][7], dArray[ii][4]);
+								;
 								rw.addDungeonToRaid(d);
 							}
 						}
@@ -8431,7 +8455,8 @@
 								cnt = 0;
 								for(ii = 0; ii < dArray.length && cnt == 0; ++ii) {
 
-									var d = new dung(dArray[ii][0], dArray[ii][1], dArray[ii][2], dArray[ii][7], dArray[ii][4])
+									var d = new dung(dArray[ii][0], dArray[ii][1], dArray[ii][2], dArray[ii][7], dArray[ii][4]);
+									;
 									var btn = this.addDungeonToRaid(d);
 									if(btn != null) {
 										cnt += this.onAddMaxRaids(btn);
@@ -8805,9 +8830,11 @@
 						return hI.getTime();
 					},
 					updateAvailableUnits:   function() {
-						console.log("here1")
+						console.log("here1");
+						;
 						var rw = ava.ui.RaidingWindow.getInstance();
-						console.log("here2")
+						console.log("here2");
+						;
 						var departNow = (rw.commandContainer.getChildren()[0].getChildren()[0].getSelection()[0].getLabel() == "Now");
 						var okToSend = true;
 						var haveOrders = false;
@@ -8824,7 +8851,7 @@
 							}
 						}
 						var pvpContainer = rw.pvpTroopContainer;
-						console.log("here2")
+						console.log("here2");
 						pvpContainer.removeAll();
 						var img = new qx.ui.basic.Image("webfrontend/ui/icons/icon_command_slots.png");
 						img.setWidth(16);
@@ -8883,7 +8910,7 @@
 							totalTS += cnt * bS.units[key].uc;
 							pvpContainer.add(lbl);
 						}
-						console.log(uk.length)
+						console.log(uk.length);
 
 						if(uk.length == 0) {
 							var lbl = new qx.ui.basic.Label("No Available Units");
@@ -8957,7 +8984,7 @@
 							lbl.setAppearance("textheader_sub1");
 							container.add(lbl);
 						}
-						console.log("done!")
+						console.log("done!");
 
 						var btn = this.commandContainer.getChildren()[0].getChildren()[10];
 					},
@@ -14412,7 +14439,7 @@
 						var player = webfrontend.data.Player.getInstance();
 						var entry = ava.Main.getInstance().selBox.getSelection()[0].entry;
 						var data = webfrontend.net.UpdateManager.getInstance().requester["MAT"].obj;
-						var cts = data.getCitiesTradeStates()
+						var cts = data.getCitiesTradeStates();
 						var cid = webfrontend.data.City.getInstance().getId();
 						var ro = data.getResourceOptions();
 						var dst = data.getBDeliverSameTarget();
@@ -15240,7 +15267,7 @@
 			}
 			console.debug('dependencies found.  initialize tools');
 			window.setTimeout(initTools, 2000);
-		}
+		};
 
 		window.setTimeout(startup, 2000);
 	}; // main
