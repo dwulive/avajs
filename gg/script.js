@@ -5,9 +5,6 @@
 // @description    Ava Tools - script for fun and good times
 // @namespace      Ava
 // @include        http://prodgame*.lordofultima.com/*/index.aspx*
-// @grant       GM_info
-// @grant       GM_getResourceText
-// @grant       GM_getResourceURL
 // @version        1024.0.0.4
 // ==/UserScript==
 /**
@@ -289,14 +286,16 @@ var contact;
 			console.debug(bos.net.CommandManager.getInstance());
 			console.debug(bos.Server.getInstance());
 			console.debug(bos.Storage.getInstance());
-			console.debug("hello");
+			console.debug(new bos.City());
+						console.debug("hello");
 			var  server = bos.Server.getInstance();
 			//server.pollCities(citiesIds);
-			server.pollCity(cid);
+		//	server.pollCity(cid);
 		}
 
 
 
+		var CreateAvaTweak;
 		var avaDebug = true;
 
 		function paDebug(e) {
@@ -415,7 +414,7 @@ var contact;
 		};
 
 
-		var CreateAvaTweak = function() {
+		CreateAvaTweak = function(lastUpdated) {
 
 			qx.Class.define("ava.Version", {
 				type:    "static",
@@ -10171,7 +10170,7 @@ var contact;
 				extend: qx.core.Object,
 				construct: function() {
 					try {
-						qx.Bootstrap.setDisplayName(this, "bos.Storageoooo");
+						qx.Bootstrap.setDisplayName(this, "bos.Storage");
 						this._player = webfrontend.data.Player.getInstance().getId();
 
 						var options = this._loadOptions();
@@ -10263,14 +10262,14 @@ var contact;
 					_intelligence: null,
 					_player: "",
 					_getValue: function(key, namespace) {
-						var result = GM_getValue(this._calculateKey(key, namespace, true));
+						var result = localStorage.getItem(this._calculateKey(key, namespace, true));
 						if (result == null) {
-							result = GM_getValue(this._calculateKey(key, namespace, false));
+							result = localStorage.getItem(this._calculateKey(key, namespace, false));
 						}
 						return result;
 					},
 					_setValue: function(key, value, namespace) {
-						GM_setValue(this._calculateKey(key, namespace, true), value);
+						localStorage.getItem(this._calculateKey(key, namespace, true), value);
 					},
 					_calculateKey: function(key, namespace, withPlayer) {
 						if (namespace == undefined) {
@@ -10370,9 +10369,9 @@ var contact;
 						var saved = this.getSavedCities();
 						for (var i = 0; i < saved.length; i++) {
 							var cityId = saved[i];
-							GM_deleteValue(this._calculateKey(cityId, "City"));
+							localStorage.deleteItem(Item(this._calculateKey(cityId, "City")));
 						}
-						GM_deleteValue(this._calculateKey("index", "City"));
+						localStorage.deleteItem(this._calculateKey("index", "City"));
 
 						this._savedCities = [];
 					},
@@ -10744,6 +10743,344 @@ var contact;
 				}
 			});
 
+			qx.Class.define("bos.Utils", {
+				type: "singleton",
+				extend: qx.core.Object,
+				statics: {
+					_popupsCount: 0,
+					convertCoordinatesToId: function(x, y) {
+						var id = parseInt(x, 10) | (parseInt(y, 10) << 16);
+						return id;
+					},
+					convertIdToCoodrinates: function(id) {
+						var o = this.convertIdToCoordinatesObject(id);
+						return o.xPos + ":" + o.yPos;
+					},
+					convertIdToCoordinatesObject: function(id) {
+						var o = {
+							xPos: (id & 0xFFFF),
+							yPos: (id >> 16),
+						}
+						o.cont = webfrontend.data.Server.getInstance().getContinentFromCoords(o.xPos, o.yPos);
+						return o;
+					},
+					extractCoordsFromClickableLook: function(pos) {
+						if (pos == null)
+							return null;
+
+						if (pos.substring != undefined) {
+							var startPos = pos.indexOf("\">");
+							var endPos = pos.indexOf("</div>");
+							if (startPos < endPos) {
+								var coords = pos.substring(startPos + 2, endPos);
+								var spacePos = pos.indexOf(" ");
+								if (spacePos > 0) {
+									coords = coords.substring(spacePos);
+								}
+								return coords;
+							} else {
+								return pos;
+							}
+						}
+						return pos;
+					},
+					translateOrderType: function(type) {
+						switch(type) {
+							case 0:
+								return qx.locale.Manager.tr("tnf:unknown");
+							case 1:
+								return qx.locale.Manager.tr("tnf:scout");
+							case 2:
+								return qx.locale.Manager.tr("tnf:plunder");
+							case 3:
+								return qx.locale.Manager.tr("tnf:assult");
+							case 4:
+								return qx.locale.Manager.tr("tnf:support");
+							case 5:
+								return qx.locale.Manager.tr("tnf:siege");
+							case 8:
+								return qx.locale.Manager.tr("tnf:raid");
+							case 9:
+								return qx.locale.Manager.tr("tnf:settle");
+							case 10:
+								return qx.locale.Manager.tr("tnf:boss raid");
+							case -2:
+								return "PvP";
+						}
+						return "??? " + type;
+					},
+					translateArray: function(arr) {
+						var translated = [];
+						for (var i = 0; i < arr.length; i++) {
+							translated.push(tr(arr[i]));
+						}
+						return translated;
+					},
+					createCitiesGroupsSelectBox: function() {
+						var sb = new qx.ui.form.SelectBox().set({
+							width: 120,
+							height: 28
+						});
+
+						sb.setToolTipText(tr("filter by: city group"));
+
+						return sb;
+					},
+					populateCitiesGroupsSelectBox: function(sb) {
+						if (sb == null) {
+							return;
+						}
+						sb.removeAll();
+						if (webfrontend.data.Player.getInstance().citygroups != undefined) {
+							var groups = webfrontend.data.Player.getInstance().citygroups;
+							for (var i = 0, iCount = groups.length; i < iCount; i++) {
+								var item = groups[i];
+								sb.add(new qx.ui.form.ListItem(item.n, null, "cg" + item.i));
+							}
+						}
+					},
+					createCitiesTypesSelectBox: function() {
+						var sb = new qx.ui.form.SelectBox().set({
+							width: 120,
+							height: 28
+						});
+
+						sb.setToolTipText(tr("filter by: city types"));
+
+						return sb;
+					},
+					populateCitiesTypesSelectBox: function(sb, onlyMilitary, onlyBosTypes) {
+						if (sb == null) {
+							return;
+						}
+
+						if (onlyMilitary == undefined) {
+							onlyMilitary = false;
+						}
+
+						if (onlyBosTypes == undefined) {
+							onlyBosTypes = false;
+						}
+
+						sb.removeAll();
+
+						sb.add(new qx.ui.form.ListItem(tr("all"), null, "A"));
+
+						if (!onlyBosTypes && webfrontend.data.Player.getInstance().citygroups != undefined) {
+							var groups = webfrontend.data.Player.getInstance().citygroups;
+							for (var i = 0, iCount = groups.length; i < iCount; i++) {
+								var item = groups[i];
+								sb.add(new qx.ui.form.ListItem(item.n, null, "cg" + item.i));
+							}
+						}
+
+						if (!onlyMilitary) {
+							sb.add(new qx.ui.form.ListItem(tr("building"), null, "B"));
+						}
+						sb.add(new qx.ui.form.ListItem(tr("castles"), null, "C"));
+						sb.add(new qx.ui.form.ListItem(tr("defensive"), null, "D"));
+
+						if (!onlyMilitary) {
+							sb.add(new qx.ui.form.ListItem(tr("warehouses"), null, "W"));
+							sb.add(new qx.ui.form.ListItem(tr("moonstones"), null, "M"));
+							sb.add(new qx.ui.form.ListItem(tr("gold"), null, "G"));
+							var list = bos.Storage.getInstance().getCustomCityTypes();
+							for (var i = 0; i < list.length; i++) {
+								var item = list[i];
+								sb.add(new qx.ui.form.ListItem(item.description, null, item.letter));
+							}
+						}
+					},
+					isCityInCityGroup: function(cityId, groupId) {
+						if (webfrontend.data.Player.getInstance().citygroups == undefined) {
+							return false;
+						}
+						var groups = webfrontend.data.Player.getInstance().citygroups;
+						for (var i = 0, iCount = groups.length; i < iCount; i++) {
+							var item = groups[i];
+							if (item.i == groupId) {
+								for (var j = 0, jCount = item.c.length; j < jCount; j++) {
+									if (item.c[j] == cityId) {
+										return true;
+									}
+								}
+								break;
+							}
+						}
+
+						return false;
+					},
+					shouldCityBeIncluded: function(city, selectedCityType, selectedContinent) {
+
+						if (selectedCityType != null && selectedCityType != "A") {
+							if (selectedCityType.indexOf("cg") == 0) {
+								var groupId = parseInt(selectedCityType.substring(2));
+								var cityId = bos.Utils.convertCoordinatesToId(city.xPos, city.yPos);
+								if (bos.Utils.isCityInCityGroup(cityId, groupId) == false) {
+									return false;
+								}
+							} else {
+								var type = bos.CityTypes.getInstance().parseReference(city.reference);
+								switch (selectedCityType) {
+									case 'C':
+										if (!type.isCastle) return false;
+										break;
+									case 'B':
+										if (!type.isBuildInProgress) return false;
+										break;
+									case 'W':
+										if (!type.isWarehouse) return false;
+										break;
+									case 'M':
+										if (!type.hasMoonglowTower) return false;
+										break;
+									case 'G':
+										if (!type.isGold) return false;
+										break;
+									case 'D':
+										if (!type.isDefensive) return false;
+										break;
+									default:
+										if (type.customTypes.indexOf(selectedCityType) < 0) return false;
+										break;
+								}
+							}
+						}
+
+						if (selectedContinent != null && selectedContinent != "A") {
+							var cont = webfrontend.data.Server.getInstance().getContinentFromCoords(city.xPos, city.yPos);
+							if (parseInt(selectedContinent) != cont) {
+								return false;
+							}
+						}
+
+						return true;
+					},
+					createCitiesContinentsSelectBox: function() {
+						var sb = new qx.ui.form.SelectBox().set({
+							width: 60,
+							height: 28
+						});
+						var cities = webfrontend.data.Player.getInstance().cities;
+
+						sb.setToolTipText("Filter by: <b>continents</b>");
+
+						var continents = [];
+						for (var cityId in cities) {
+							var city = cities[cityId];
+
+							var cont = webfrontend.data.Server.getInstance().getContinentFromCoords(city.xPos, city.yPos);
+							continents["c" + cont] = true;
+						}
+
+						var list = [];
+						for (var key in continents) {
+							if (key.substring != undefined && qx.lang.Type.isString(key)) {
+								var cont = parseInt(key.substring(1), 10);
+								if (!isNaN(cont)) {
+									list.push(cont);
+								}
+							}
+						}
+						list.sort();
+
+						sb.add(new qx.ui.form.ListItem(tr("all"), null, "A"));
+						for (var i = 0; i < list.length; i++) {
+							var cont = list[i];
+							sb.add(new qx.ui.form.ListItem(sprintf("C%02d", cont), null, cont));
+						}
+
+						return sb;
+					},
+					makeClickable: function(msg, color) {
+						return qx.lang.String.format("<div style=\"cursor:pointer;color:%1\">%2</div>", [color, msg]);
+					},
+					makeColorful: function(msg, color) {
+						return qx.lang.String.format("<font color=\"%1\">%2</font>", [color, msg]);
+					},
+					handleError: function(message) {
+						//TODO make it nicer than alert box (webfrontend.gui.ConfirmationWidget)
+						bos.Utils._alert(message);
+					},
+					handleWarning: function(message) {
+						bos.Utils._alert(message);
+					},
+					handleInfo: function(message) {
+						alert(message);
+					},
+					_alert: function(message) {
+						if (bos.Utils._popupsCount < bos.Const.MAX_POPUPS) {
+							alert(message);
+							bos.Utils._popupsCount++;
+						}
+					},
+					displayLongText: function(body) {
+						var dialog = new webfrontend.gui.ConfirmationWidget();
+						//dialog.setZIndex(100000);
+						var bgImg = new qx.ui.basic.Image("webfrontend/ui/bgr_popup_survey.gif");
+						dialog.dialogBackground._add(bgImg, {left: 0, top: 0});
+						var shrStr = new qx.ui.form.TextArea(body).set({allowGrowY: true, tabIndex: 303});
+						dialog.dialogBackground._add(shrStr, {left: 30, top: 50, width: 90, height: 45});
+						shrStr.selectAllText();
+						var okButton = new qx.ui.form.Button("OK");
+						okButton.setWidth(120);
+						okButton.addListener("click", function(){dialog.disable();}, false);
+						dialog.dialogBackground._add(okButton, {left: 445, top: 190});
+						qx.core.Init.getApplication().getDesktop().add(dialog, {left: 0, right: 0, top: 0, bottom: 0});
+						dialog.show();
+					},
+					inputLongText: function(callback) {
+						var dialog = new webfrontend.gui.ConfirmationWidget();
+						//dialog.setZIndex(100000);
+						var bgImg = new qx.ui.basic.Image("webfrontend/ui/bgr_popup_survey.gif");
+						dialog.dialogBackground._add(bgImg, {left: 0, top: 0});
+						var shrStr = new qx.ui.form.TextArea("").set({allowGrowY: true, tabIndex: 303});
+						dialog.dialogBackground._add(shrStr, {left: 30, top: 50, width: 90, height: 45});
+						shrStr.selectAllText();
+						var okButton = new qx.ui.form.Button("OK");
+						okButton.setWidth(120);
+						okButton.addListener("click", function(){dialog.disable(); callback(shrStr.getValue()) }, false);
+						dialog.dialogBackground._add(okButton, {left: 445, top: 190});
+						qx.core.Init.getApplication().getDesktop().add(dialog, {left: 0, right: 0, top: 0, bottom: 0});
+						dialog.show();
+					},
+					getDistance: function(x1, y1, x2, y2) {
+						var diffX = Math.abs(x1 - x2);
+						var diffY = Math.abs(y1 - y2);
+						return Math.sqrt(diffX * diffX + diffY * diffY);
+					},
+					getDistanceUsingIds: function(id1, id2) {
+						var c1 = this.convertIdToCoodrinates(id1);
+						var c2 = this.convertIdToCoodrinates(id2);
+						return this.getDistance(c1.xPos, c1.yPos, c2.xPos, c2.yPos);
+					},
+					summaryWidget: function() {
+						return summaryWidget;
+					},
+					showAllianceInfo: function(o) {
+						var a = qx.core.Init.getApplication();
+						a.showAllianceInfo(webfrontend.gui.Alliance.Info.MainWindow.tabs.info, o);
+					},
+					showProgressDialog: function(message) {
+						var dialog = new webfrontend.gui.ConfirmationWidget();
+						dialog.showInProgressBox(message);
+						qx.core.Init.getApplication().getDesktop().add(dialog, {
+							left: 0,
+							right: 0,
+							top: 0,
+							bottom: 0
+						});
+						dialog.show();
+						return dialog;
+					},
+					hideProgressDialog: function(dialog) {
+						if (dialog != null) {
+							dialog.disable();
+							dialog.destroy();
+						}
+					}
+				}
+			});
 			qx.Class.define("bos.Server", {
 				extend: qx.core.Object,
 				type: "singleton",
@@ -10911,6 +11248,7 @@ paDebug("update");
 							//this._disposeObjects(this.cities[c.getId()]);
 							//delete this.cities[c.getId()];
 						}
+						console.debug("updatecityend" + city);
 						this.cities[c.getId()] = c;
 
 						this.setLastUpdatedCityId(c.getId());
@@ -10919,10 +11257,12 @@ paDebug("update");
 						this.markCityDirty(city.getId());
 					},
 					addCOMOItem: function(item) {
+					console.debug("como");
 						this.como[item.i] = item;
 						this.updateCityFromCOMOItem(item);
 					},
 					updateCityFromCOMOItem: function(item) {
+						console.debug("comoset" + item);
 						if (this.cities[item.i] == undefined) {
 							return;
 						}
@@ -10992,6 +11332,615 @@ paDebug("update");
 					}
 				}
 			});
+			/** most of code of this class is taken from game source code */
+			qx.Class.define("bos.City", {
+				extend: qx.core.Object,
+				construct: function() {
+					qx.Bootstrap.setDisplayName(this, "bos.City");
+					this.resources = new Object();
+					this.setId(-1);
+					//this.setRequestId(-1);
+				}, destruct: function() {
+					//alert("Destroying " + this.getId());
+
+					delete this.resources;
+					delete this.buildQueue;
+					delete this.units;
+					delete this.traders;
+
+					delete this.unitOrders;
+					delete this.tradeOrders;
+
+					delete this.unitQueue;
+					delete this.recruitingSpeed;
+					delete this.incomingUnitOrders;
+					delete this.supportOrders,
+						delete this.tradeIncoming;
+
+				},
+				statics: {
+					SERIALIZABLE_MEMBERS: ["resources", "units", "buildQueue", "unitQueue", "recruitingSpeed", "unitOrders", "incomingUnitOrders", "supportOrders", "traders" /*XXX trades are useless to save, "tradeOrders", "tradeIncoming"*/],
+					createFromSimpleObject: function(o) {
+						var c = new bos.City();
+						var props = qx.Class.getProperties(c.constructor);
+
+						o["lastUpdated"] = new Date(o["lastUpdated"]);
+
+						for (var prop in props) {
+							var name = props[prop];
+							try {
+								if (o[name] != undefined) {
+									c.set(name, o[name]);
+								}
+							} catch (e) {
+								debug(name + " " + e);
+							}
+						}
+
+						var members = bos.City.SERIALIZABLE_MEMBERS;
+						for (var key in members) {
+							var m = members[key];
+							c[m] = o[m];
+						}
+
+						return c;
+					}
+				}, properties: {
+					id: {
+						init: -1
+					},
+					lastUpdated: {
+						init: null
+					},
+					requestId: {
+						init: -1
+					},
+					version: {
+						init: -1
+					},
+
+					//id: {
+					//        event: bK
+					// }, version: {
+					//        init: -1,
+					//        event: ba
+					onWater: {
+						init: false
+					}, unitCount: {
+						init: 0
+					}, unitLimit: {
+						init: 0
+					}, unitsInQueue: {
+						init: 0
+					}, buildingCount: {
+						init: 0
+					}, buildingLimit: {
+						init: 0
+					}, buildingsInQueue: {
+						init: 0
+					}, strongHold: {
+						init: false
+					}, sieged: {
+						init: false
+					}, canRecruit: {
+						init: false
+					}, canCommand: {
+						init: false
+					}, orderLimit: {
+						init: 0
+					}, barracksLevel: {
+						init: 0
+					}, townhallLevel: {
+						init: 0
+					}, marketplaceLevel: {
+						init: 0
+					}, harborLevel: {
+						init: 0
+					}, wallLevel: {
+						init: 0
+					}, hideoutSize: {
+						init: 0
+					}, foodConsumption: {
+						init: 0
+					}, foodConsumptionSupporter: {
+						init: 0
+					}, foodConsumptionQueue: {
+						init: 0
+					}, buildTimeAbsMod: {
+						init: 0
+					}, buildTimePercentMod: {
+						init: 0
+					}, plunderProtection: {
+						init: 0
+					}, goldProduction: {
+						init: 0
+					}, name: {
+						init: ""
+					}, reference: {
+						reference: ""
+					}, text: {
+						init: ""
+					}, buildingQueueStart: {
+						init: 0
+					}, buildingQueueEnd: {
+						init: 0
+					}
+				}, members: {
+					resources: null,
+					units: null,
+					buildQueue: null,
+					unitQueue: null,
+					recruitingSpeed: null,
+					unitOrders: null,
+					incomingUnitOrders: null,
+					tradeOrders: null,
+					tradeIncoming: null,
+					//----------------
+					toSimpleObject : function() {
+						var o = new Object();
+
+						var props = qx.Class.getProperties(this.constructor);
+						for (var prop in props) {
+							var name = props[prop];
+							try {
+								if (qx.lang.Type.isString(name) && name.indexOf("function ") != 0) {
+									o[name] = this.get(name);
+								}
+							} catch (e) {
+								debug(name + " " + e);
+							}
+						}
+
+						//qx does strange things for date object when serializing to JSON, below is workaround
+						o["lastUpdated"] = this.getLastUpdated().getTime();
+
+						var members = bos.City.SERIALIZABLE_MEMBERS;
+						for (var key in members) {
+							var m = members[key];
+							o[m] = this[m];
+						}
+
+						return o;
+					},
+					//----------------
+					populate: function(other) {
+console.log(this + "populate " + other);
+						this.setLastUpdated(new Date());
+
+						this.resources = new Object();
+						this.setId(-1);
+						//this.setRequestId(-1);
+
+						var props = qx.Class.getProperties(this.constructor);
+						for (var prop = 0; prop < props.length; prop++) {
+							//for (var prop in props) {
+							var name = props[prop];
+							try {
+								if (qx.lang.Type.isString(name)&&other.hasOwnProperty(name) ) {
+									this.set(name, other.get(name));
+								}
+							} catch (e) {
+								//debug(name + " " + e);
+							}
+						}
+
+						this.setId(parseInt(this.getId()));
+
+						for (var res = 1; res <= 4; res++) {
+
+							this.resources[res] = {
+								step: 0,
+								base: 0,
+								delta: 0,
+								max: 0
+							};
+
+							if (other.resources.hasOwnProperty(res)) {
+								var thisRes = this.resources[res];
+								var otherRes = other.resources[res];
+								thisRes.step = otherRes.step;
+								thisRes.base = otherRes.base;
+								thisRes.delta = otherRes.delta;
+								thisRes.max = otherRes.max;
+							}
+						}
+
+						this.buildQueue = new Array();
+
+						if (other.hasBuildQueue()) {
+							for (var i = 0; i < other.buildQueue.length; i++) {
+								var item = other.buildQueue[i];
+								this.buildQueue[i] = {
+									id: item.id,
+									building: item.building,
+									state: item.state,
+									start: item.start,
+									end: item.end,
+									type: item.type,
+									level: item.level,
+									x: item.x,
+									y: item.y,
+									isPaid: item.isPaid
+								};
+							}
+						}
+
+						this.units = new Object();
+						if (other.getUnits() != null) {
+							for (var key in other.getUnits()) {
+								var item = (other.getUnits())[key];
+								this.units[key] = {
+									count: item.count,
+									total: item.total,
+									speed: item.speed
+								};
+							}
+						}
+
+						this.unitQueue = new Array();
+						if (other.hasUnitQueue()) {
+							for (var i = 0; i < other.unitQueue.length; i++) {
+								var item = other.unitQueue[i];
+								this.unitQueue[i] = {
+									id: item.id,
+									type: item.type,
+									count: item.count,
+									batch: item.batch,
+									left: item.left,
+									start: item.start,
+									end: item.end,
+									isPaid: item.isPaid
+								};
+							}
+						}
+
+						this.traders = new Object();
+						if (other.traders != null) {
+							for (var key in other.traders) {
+								var item = other.traders[key];
+								this.traders[key] = {
+									count: item.count,
+									total: item.total,
+									order: item.order
+								};
+							}
+						}
+
+
+						this.unitOrders = new Array();
+						if (other.unitOrders != null) {
+							for (var i = 0; i < other.unitOrders.length; i++) {
+								var item = other.unitOrders[i];
+								this.unitOrders[i] = {
+									id: item.id,
+									type: item.type,
+									state: item.state,
+									start: item.start,
+									end: item.end,
+									city: item.city,
+									cityName: item.cityName,
+									player: item.player,
+									playerName: item.playerName,
+									alliance: item.alliance,
+									allianceName: item.allianceName,
+									units: item.units,
+									isDelayed: item.isDelayed,
+									recurringType: item.recurringType,
+									recurringEndStep: item.recurringEndStep,
+									quickSupport: item.quickSupport
+								};
+							}
+						}
+
+						this.supportOrders = new Array();
+						if (other.supportOrders != null) {
+							for (var i = 0; i < other.supportOrders.length; i++) {
+								var item = other.supportOrders[i];
+
+								this.supportOrders[i] = {
+									id: item.id,
+									type: item.type,
+									state: item.state,
+									end: item.end,
+									city: item.city,
+									cityName: item.cityName,
+									player: item.player,
+									playerName: item.playerName,
+									alliance: item.alliance,
+									allianceName: item.allianceName,
+									units: new Array(),
+									quickSupport: item.quickSupport
+								};
+
+								for (var u = 0; u < item.units.length; u++) {
+									this.supportOrders[i].units[u] = {
+										type: item.units[u].type,
+										count: item.units[u].count
+									};
+								}
+							}
+						}
+
+						this.tradeOrders = new Array();
+						if (other.tradeOrders != null) {
+							for (var i = 0; i < other.tradeOrders.length; i++) {
+								var item = other.tradeOrders[i];
+
+								this.tradeOrders[i] = {
+									id: item.id,
+									type: item.type,
+									transport: item.transport,
+									state: item.state,
+									start: item.start,
+									end: item.end,
+									city: item.city,
+									cityName: item.cityName,
+									player: item.player,
+									playerName: item.playerName,
+									alliance: item.alliance,
+									allianceName: item.allianceName,
+									resources: new Array()
+								};
+								for (var u = 0; u < item.resources.length; u++) {
+									this.tradeOrders[i].resources[u] = {
+										type: item.resources[u].type,
+										count: item.resources[u].count
+									};
+								}
+							}
+						}
+
+						this.tradeIncoming = new Array();
+						if (other.tradeIncoming != null) {
+							for (var i = 0; i < other.tradeIncoming.length; i++) {
+								var item = other.tradeIncoming[i];
+
+								this.tradeIncoming[i] = {
+									id: item.id,
+									type: item.type,
+									transport: item.transport,
+									state: item.state,
+									start: item.start,
+									end: item.end,
+									city: item.city,
+									cityName: item.cityName,
+									player: item.player,
+									playerName: item.playerName,
+									alliance: item.alliance,
+									allianceName: item.allianceName,
+									resources: new Array()
+								};
+								for (var u = 0; u < item.resources.length; u++) {
+									this.tradeIncoming[i].resources[u] = {
+										type: item.resources[u].type,
+										count: item.resources[u].count
+									};
+								}
+							}
+						}
+					},
+					//----------------
+
+
+
+
+					//----------------
+					getIncomingUnitOrders: function() {
+						return this.incomingUnitOrders;
+					}, getUnitTypeInfo: function(g) {
+						if (this.units != null && this.units.hasOwnProperty(g)) return this.units[g];
+						return {
+							count: 0,
+							total: 0,
+							speed: -1
+						};
+					}, getBuildQueue: function() {
+						return this.buildQueue;
+					}, hasBuildQueue: function() {
+						return this.buildQueue != null;
+					}, getUnitQueue: function() {
+						return this.unitQueue;
+					}, hasUnitQueue: function() {
+						return this.unitQueue != null;
+					}, getAvailableUnitQueueSpace: function() {
+						var e = webfrontend.data.Player.getInstance().getMaxUnitQueueSize();
+						if (this.unitQueue != null) {
+							e -= this.unitQueue.length;
+						}
+						return e;
+					}, getUnitOrders: function() {
+						return this.unitOrders;
+					}, getSupportOrders: function() {
+						return this.supportOrders;
+					}, getRecruitingSpeed: function() {
+						return this.recruitingSpeed;
+					}, getIncomingUnitOrders: function() {
+						return this.incomingUnitOrders;
+					}, getUnits: function() {
+						return this.units;
+					}, getTraders: function() {
+						return this.traders;
+					}, getTradeOrders: function() {
+						return this.tradeOrders;
+					}, getTradeOffers: function() {
+						return this.tradeOffers;
+					}, getTradeIncoming: function() {
+						return this.tradeIncoming;
+					}, getOrder: function(d) {
+						if (this.unitOrders != null) {
+							for (var i = 0; i < this.unitOrders.length; i++) if (this.unitOrders[i].id == d) return this.unitOrders[i];
+						}
+						if (this.incomingUnitOrders != null) {
+							for (var i = 0; i < this.incomingUnitOrders.length; i++) if (this.incomingUnitOrders[i].id == d) return this.incomingUnitOrders[i];
+						}
+						if (this.supportOrders != null) {
+							for (var i = 0; i < this.supportOrders.length; i++) if (this.supportOrders[i].id == d) return this.supportOrders[i];
+						}
+						return null;
+					}, getResourceCount: function(F) {
+						if (!this.resources.hasOwnProperty(F)) return 0;
+						var G = webfrontend.data.ServerTime.getInstance().getServerStep();
+						if (G == 0) return 0;
+						var I = G - this.resources[F].step;
+						var H = this.resources[F].delta;
+						if (F == 4) {
+							H -= this.getFoodConsumption() + this.getFoodConsumptionSupporter();
+						}
+						var J = I * H + this.resources[F].base;
+						J = Math.max(0, Math.min(J, this.resources[F].max));
+						return J;
+					}, getResourceGrowPerHour: function(a) {
+						if (!this.resources.hasOwnProperty(a)) return 0;
+						return this.resources[a].delta * webfrontend.data.ServerTime.getInstance().getStepsPerHour();
+					}, getResourceMaxStorage: function(f) {
+						if (!this.resources.hasOwnProperty(f)) return 0;
+						return this.resources[f].max;
+					}, getResourceStorageFullTime: function(K) {
+						if (!this.resources.hasOwnProperty(K)) return new Date(0);
+						var L = this.getResourceGrowPerHour(K);
+						if (L <= 0) return new Date(0);
+						var M = this.resources[K].step + (this.resources[K].max - this.resources[K].base) / this.resources[K].delta;
+						if (webfrontend.data.ServerTime.getInstance().getServerStep() >= M) return new Date(0);
+						return webfrontend.data.ServerTime.getInstance().getStepTime(M);
+					}, getResourceStorageEmptyTime: function(l, m) {
+						if (!this.resources.hasOwnProperty(l)) return new Date(0);
+						var n = this.resources[l].step + this.resources[l].base / -(this.resources[l].delta - m);
+						if (webfrontend.data.ServerTime.getInstance().getServerStep() >= n) return new Date(0);
+						return webfrontend.data.ServerTime.getInstance().getStepTime(n);
+					}, getResourceCountTime: function(o, p) {
+						if (!this.resources.hasOwnProperty(o)) return new Date(0);
+						if (this.resources[o].delta <= 0) return new Date(0);
+						var q = this.resources[o].step + (p - this.resources[o].base) / this.resources[o].delta;
+						return webfrontend.data.ServerTime.getInstance().getStepTime(q);
+					}, countDefenders: function() {
+						if (this.units == null || this.units.length == 0) return 0;
+						var c = 0;
+						for (var b in this.units) c += this.units[b].count;
+						return c;
+					}, getGoldGrowPerHour: function() {
+						return this.getGoldProduction() * webfrontend.data.ServerTime.getInstance().getStepsPerHour();
+					}, _applyId: function(O, P) {
+						if (O != -1 && P == -1) webfrontend.net.UpdateManager.getInstance().addConsumer(Y, this);
+						if (O == -1 && P != -1) {
+							webfrontend.net.UpdateManager.getInstance().removeConsumer(Y);
+							this.setId(-1);
+						}
+					}, getSupportMoving: function(r) {
+						r = r || false;
+						var u = [];
+						var t = this.getUnitOrders();
+						if (t) {
+							var s = t.length;
+							for (var i = 0; i < s; i++) {
+								if (t[i].quickSupport && r) {
+									continue;
+								}
+								if (t[i].type == 4) {
+									if (t[i].state == 1 || t[i].state == 2) {
+										u[u.length] = [t[i], 0];
+									}
+								}
+							}
+						}
+						var t = this.getSupportOrders();
+						if (t) {
+							var s = t.length;
+							for (var i = 0; i < s; i++) {
+								if (t[i].quickSupport && r) {
+									continue;
+								}
+								if (t[i].type == 4 && t[i].state == 1) {
+									u[u.length] = [t[i], 1];
+								}
+							}
+						}
+						return u;
+					},
+					//MINE
+					buildQueueOcuppied: function() {
+						if (this.buildQueue == null || this.buildQueue.length == 0) {
+							return null;
+						}
+						return (this.buildQueue[this.buildQueue.length - 1].end - webfrontend.data.ServerTime.getInstance().getServerStep());
+					},
+					unitQueueOcuppied: function() {
+						if (this.unitQueue == null || this.unitQueue.length == 0) {
+							return null;
+						}
+						return (this.unitQueue[this.unitQueue.length - 1].end - webfrontend.data.ServerTime.getInstance().getServerStep());
+					},
+					setResourceCount: function(res, count) {
+						if (!this.resources.hasOwnProperty(res)) {
+							return;
+						}
+
+						var serverStep = webfrontend.data.ServerTime.getInstance().getServerStep();
+						if (serverStep == 0) return;
+
+						this.resources[res].step = serverStep;
+						this.resources[res].base = count;
+					},
+					getFoodBalance: function() {
+						var steps = webfrontend.data.ServerTime.getInstance().getStepsPerHour();
+						var foodGrow = Math.floor(this.getResourceGrowPerHour(bos.Const.FOOD) + 0.5);
+						var foodCons = Math.round(this.getFoodConsumption() * steps);
+						var foodConsQueue = Math.round(this.getFoodConsumptionQueue() * steps);
+						var foodConsSupport = Math.round(this.getFoodConsumptionSupporter() * steps);
+
+						var foodBalance = foodGrow - foodCons - foodConsQueue - foodConsSupport;
+						return foodBalance;
+					},
+					getTradeIncomingResources: function(resType) {
+						var totalRes = 0;
+						if (this.tradeIncoming == null) {
+							return totalRes;
+						}
+						var now = webfrontend.data.ServerTime.getInstance().getServerStep();
+						for (var i = 0; i < this.tradeIncoming.length; i++) {
+							var order = this.tradeIncoming[i];
+							if (order.end >= now) {
+								for (var j = 0; j < order.resources.length; j++) {
+									var r = order.resources[j];
+									if (r.type == resType) {
+										totalRes += r.count;
+									}
+								}
+							}
+						}
+						return totalRes;
+					},
+					urthBuildingGetBuildTime: function(P, Q, R, S) {
+						if (S == null) S = this.urthBuildingGetTotalSpeedBouns();
+						var res = webfrontend.res.Main.getInstance();
+						var T = 0;
+						if (res.buildings.hasOwnProperty(P) && res.buildings[P].r.hasOwnProperty(Q)) {
+							var U = res.buildings[P].r[Q].t;
+							if (res.buildings[P].im == 0) {
+								U = (U * 100) / S;
+								if (R == 2 || R == 5) U /= 2;
+							}
+							T = Math.floor(Math.max(webfrontend.data.Server.getInstance().getBuildingMinimumBuildTime(), U + 0.5));
+						}
+						return T;
+					},
+					urthBuildingGetDemolishTime: function(V, W) {
+						var X = this.urthBuildingGetTotalSpeedBouns();
+						var Y = 0;
+						for (var ba = W; ba > 0; ba--) Y += this.urthBuildingGetBuildTime(V, ba, 5, X);
+						return Y;
+					},
+					urthBuildingGetTotalSpeedBouns: function() {
+						//var city = webfrontend.data.City.getInstance();
+						var city = this;
+						var tech = webfrontend.data.Tech.getInstance();
+						var bf = tech.getBonus("constSpeed", webfrontend.data.Tech.research);
+						var be = tech.getBonus("constSpeed", webfrontend.data.Tech.shrine);
+						var bc = Math.floor(city.getBuildTimePercentMod());
+						return bc + bf + be;
+					}
+				}
+			});
+
 			qx.Class.define("bos.net.CommandManager", {
 				type: "singleton",
 				extend: qx.core.Object,
@@ -11001,10 +11950,12 @@ paDebug("update");
 					this._sendTimer.start();
 paDebug("command Ctor");
 				},
+				var lastUpdated,
 				properties: {
 					lastSendCommand: {
 						init: 0
-					}
+					},
+
 				},
 				members: {
 					_toSend: [],
@@ -11035,7 +11986,7 @@ paDebug("command Ctor");
 						if (this._toSend.length > 0) {
 							var o = this._toSend[0];
 							this._toSend.splice(0, 1);
-paDebug(o);
+paDebug("send " + o);
 							this.forcedSendCommand(o.endPoint, o.request, o.context, o.onSendDone, o.extraValue);
 						}
 					},
@@ -16333,7 +17284,7 @@ console.debug("compltereq " + e + callbackInfo );
 				startup.initialized = true;
 
 				CreateAvaTweak();
-				AvaInit();
+				new AvaInit();
 				ava.Main.getInstance().initialize();
 				//initSession();
 			}
