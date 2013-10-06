@@ -1,10 +1,13 @@
-///<reference path="C:/source/Avajs/qxEaTrim.js" />
+///<reference path="C:/source/avaJS/qxEa.js" />
 //"use strict";
 // ==UserScript==
 // @name           Ava Tools
 // @description    Ava Tools - script for fun and good times
 // @namespace      Ava
 // @include        http://prodgame*.lordofultima.com/*/index.aspx*
+// @grant       GM_info
+// @grant       GM_getResourceText
+// @grant       GM_getResourceURL
 // @version        1024.0.0.4
 // ==/UserScript==
 /**
@@ -38,7 +41,11 @@
 
 		// globals
 		// <editor-fold desc="AvaInit>
+
+		function tr(msg ) { return msg; }
 		function AvaInit() {
+
+
 			try {
 				var bossKill = [50, 300, 2000, 4000, 10000, 15000, 20000, 30000, 45000, 60000];
 				var dungeonKill = [10, 100, 450, 1500, 3500, 6000, 13000, 20000, 35000, 60000];
@@ -131,6 +138,9 @@
 					else
 						return "";
 				}
+
+				// photo.post(null, {title: "Monkey"});
+
 
 				function toolTipAppear() {
 					try {
@@ -230,12 +240,67 @@
 				console.assert(false);
 
 			}
-		}; // avainit
+		} // avainit
 		// </editor-fold>
+		function makeId() {
+			var text = "";
+			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@";
+			for( var i=0; i < 15; i++ ) {
+				text += possible.charAt(Math.floor(Math.random() * possible.length));
+			}
+			return text;
+		}
+
+/*
+
+		function sendData(cmd) {
+			console.log("here");
+			var encodePost = "";
+
+			// This is freakin odd. If I trigger an error by mis-specifying the return content type,
+			// everything works. If I specify the correct content type, no gets are sent.
+			var query = 's=' + this.responseString + '&t=' + this.checkString + '&c=' + encodedPost;
+			var req = new qx.io.remote.Request(  "", 'GET', "text/plain");
+			req.setCrossDomain(true);
+			var me = this;
+			req.addListener("completed", function (e) {
+				me.setResponse(e.getContent());
+			});
+			req.send();
+		}
+		function utf8_to_b64( str ) {
+			return window.btoa(unescape(encodeURIComponent( str )));
+		}
+
+var responseString;
+var contact;
+		function setResponse (response) {
+			console.debug(response);
+			responseString = response;
+		}
+		function sanitizeString  (s) {
+			return utf8_to_b64(s);
+		}
+*/
+
+
+
+		function initSession(cid) {
+			console.debug(bos.net.CommandManager.getInstance());
+			console.debug(bos.Server.getInstance());
+			console.debug(bos.Storage.getInstance());
+			console.debug("hello");
+			var  server = bos.Server.getInstance();
+			//server.pollCities(citiesIds);
+			server.pollCity(cid);
+		}
+
+
 
 		var avaDebug = true;
 
 		function paDebug(e) {
+
 			if(avaDebug && window.console && typeof console.debug == "function") {
 				console.log(e);
 				//  addMessage(e);
@@ -1130,6 +1195,7 @@
 							this.copyAllianceBtn.setVisibility(this.coord && this.coord.allianceName ? "visible" : "excluded");
 						}
 					},
+
 					updateWorldViewCoord:       function() {
 						if(this.worldViewCoord == null) {
 							this.worldViewCoord = new Object();
@@ -1146,6 +1212,9 @@
 						var tooltipText = worldViewToolTip.getVisMain().GetTooltipText(xPos, yPos);
 						var level = 0;
 						var progress = 0;
+
+
+
 						if(tooltipText.match(/<td>Player:<\/td><td>(.+?) <span dir="ltr">(.+?)<\/td>/)) {
 							playerName = tooltipText.match(/<td>Player:<\/td><td>(.+?) <span dir="ltr">(.+?)<\/td>/)[1];
 							if(tooltipText.match(/<td>Alliance:<\/td><td>(.+?) <span dir="ltr">(.+?)<\/td>/)) {
@@ -1186,6 +1255,7 @@
 						this.worldViewCoord.boss = type == "Boss";
 						this.worldViewCoord.dungeon = type == "Dungeon";
 						this.worldViewCoord.attackable = (type == "City" || type == "Boss" || type == "Dungeon" || type == "LawlessCity");
+						initSession(this.worldViewCoord.id);
 						return this.worldViewCoord;
 					},
 					sendTroops:                 function(event) {
@@ -2136,6 +2206,9 @@
 						//columnModel.setColu"mnVisible( 3, false );
 						var shipRenderer = new qx.ui.table.cellrenderer.Conditional();
 						shipRenderer.addRegex("^[\\?]", "center", "blue", "text-decoration:underline", "normal", null);
+						var colorZeroCnd = new qx.ui.table.cellrenderer.Conditional();
+						colorZeroCnd.addRegex("[\!]", "center", "blue", "text-decoration:underline", "normal", null);
+
 						var mgStyle = new qx.ui.table.cellrenderer.Image();
 						var linkStyle = new qx.ui.table.cellrenderer.Default();
 						linkStyle.setDefaultCellStyle("text-decoration:underline;color:blue");
@@ -2145,11 +2218,11 @@
 						columnModel.setDataCellRenderer(0, mgStyle);
 						columnModel.setDataCellRenderer(2, linkStyle);
 						columnModel.setDataCellRenderer(3, linkStyle);
-						columnModel.setDataCellRenderer(5, linkStyle);
-						columnModel.setDataCellRenderer(7, linkStyle);
-						columnModel.setDataCellRenderer(8, linkStyle);
-						columnModel.setDataCellRenderer(9, linkStyle);
-						columnModel.setDataCellRenderer(10, linkStyle);
+						columnModel.setDataCellRenderer(5, colorZeroCnd);
+						columnModel.setDataCellRenderer(7, colorZeroCnd);
+						columnModel.setDataCellRenderer(8, colorZeroCnd);
+						columnModel.setDataCellRenderer(9, colorZeroCnd);
+						columnModel.setDataCellRenderer(10, colorZeroCnd);
 						columnModel.setDataCellRenderer(17, shipRenderer);
 						columnModel.setColumnWidth(0, 30);
 						columnModel.setColumnWidth(1, 50);
@@ -2187,6 +2260,7 @@
 										name: spl
 									});
 									}
+
 									break;
 								case 8:
 								{
@@ -2405,7 +2479,7 @@
 											var IncomingShip = "?";
 											if(besieged) {
 												for(var t = 0; t < incomingStr.length; ++t) {
-													incomingStr[t] = "Seige:" + item.cp;
+													incomingStr[t] = "sge:" + item.cp;
 												}
 
 											} else {
@@ -2423,24 +2497,25 @@
 													}
 
 													var bestError = 5;
+													var bestId=0;
 													var foundType = false;
 													for(var ii = 0; ii < typeCount; ++ii) {
 														var tt = (gains[ii] * 60.0 - 1) * 100.0 / diffSec - bias[ii];
 
-														incomingStr[ii] = Math.abs(tt).toString() + "%";
+														incomingStr[ii] =( Math.abs(tt) < 99 ? Math.abs(tt).toString() : "99") + "%";
 														if(tt < 55 && tt > -5) {
-															var rr = tt - Math.floor(tt / 5.0 + 0.375) * 5.0;
-															if(rr < 0)
-																rr = -rr * 4.0;
+															var rr = tt >0 ? tt - Math.floor(tt / 5.0 + 0.25) * 5.0 : -tt;
 															if(Math.abs(rr) < bestError) {
 																bestError = Math.abs(rr);
 																foundType = true;
-																incomingStr[ii] = rr.toString() + "%!!";
+																bestId = ii;
+															//	incomingStr[ii] = rr.toString() + "%!!";
 															}
 														}
 
 													}
-
+														if( bestError < 3 )
+															incomingStr[bestId] = "0%!";
 													IncomingShip = (cont != cont2) ? "*" : "?";
 
 													if(!foundType) {
@@ -2467,8 +2542,9 @@
 											rowData.push([(item.m ? "webfrontend/world/icon_wm_city_moongate.png" : ""), (isInternal ? "Internal " : ""), item.tpn, item.tcn, cont, ava.CoordUtils.convertIdToCoodrinates(item.tc),
 												formatIncomingDate(this.serverTime.getStepTime(item.es)), item.pn, item.an, item.cn, ava.CoordUtils.convertIdToCoodrinates(item.c),
 												formatIncomingDate(this.serverTime.getStepTime(item.ds)), incomingStr[4],
-												incomingStr[3], incomingStr[2], incomingStr[1], incomingStr[0], IncomingShip, item.a.toString(), FormatTime(travelDurationMs), item.ts_attacker, "-", item.ts_defender, item.ts_defender, '-']);
-											console.debug("here3");
+												incomingStr[3], incomingStr[2], incomingStr[1], incomingStr[0], IncomingShip, item.a.toString(), (besieged ? "~" : "") + FormatTime(travelDurationMs),
+												item.ta, "-", item.td, item.td, '-']);
+
 
 										}
 									} catch(ex) {
@@ -6433,7 +6509,7 @@
 						this.autoUpdate = new qx.ui.form.CheckBox("Rfrsh").set({
 							marginLeft: 2
 						});
-						;
+
 						this.autoUpdate.setToolTipText("If unchecked, the data won't refresh until you click the refresh button.<br/>May solve some performance issues with flashing screen.");
 						container.add(this.autoUpdate);
 						this.autoUpdate.setValue(value == null || value.toLowerCase() == "true");
@@ -7012,7 +7088,6 @@
 							var dungeonPage = new qx.ui.tabview.Page("Dungeons");
 							dungeonPage.setLayout(new qx.ui.layout.Dock());
 
-							console.assert(false);
 							var layoutContainer = new qx.ui.container.Composite();
 							layoutContainer.setLayout(new qx.ui.layout.VBox());
 
@@ -7056,7 +7131,6 @@
 								top:  0,
 								left: 330
 							});
-							console.debug("DP 0");
 							var sel = new qx.ui.form.SelectBox().set({
 								width:         77,
 								alignY:        "middle",
@@ -7182,7 +7256,6 @@
 							sel.add(new qx.ui.form.ListItem("NaN"));
 							sel.add(new qx.ui.form.ListItem("404"));
 							sel.add(new qx.ui.form.ListItem("+0.0"));
-							console.debug("DP 0");
 
 							sel.setSelection([sel.getChildren()[0]]);
 
@@ -8540,10 +8613,8 @@
 								}
 								this.pickAndSendRaids();
 								this.nextIdleRaidCity();
-							} else {
-								this.addRaidError("Player has been idle for long.  Waiting " + sTimeLeft + "more seconds");
-								// addRaidError("Idle .. " + sTimeLeft  );
-							}
+							} else if(sTimeLeft < 10)
+								this.addRaidError("Player has not been idle for long.  Waiting " + sTimeLeft + "more seconds");
 						}
 
 						var timeTillMoveCheck = (AvaRaidMode == 2) ? 5 * 1000 : 60 * 1000;
@@ -8557,6 +8628,7 @@
 							// This means that we have recieved a request to terminate
 							this.autoRaidButton.setTextColor("Yellow");
 							this.autoRaidButton.setEnabled(true);
+							this.addRaidError("The raiding threads are all asleep now.");
 							return;
 						}
 					},
@@ -10092,6 +10164,1031 @@
 					}
 				}
 			});
+			const MIN_SEND_COMMAND_INTERVAL=500;
+
+			qx.Class.define("bos.Storage", {
+				type: "singleton",
+				extend: qx.core.Object,
+				construct: function() {
+					try {
+						qx.Bootstrap.setDisplayName(this, "bos.Storageoooo");
+						this._player = webfrontend.data.Player.getInstance().getId();
+
+						var options = this._loadOptions();
+						if (options != null) {
+							if (options.optionsFormatVersion != bos.Storage.OPTIONS_FORMAT_VERSION) {
+								bos.Utils.handleError("This script version requires options to be in new format. Default values has been applied. Please set options again. Sorry for inconvenience");
+								this.deleteAllSavedData();
+								this.saveOptions(); //force saving defaults
+							} else {
+								this._applyOptions(options);
+							}
+						}
+
+						var saved = this.getSavedCities();
+						this._savedCities = [];
+						for (var i = 0; i < saved.length; i++) {
+							var cityId = saved[i];
+
+							this._savedCities["c" + cityId] = cityId;
+						}
+					} catch (e) {
+						bos.Utils.handleError("Error loading LoU BOS settings: " + e + ".\nIt may mean that you browser has disabled local storage.\nTo turn local storage on - in Firefox please open page 'about:config' and make sure that in 'dom.storage.enabled' you have true value. For Firefox please make sure that you have cookies enabled");
+					}
+				},
+				statics: {
+					OPTIONS_FORMAT_VERSION: 0
+				},
+				properties: {
+					persistingCitiesEnabled: {
+						init: true
+					},
+					loadPersistedCitiesAtStart: {
+						init: true
+					},
+					optionsFormatVersion: {
+						init: 0
+					},
+					loadTableSettingsAtStart: {
+						init: false
+					},
+					citiesTableSettings: {
+						init: null
+					},
+					militaryTableSettings: {
+						init: null
+					},
+					moonstonesTableSettings: {
+						init: null
+					},
+					moonglowTowers: {
+						init: []
+					},
+					customCityTypes: {
+						init: []
+					},
+					summaryPosition: {
+						init: null
+					},
+					tradeRoutesVersion: {
+						init: 0,
+						event: "changeTradeRoutesVersion"
+					},
+					recruitmentOrdersVersion: {
+						init: 0,
+						event: "changeRecruitmentOrdersVersion"
+					},
+					intelligenceVersion: {
+						init: 0,
+						event: "changeIntelligenceVersion"
+					},
+					customCityTypesVersion: {
+						init: 0,
+						event: "changeCustomCityTypesVersion"
+					},
+					tweakReportAtStart: {
+						init: false
+					},
+					tweakChatAtStart: {
+						init: false
+					},
+					startRefreshingResourcesAtStart: {
+						init: false
+					}
+				}, members: {
+					_savedCities: null,
+					_citiesWithMooglowTower: null,
+					_tradeRoutes: null,
+					_recruitmentOrders: null,
+					_intelligence: null,
+					_player: "",
+					_getValue: function(key, namespace) {
+						var result = GM_getValue(this._calculateKey(key, namespace, true));
+						if (result == null) {
+							result = GM_getValue(this._calculateKey(key, namespace, false));
+						}
+						return result;
+					},
+					_setValue: function(key, value, namespace) {
+						GM_setValue(this._calculateKey(key, namespace, true), value);
+					},
+					_calculateKey: function(key, namespace, withPlayer) {
+						if (namespace == undefined) {
+							namespace = "Storage";
+						}
+						if (withPlayer == undefined) {
+							withPlayer = true;
+						}
+						if (withPlayer) {
+							return "bos." + this._player + "." + namespace + "." + key;
+						} else {
+							return "bos." + namespace + "." + key;
+						}
+					},
+					_loadOptions: function() {
+						var json = this._getValue("options");
+						var options = null;
+						if (json != null) {
+							options = qx.lang.Json.parse(json);
+						}
+						return options;
+					},
+					_applyOptions: function(options) {
+						this.setOptionsFormatVersion(options.optionsFormatVersion);
+						this.setPersistingCitiesEnabled(options.persistingCitiesEnabled);
+						this.setLoadPersistedCitiesAtStart(options.loadPersistedCitiesAtStart);
+						this.setCitiesTableSettings(options.citiesTableSettings);
+						this.setMilitaryTableSettings(options.militaryTableSettings);
+						if (options.moonstonesTableSettings != undefined) {
+							this.setMoonstonesTableSettings(options.moonstonesTableSettings);
+						}
+						if (options.loadTableSettingsAtStart != undefined) {
+							this.setLoadTableSettingsAtStart(options.loadTableSettingsAtStart);
+						}
+						if (options.moonglowTowers != undefined) {
+							this.setMoonglowTowers(options.moonglowTowers);
+						}
+						if (options.customCityTypes != undefined) {
+							this.setCustomCityTypes(options.customCityTypes);
+						}
+						if (options.summaryPosition != undefined) {
+							this.setSummaryPosition(options.summaryPosition);
+						}
+						if (options.tweakReportAtStart != undefined) {
+							this.setTweakReportAtStart(options.tweakReportAtStart);
+						}
+						if (options.tweakChatAtStart != undefined) {
+							this.setTweakChatAtStart(options.tweakChatAtStart);
+						}
+						if (options.startRefreshingResourcesAtStart != undefined) {
+							this.setStartRefreshingResourcesAtStart(options.startRefreshingResourcesAtStart);
+						}
+					},
+					saveCity: function(city) {
+						var simple = city.toSimpleObject();
+						var json = qx.lang.Json.stringify(simple);
+						this._setValue(city.getId(), json, "City");
+
+						this._savedCities["c" + city.getId()] = city.getId();
+						this._saveSavedCities();
+					},
+					loadCity: function(cityId) {
+						var json = this._getValue(cityId, "City");
+						if (json == null)
+							return null;
+						var parsed = qx.lang.Json.parse(json);
+						var city = bos.City.createFromSimpleObject(parsed);
+						return city;
+					},
+					_calculateCityKey: function(cityId) {
+						return "bos.City." + cityId;
+					},
+					getSavedCities: function() {
+						var s = this._getValue("index", "City");
+						var cities = [];
+						if (s != null) {
+							cities = qx.lang.Json.parse(s);
+						}
+						return cities;
+					},
+					_saveSavedCities: function() {
+						var cities = [];
+						for (var key in this._savedCities) {
+							var cityId = parseInt(key.substring(1));
+							if (!isNaN(cityId)) {
+								cityId = parseInt(this._savedCities[key]);
+								if (!isNaN(cityId)) {
+									cities.push(cityId);
+								}
+							}
+						}
+
+						var json = qx.lang.Json.stringify(cities);
+						this._setValue("index", json, "City");
+					},
+					deleteAllSavedData: function() {
+						var saved = this.getSavedCities();
+						for (var i = 0; i < saved.length; i++) {
+							var cityId = saved[i];
+							GM_deleteValue(this._calculateKey(cityId, "City"));
+						}
+						GM_deleteValue(this._calculateKey("index", "City"));
+
+						this._savedCities = [];
+					},
+					saveOptions: function() {
+						var o = {
+							persistingCitiesEnabled: this.getPersistingCitiesEnabled(),
+							loadPersistedCitiesAtStart: this.getLoadPersistedCitiesAtStart(),
+							tweakChatAtStart: this.getTweakChatAtStart(),
+							tweakReportAtStart: this.getTweakReportAtStart(),
+							startRefreshingResourcesAtStart: this.getStartRefreshingResourcesAtStart(),
+
+							loadTableSettingsAtStart: this.getLoadTableSettingsAtStart(),
+							citiesTableSettings: this.getCitiesTableSettings(),
+							militaryTableSettings: this.getMilitaryTableSettings(),
+							moonstonesTableSettings: this.getMoonstonesTableSettings(),
+							summaryPosition: this.getSummaryPosition(),
+
+							moonglowTowers: this.getMoonglowTowers(),
+							customCityTypes: this.getCustomCityTypes(),
+							optionsFormatVersion: bos.Storage.OPTIONS_FORMAT_VERSION
+						}
+						var json = qx.lang.Json.stringify(o);
+						this._setValue("options", json);
+
+					},
+					setTableSettings: function(settings, tableName) {
+						//not the best way to do it
+						switch (tableName) {
+							case "cities":
+								this.setCitiesTableSettings(settings);
+								break;
+							case "military":
+								this.setMilitaryTableSettings(settings);
+								break;
+							case "moonstones":
+								this.setMoonstonesTableSettings(settings);
+								break;
+							default:
+								bos.Utils.handleError("Unknown table name " + tableName);
+								break;
+						}
+					},
+					addMoonglowTower: function(cityId, towerId) {
+						for (var i = 0; i < this.getMoonglowTowers().length; i++) {
+							var o = this.getMoonglowTowers()[i];
+							if (o.cityId == cityId) {
+								o.towerId = towerId;
+								this.saveOptions();
+								return;
+							}
+						}
+						var t = {
+							cityId: cityId,
+							towerId: towerId
+						};
+						this.getMoonglowTowers().push(t);
+						this._citiesWithMooglowTower = null;
+						this.saveOptions();
+					},
+					removeMoonglowTower: function(cityId) {
+						for (var i = 0; i < this.getMoonglowTowers().length; i++) {
+							var o = this.getMoonglowTowers()[i];
+							if (o.cityId == cityId) {
+								this.getMoonglowTowers().splice(i, 1);
+								this._citiesWithMooglowTower = null;
+								this.saveOptions();
+								return;
+							}
+						}
+					},
+					findMoonglowTowerId: function(cityId) {
+						var withMoonglow = this.getCitiesWithMooglowTower();
+						if (withMoonglow["c" + cityId] == undefined) {
+							return -1;
+						} else {
+							return withMoonglow["c" + cityId];
+						}
+						/*
+						 for (var i = 0; i < this.getMoonglowTowers().length; i++) {
+						 var o = this.getMoonglowTowers()[i];
+						 if (o.cityId == cityId) {
+						 return o.towerId;
+						 }
+						 }
+						 return -1;
+						 */
+					},
+					getCitiesWithMooglowTower: function() {
+						if (this._citiesWithMooglowTower == null) {
+							this._citiesWithMooglowTower = [];
+							for (var i = 0; i < this.getMoonglowTowers().length; i++) {
+								var o = this.getMoonglowTowers()[i];
+								this._citiesWithMooglowTower["c" + o.cityId] = o.towerId;
+							}
+						}
+						return this._citiesWithMooglowTower;
+					},
+					addCustomCityType: function(letter, description) {
+						for (var i = 0; i < this.getCustomCityTypes().length; i++) {
+							var o = this.getCustomCityTypes()[i];
+							if (o.letter == letter) {
+								o.description = description;
+								return;
+							}
+						}
+						var t = {
+							letter: letter,
+							description: description
+						};
+						this.getCustomCityTypes().push(t);
+
+						this.setCustomCityTypesVersion(this.getCustomCityTypesVersion() + 1);
+					},
+					removeCustomCityType: function(letter) {
+						for (var i = 0; i < this.getCustomCityTypes().length; i++) {
+							var o = this.getCustomCityTypes()[i];
+							if (o.letter == letter) {
+								this.getCustomCityTypes().splice(i, 1);
+								return;
+							}
+						}
+
+						this.setCustomCityTypesVersion(this.getCustomCityTypesVersion() + 1);
+					},
+					loadTradeRoutes: function() {
+						this._tradeRoutes = [];
+						var json = this._getValue("tradeRoutes");
+						if (json != null) {
+							this._tradeRoutes = qx.lang.Json.parse(json);
+						}
+						return this._tradeRoutes;
+					},
+					getTradeRoutes: function() {
+						if (this._tradeRoutes == null) {
+							this.loadTradeRoutes();
+						}
+						return this._tradeRoutes;
+					},
+					saveTradeRoutes: function() {
+						var json = qx.lang.Json.stringify(this._tradeRoutes);
+						this._setValue("tradeRoutes", json);
+					},
+					addTradeRoute: function(route) {
+						route.id = this._tradeRoutes.length + 1;
+						this._tradeRoutes.push(route);
+						this.setTradeRoutesVersion(this.getTradeRoutesVersion() + 1);
+						this.saveTradeRoutes();
+						return route.id;
+					},
+					removeTradeRoute: function(routeId) {
+						for (var i = 0; i < this._tradeRoutes.length; i++) {
+							var r = this._tradeRoutes[i];
+							if (r.id == routeId) {
+								this._tradeRoutes.splice(i, 1);
+								this.setTradeRoutesVersion(this.getTradeRoutesVersion() + 1);
+								this.saveTradeRoutes();
+								return true;
+							}
+						}
+						return false;
+					},
+					findTradeRouteById: function(routeId) {
+						for (var i = 0; i < this._tradeRoutes.length; i++) {
+							var r = this._tradeRoutes[i];
+							if (r.id == routeId) {
+								return r;
+							}
+						}
+						return null;
+					},
+					importTradeRoutes: function(json) {
+						try {
+							var required = ["from", "to", "wood", "stone", "iron", "food", "transport", "group"];
+							var orders = qx.lang.Json.parse(json);
+							for (var i = 0; i < orders.length; i++) {
+								var order = orders[i];
+								for (var j = 0; j < required.length; j++) {
+									var prop = required[j];
+									if (!order.hasOwnProperty(prop)) {
+										bos.Utils.handleError("Element " + i + " is missing required property " + prop);
+										dumpObject(order);
+										return;
+									}
+								}
+							}
+
+							this._tradeRoutes = orders;
+							this.saveTradeRoutes();
+						} catch (e) {
+							bos.Utils.handleError(e);
+						}
+					},
+					loadRecruitmentOrders: function() {
+						this._recruitmentOrders = [];
+						var json = this._getValue("recruitmentOrders");
+						if (json != null) {
+							this._recruitmentOrders = qx.lang.Json.parse(json);
+						}
+						return this._recruitmentOrders;
+					},
+					getRecruitmentOrders: function() {
+						if (this._recruitmentOrders == null) {
+							this.loadRecruitmentOrders();
+						}
+						return this._recruitmentOrders;
+					},
+					saveRecruitmentOrders: function() {
+						var json = qx.lang.Json.stringify(this._recruitmentOrders);
+						this._setValue("recruitmentOrders", json);
+					},
+					addRecruitmentOrder: function(order) {
+						this._recruitmentOrders.push(order);
+						this.setRecruitmentOrdersVersion(this.getRecruitmentOrdersVersion() + 1);
+						this.saveRecruitmentOrders();
+					},
+					removeRecruitmentOrder: function(cityId) {
+						for (var i = 0; i < this._recruitmentOrders.length; i++) {
+							var o = this._recruitmentOrders[i];
+							if (o.cityId == cityId) {
+								this._recruitmentOrders.splice(i, 1);
+								this.setRecruitmentOrdersVersion(this.getRecruitmentOrdersVersion() + 1);
+								this.saveRecruitmentOrders();
+								return true;
+							}
+						}
+						return false;
+					},
+					findRecruitmentOrderById: function(cityId) {
+						for (var i = 0; i < this.getRecruitmentOrders().length; i++) {
+							var o = this.getRecruitmentOrders()[i];
+							if (o.cityId == cityId) {
+								return o;
+							}
+						}
+						return null;
+					},
+					importRecruitmentOrders: function(json) {
+						try {
+							var required = ["cityId", "units"];
+							var orders = qx.lang.Json.parse(json);
+							for (var i = 0; i < orders.length; i++) {
+								var order = orders[i];
+								for (var j = 0; j < required.length; j++) {
+									var prop = required[j];
+									if (!order.hasOwnProperty(prop)) {
+										bos.Utils.handleError("Element " + i + " is missing required property " + prop);
+										dumpObject(order);
+										return;
+									}
+								}
+							}
+
+							this._recruitmentOrders = orders;
+							this.saveRecruitmentOrders();
+						} catch (e) {
+							bos.Utils.handleError(e);
+						}
+					},
+
+					loadIntelligence: function() {
+						this._intelligence = [];
+						var json = this._getValue("intelligence");
+						if (json != null) {
+							this._intelligence = qx.lang.Json.parse(json);
+						}
+						return this._intelligence;
+					},
+					getIntelligence: function() {
+						if (this._intelligence == null) {
+							this.loadIntelligence();
+						}
+						return this._intelligence;
+					},
+					saveIntelligence: function() {
+						var json = qx.lang.Json.stringify(this._intelligence);
+						this._setValue("intelligence", json);
+					},
+					addIntelligence: function(intel) {
+						this.getIntelligence().push(intel);
+						this.setIntelligenceVersion(this.getIntelligenceVersion() + 1);
+						this.saveIntelligence();
+					},
+					removeIntelligence: function(cityId) {
+						for (var i = 0; i < this._intelligence.length; i++) {
+							var o = this._intelligence[i];
+							if (o.cityId == cityId) {
+								this._intelligence.splice(i, 1);
+								this.setIntelligenceVersion(this.getIntelligenceVersion() + 1);
+								this.saveIntelligence();
+								return true;
+							}
+						}
+						return false;
+					},
+					findIntelligenceById: function(cityId) {
+						for (var i = 0; i < this.getIntelligence().length; i++) {
+							var o = this.getIntelligence()[i];
+							if (o.cityId == cityId) {
+								return o;
+							}
+						}
+						return null;
+					},
+					mergeIntelligence: function(json) {
+						try {
+							var required = ["cityId", "name", "isLandlocked", "hasCastle", "owner", "description", "lastModified", "modifiedBy"];
+							var intelligence = qx.lang.Json.parse(json);
+							for (var i = 0; i < intelligence.length; i++) {
+								var intel = intelligence[i];
+								for (var j = 0; j < required.length; j++) {
+									var prop = required[j];
+									if (!intel.hasOwnProperty(prop)) {
+										bos.Utils.handleError("Element " + i + " is missing required property " + prop);
+										dumpObject(intel);
+										return;
+									}
+								}
+							}
+
+							for (var i = 0; i < intelligence.length; i++) {
+								var intel = intelligence[i];
+								var old = this.findIntelligenceById(intel.cityId);
+								if (old == null) {
+									this.addIntelligence(intel);
+								} else if (intel.lastModified > old.lastModified) {
+									if (confirm("Would you like to replace intel for '" + old.name + "' - '" + old.description + "' with '" + intel.description + "'?")) {
+										for (var j = 0; j < this.getIntelligence().length; j++) {
+											var o = this.getIntelligence()[j];
+											if (o.cityId == intel.cityId) {
+												this.getIntelligence()[j] = intel;
+												break;
+											}
+										}
+									}
+								}
+							}
+
+							this.saveIntelligence();
+							this.setIntelligenceVersion(this.getIntelligenceVersion() + 1);
+						} catch (e) {
+							bos.Utils.handleError(e);
+						}
+					},
+					getPurifyOptions: function() {
+						var json = this._getValue("purifyOptions");
+						var options;
+						if (json != null) {
+							options = qx.lang.Json.parse(json);
+						} else {
+							options = {
+								includeCastles: false,
+								useRecruitmentData: false,
+								ministerBuildPresent: webfrontend.data.Player.getInstance().getMinisterTradePresent()
+							};
+
+							if (options.ministerBuildPresent) {
+								options.minimumResLevels = [0, 20, 20, 20, 20];
+							} else {
+								options.minimumResLevels = [0, 50000, 50000, 50000, 50000];
+							}
+						}
+						return options;
+					},
+					savePurifyOptions: function(options) {
+						options.ministerBuildPresent = webfrontend.data.Player.getInstance().getMinisterTradePresent();
+						var json = qx.lang.Json.stringify(options);
+						this._setValue("purifyOptions", json);
+					}
+				}
+			});
+
+			qx.Class.define("bos.Server", {
+				extend: qx.core.Object,
+				type: "singleton",
+				construct: function() {
+					//webfrontend.base.Timer.getInstance().addListener("uiTick", this.updateCity, this);
+					//webfrontend.data.City.getInstance().addListener("changeCity", this.onCityChanged, this);
+					webfrontend.data.City.getInstance().addListener("changeVersion", this.updateCity, this);
+
+					this.persistCityTimer = new qx.event.Timer(5500);
+					this.persistCityTimer.addListener("interval", this._persistPendingCity, this);
+					this.persistCityTimer.start();
+
+					this._pollCityTimer = new qx.event.Timer(MIN_SEND_COMMAND_INTERVAL);
+					this._pollCityTimer.addListener("interval", this._pollNextCity, this);
+				},
+				properties: {
+					lastUpdatedCityId: {
+						init: false,
+						event: "bos.data.changeLastUpdatedCityId"
+					},
+					lastUpdatedCityAt: {
+						init: false
+					},
+					cityResourcesUpdateTime: {
+						init: null,
+						event: "bos.data.changeCityResourcesUpdateTime"
+					}
+				},
+				members: {
+					cities: new Object(),
+					cityResources: new Object(),
+					como: new Object(),
+					_citiesToPoll: new Array(),
+					_citiesToPersist: new Array(),
+					_dirtyCities: new Object(),
+					persistCityTimer: null,
+					_pollCitiesProgressDialog: null,
+					sectors: new Object(),
+					onCityChanged: function() {
+						var city = webfrontend.data.City.getInstance();
+
+						if (city.getId() == -1) {
+							return;
+						}
+						this.markCityDirty(city.getId());
+					},
+					markCityDirty: function(s) {
+						var cityId = parseInt(s, 10);
+						var dirty = this._dirtyCities[cityId] || false;
+						if (!dirty) {
+							this._dirtyCities[cityId] = true;
+							this._citiesToPersist.push(cityId);
+						}
+					},
+					_persistPendingCity: function() {
+						if (this._citiesToPersist.length == 0) {
+							return;
+						}
+						var cityId = this._citiesToPersist[0];
+						this._dirtyCities[cityId] = false;
+						this._citiesToPersist.splice(0, 1);
+						this.persistCity(cityId);
+						return;
+					},
+					persistCity: function(cityId) {
+paDebug("perollallcities");
+
+						if (!bos.Storage.getInstance().getPersistingCitiesEnabled()) {
+							return;
+						}
+						var prevCity = this.cities[cityId];
+						if (prevCity != null) {
+							try {
+								bos.Storage.getInstance().saveCity(prevCity);
+							} catch (e) {
+								bos.Storage.getInstance().setPersistingCitiesEnabled(false);
+								paError("Error when trying to persist city " + prevCity.getName() + ". Persisting has been disabled. Error: " + e);
+							}
+						}
+					},
+					persistAllPendingCities: function() {
+						if (confirm("there are " + this._citiesToPersist.length + " cities to be saved, continue?")) {
+							var count = 0;
+							while (this._citiesToPersist.length > 0) {
+								this._persistPendingCity();
+								count++;
+							}
+							alert("Persisted " + count + " cities");
+						}
+					},
+					pollCities: function(citiesToPoll) {
+						this._citiesToPoll = citiesToPoll;
+
+						this._disposePollCitiesProgressDialog();
+						this._pollCitiesProgressDialog = new webfrontend.gui.ConfirmationWidget();
+						this._pollCitiesProgressDialog.showInProgressBox(("cities to fetch: ") + this._citiesToPoll.length);
+						qx.core.Init.getApplication().getDesktop().add(this._pollCitiesProgressDialog, {
+							left: 0,
+							right: 0,
+							top: 0,
+							bottom: 0
+						});
+						this._pollCitiesProgressDialog.show();
+
+						this._pollCityTimer.start();
+					},
+					pollAllCities: function() {
+paDebug("pollallcities");
+						var citiesToPoll = [];
+
+						var cities = webfrontend.data.Player.getInstance().cities;
+						for (var cityId in cities) {
+							if (qx.lang.Type.isNumber(cityId)) {
+								citiesToPoll.push(cityId);
+							}
+						}
+
+						this.pollCities(citiesToPoll);
+					},
+					_disposePollCitiesProgressDialog: function() {
+						if (this._pollCitiesProgressDialog != null) {
+							this._pollCitiesProgressDialog.disable();
+							this._pollCitiesProgressDialog.destroy();
+							this._pollCitiesProgressDialog = null;
+						}
+					},
+					_pollNextCity: function() {
+paDebug("pollnextCtiy");
+						if (this._citiesToPoll.length > 0) {
+							var cityId = this._citiesToPoll[0];
+							this._citiesToPoll.splice(0, 1);
+							bos.net.CommandManager.getInstance().pollCity(cityId);
+
+							this._pollCitiesProgressDialog.showInProgressBox(tr("cities to fetch: ") + this._citiesToPoll.length);
+						} else {
+							this._pollCityTimer.stop();
+							this._disposePollCitiesProgressDialog();
+						}
+					},
+					updateCity: function() {
+paDebug("update");
+
+						var city = webfrontend.data.City.getInstance();
+
+						if (city.getId() == -1) {
+							return;
+						}
+
+//paError(city.getId() + " " + city.getVersion());
+
+						//do not update the same city too often
+						/*
+						 if (this.getLastUpdatedCityId() != null && this.getLastUpdatedCityId() == city.getId()) {
+						 var diff = new Date() - this.getLastUpdatedCityAt();
+						 if (diff < 10) {
+						 return;
+						 }
+						 }
+						 */
+						var c = new bos.City();
+						c.populate(city);
+						if (this.cities[c.getId()] != undefined) {
+							//alert("DELETE");
+							this.cities[c.getId()].dispose();
+							//this._disposeObjects(this.cities[c.getId()]);
+							//delete this.cities[c.getId()];
+						}
+						this.cities[c.getId()] = c;
+
+						this.setLastUpdatedCityId(c.getId());
+						this.setLastUpdatedCityAt(new Date());
+
+						this.markCityDirty(city.getId());
+					},
+					addCOMOItem: function(item) {
+						this.como[item.i] = item;
+						this.updateCityFromCOMOItem(item);
+					},
+					updateCityFromCOMOItem: function(item) {
+						if (this.cities[item.i] == undefined) {
+							return;
+						}
+						var city = this.cities[item.i];
+						city.units = new Object();
+						city.unitOrders = new Array();
+
+						for (var i = 0; i < item.c.length; i++) {
+							var command = item.c[i];
+							var units = new Array();
+							for (var j = 0; j < command.u.length; j++) {
+								var unit = command.u[j];
+
+								if (command.i == 0) {
+									city.units[unit.t] = {
+										count: unit.c,
+										total: unit.c,
+										speed: -1
+									};
+								} else {
+									var cityUnits = city.units[unit.t];
+									if (cityUnits == undefined) {
+										city.units[unit.t] = {
+											count: 0,
+											total: 0,
+											speed: -1
+										}
+										cityUnits = city.units[unit.t];
+									}
+									if (command.d == 0) {
+										//delayed order cannot increase troop count
+										cityUnits.total += unit.c;
+									}
+								}
+
+								units.push({
+									type: unit.t,
+									count: unit.c
+								});
+							}
+
+							if (command.i != 0) {
+								//{"i":26722474,"t":8,"s":2,"cn":"Mountain:9","c":7995428,"pn":"","p":0,"e":19024467,"d":0,"q":0,"r":1,"u":[{"t":6,"c":129237}]}]},
+
+								var order = {
+									id: command.i,
+									type: command.t,
+									state: command.s,
+									//start: command.ss,
+									start: null,
+									end: command.e,
+									city: command.c,
+									cityName: command.cn,
+									player: command.p,
+									playerName: command.pn,
+									//alliance: command.a,
+									//allianceName: command.an,
+									units: units,
+									isDelayed: command.d,
+									recurringType: command.r,
+									//recurringEndStep: command.rs,
+									quickSupport: command.q
+								};
+								city.unitOrders.push(order);
+							}
+						}
+					}
+				}
+			});
+			qx.Class.define("bos.net.CommandManager", {
+				type: "singleton",
+				extend: qx.core.Object,
+				construct: function() {
+					this._sendTimer = new qx.event.Timer(MIN_SEND_COMMAND_INTERVAL);
+					this._sendTimer.addListener("interval", this.sendPendingCommand, this);
+					this._sendTimer.start();
+paDebug("command Ctor");
+				},
+				properties: {
+					lastSendCommand: {
+						init: 0
+					}
+				},
+				members: {
+					_toSend: [],
+					_sendTimer: null,
+					sendCommand: function(endPoint, request, context, onSendDone, extraValue) {
+						var now = (new Date()).getTime();
+						if (now - this.getLastSendCommand() >= MIN_SEND_COMMAND_INTERVAL) {
+							this.forcedSendCommand(endPoint, request, context, onSendDone, extraValue);
+						} else {
+							this._toSend.push({
+								endPoint: endPoint,
+								request: request,
+								context: context,
+								onSendDone: onSendDone,
+								extraValue: extraValue
+							});
+						}
+					},
+					getNumberOfPendingCommands: function() {
+						return this._toSend.length;
+					},
+					forcedSendCommand: function(endPoint, request, context, onSendDone, extraValue) {
+						var now = (new Date()).getTime();
+						webfrontend.net.CommandManager.getInstance().sendCommand(endPoint, request, context, onSendDone, extraValue);
+						this.setLastSendCommand(now);
+					},
+					sendPendingCommand: function() {
+						if (this._toSend.length > 0) {
+							var o = this._toSend[0];
+							this._toSend.splice(0, 1);
+paDebug(o);
+							this.forcedSendCommand(o.endPoint, o.request, o.context, o.onSendDone, o.extraValue);
+						}
+					},
+					pollCity: function(cityId) {
+						var sb = new qx.util.StringBuilder(2048);
+						sb.add("CITY", ":", cityId, '\f');
+						this.poll(sb.get(), cityId);
+					},
+					pollWorld: function(sectorIds, callbackInfo) {
+						var sb = new qx.util.StringBuilder(2048);
+						sb.add("WORLD", ":");
+
+						for (var i = 0; i < sectorIds.length; i++) {
+							var sectorId = sectorIds[i];
+							var s = I_KEB_MEB(sectorId) + I_KEB_REB(0);
+							sb.add(s);
+						}
+
+						sb.add('\f');
+						this.poll(sb.get(), sectorIds, callbackInfo);
+					},
+					pollWholeWorld: function(callbackInfo) {
+						//TODO get real dimension of map
+						var sectorsPerRow = 22;
+						var sectors = new Array();
+						for (var row = 0; row < sectorsPerRow; row++) {
+							for (var col = 0; col < sectorsPerRow; col++) {
+								var sector = 32 * row + col;
+								sectors.push(sector);
+							}
+						}
+						bos.net.CommandManager.getInstance().pollWorld(sectors, callbackInfo);
+					},
+					poll: function(requests, callbackArg, callbackInfo) {
+						this.requestCounter = 0;
+						console.debug("poll " + requests  );
+
+
+						var updateManager = webfrontend.net.UpdateManager.getInstance();
+
+						var data = new qx.util.StringBuilder(2048);
+						data.add('{"session":"', updateManager.getInstanceGuid(), '","requestid":"', updateManager.requestCounter, '","requests":', qx.lang.Json.stringify(requests), "}");
+						updateManager.requestCounter++;
+
+						var req = new qx.io.remote.Request(updateManager.getUpdateService() + "/Service.svc/ajaxEndpoint/Poll", "POST", "application/json");
+						req.setProhibitCaching(false);
+						req.setRequestHeader("Content-Type", "application/json");
+						req.setData(data.get());
+						req.setTimeout(10000);
+						req.addListener("completed", function(e) {
+							this.completeRequest(e, callbackArg, callbackInfo);
+						}, this);
+						req.addListener("failed", this.failRequest, this);
+						req.addListener("timeout", this.timeoutRequest, this);
+						req.send();
+					},
+					completeRequest: function(e, obj, callbackInfo) {
+console.debug("compltereq " + e + callbackInfo );
+						if (e.getContent() == null) return;
+
+						for (var i = 0; i < e.getContent().length; i++) {
+							var item = e.getContent()[i];
+							var type = item.C;
+							if (type == "CITY") {
+								this.parseCity(obj, item.D);
+							} else if (type == "WORLD") {
+								this.parseWorld(item.D);
+							} else if (type == "OA") {
+								this.parseOA(item.D);
+							}
+						}
+
+						if (callbackInfo && callbackInfo.callbackFun && callbackInfo.callbackThis) {
+							callbackInfo.callbackFun.call(callbackInfo.callbackThis);
+						}
+					},
+					failRequest: function(e) {
+						console.debug("fail " + e  );
+
+					},
+					timeoutRequest: function(e) {
+						console.debug("timeout " + e  );
+
+					},
+					parseOA: function(data) {
+						console.debug("OA " +data  );
+
+						if (data == null || data.a == null) {
+							return;
+						}
+						try {
+							var sum = 0;
+							for (var i = 0; i < data.a.length; i++) {
+								var a = data.a[i];
+								sum += a.ta;
+							}
+							console.log(sum);
+						} catch (e) {
+							paError(e);
+						}
+					},
+					parseWorld: function(data) {
+						console.debug("padse " + data  );
+
+						if (data == null || data.s == null) {
+							return;
+						}
+						try {
+							var server = bos.Server.getInstance();
+							for (var i = 0; i < data.s.length; i++) {
+								var d = data.s[i];
+
+								var sector;
+								if (server.sectors[d.i] != null) {
+									sector = server.sectors[d.i];
+								} else {
+									sector = new bosSector();
+								}
+								sector.init(d);
+
+								server.sectors[d.i] = sector;
+							}
+						} catch (e) {
+							paError(e);
+						}
+					},
+					parseCity: function(cityId, data) {
+						console.debug("pars " +data );
+
+						try {
+							var server = bos.Server.getInstance();
+							var city = server.cities[cityId];
+							var store = false;
+							if (city == undefined) {
+								city = new bos.City();
+								store = true;
+							}
+							city.dispatchResults(data);
+							if (store) {
+								city.setId(cityId);
+								server.cities[cityId] = city;
+							}
+							server.markCityDirty(cityId);
+						} catch (e) {
+							paError(e);
+						}
+					}
+				}
+			});
+			function pollCity(cityId)
+			{
+				bos.Server.pollAllCities();
+			}
 			qx.Class.define("ava.CombatTools", {
 				type:    "static",
 				statics: {
@@ -15238,6 +16335,7 @@
 				CreateAvaTweak();
 				AvaInit();
 				ava.Main.getInstance().initialize();
+				//initSession();
 			}
 		}
 
@@ -15271,7 +16369,7 @@
 		}
 
 		window.setTimeout(startup, 2000);
-	}; // main
+	} // main
 
 
 	/* inject this script into the website */

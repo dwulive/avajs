@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/avaJs.iml" filepath="$PROJECT_DIR$/.idea/avaJs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/avajs.iml" filepath="$PROJECT_DIR$/avajs.iml" />
     </modules>
   </component>
 </project>
