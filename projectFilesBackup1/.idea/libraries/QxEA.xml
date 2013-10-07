@@ -1,0 +1,21 @@
+<component name="libraryTable">
+    <library name="QxEA" type="javaScript">
+        <properties>
+            <option name="frameworkName" value="qooxdoo"/>
+            <option name="frameworkVersion" value=""/>
+            <sourceFilesUrls>
+                <item url="file://$PROJECT_DIR$/qxEa.js"/>
+            </sourceFilesUrls>
+        </properties>
+        <CLASSES>
+            <root url="file://$PROJECT_DIR$/qxEa.js"/>
+        </CLASSES>
+        <DOCUMENTATION>
+            <root url="http://demo.qooxdoo.org/current/apiviewer"/>
+        </DOCUMENTATION>
+        <JAVADOC/>
+        <SOURCES>
+            <root url="file://$PROJECT_DIR$/qxEa.js"/>
+        </SOURCES>
+    </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+    <library name="script1" type="javaScript">
+        <CLASSES/>
+        <JAVADOC/>
+        <SOURCES>
+            <root url="file://$PROJECT_DIR$/gg/script.js"/>
+            <root url="file://$PROJECT_DIR$/app.ts"/>
+        </SOURCES>
+    </library>
+</component>
