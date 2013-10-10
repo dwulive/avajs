@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="script1" type="javaScript">
     <properties>
-      <option name="frameworkName" value="qooxdoo" />
-      <option name="frameworkVersion" value="0.9" />
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/gg/script.js" />
         <item url="file://$PROJECT_DIR$/app.ts" />
@@ -12,6 +10,7 @@
       <root url="file://$PROJECT_DIR$/gg/script.js" />
       <root url="file://$PROJECT_DIR$/app.ts" />
     </CLASSES>
+    <JAVADOC />
     <SOURCES />
   </library>
 </component>

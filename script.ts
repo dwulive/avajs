@@ -1,4 +1,4 @@
-/////<reference path="C:/source/Avajs/qxEa.js" />
+///<reference path="C:/source/Avajs/qxEa.js" />
 //"use strict";
 // ==UserScript==
 // @name           Ava Tools
@@ -15279,8 +15279,8 @@
 		console.warn('Injecting fun fun fun script');
 		var script = document.createElement("script");
 		var txt = main.toString();
-		//	if(window.opera != undefined)
-//			txt = txt.replace(/</g, "&lt;");
+		if(window.opera != undefined)
+			txt = txt.replace(/</g, "&lt;");
 		script.innerHTML = "(" + txt + ")();";
 		script.type = "text/javascript";
 		document.getElementsByTagName("head")[0].appendChild(script);

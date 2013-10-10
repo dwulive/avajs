@@ -6,8 +6,87 @@
     <option name="ANALYSIS_IN_BACKGROUND" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14ea2118-356d-443b-9722-15692e43735e" name="Default" comment="">
+    <list default="true" id="14ea2118-356d-443b-9722-15692e43735e" name="Default" comment="Hello">
+      <change type="DELETED" beforePath="C:\source\avaJs\avaCoffee.coffee" afterPath="" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp71\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp71\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\net45\Microsoft.WindowsAzure.Mobile.Ext.XML" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\net45\Microsoft.WindowsAzure.Mobile.Ext.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.IO.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.UI.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.UI.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.IO.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net45\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net45\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.ServiceBus.2.1.3.0\lib\net40-full\Microsoft.ServiceBus.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.ServiceBus.2.1.3.0\lib\net40-full\Microsoft.ServiceBus.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.min.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.min.js" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.UI.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.UI.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net45+win8\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net45+win8\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.IO.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.intellisense.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.intellisense.js" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.IO.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\portable-net40+sl5+wp8+win8\Microsoft.Data.Edm.Portable.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\portable-net40+sl5+wp8+win8\Microsoft.Data.Edm.Portable.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Primitives.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Primitives.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.Ext.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.Ext.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\sl4\Microsoft.Data.Edm.SL.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\sl4\Microsoft.Data.Edm.SL.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avajs.sln" afterPath="$PROJECT_DIR$/avajs.sln" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net45\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net45\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages.config" afterPath="$PROJECT_DIR$/packages.config" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Runtime.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avajs.csproj" afterPath="$PROJECT_DIR$/avajs.csproj" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\sl4\System.Spatial.SL.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\sl4\System.Spatial.SL.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.js" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Primitives.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Primitives.XML" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.Extensions.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\portable-net40+sl5+wp8+win8\System.Spatial.Portable.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\portable-net40+sl5+wp8+win8\System.Spatial.Portable.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.xml" />
+      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.xml" />
     </list>
     <list id="06ba6c9e-faff-4c68-8d39-dcb58f59a5de" name="Revert: Rejected commit: Default (d2c135b)" comment="" />
     <list id="8da68047-9178-49df-b81e-980944949c69" name="Failed commit: Default" comment="Hello" />
@@ -31,7 +110,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <method_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint wildcard_breakpoint="true" class_name="Class bos.net.CommandManager" method_name="pollCity">
         <option name="WATCH_ENTRY" value="true" />
@@ -87,6 +165,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -120,10 +199,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gg/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.50187266" vertical-offset="172471" max-vertical-offset="264911">
+            <state line="10442" column="15" selection-start="348715" selection-end="348715" vertical-scroll-proportion="0.0" vertical-offset="177514" max-vertical-offset="264452">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.01378751" vertical-offset="238" max-vertical-offset="4284">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -159,11 +247,6 @@
     </option>
     <option name="SYNC_SETTING" value="DONT" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="WARN_ABOUT_CRLF" value="false" />
   </component>
   <component name="GitLogSettings">
@@ -378,6 +461,10 @@
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="winjs-DefinitelyTyped" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -387,10 +474,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="script1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -417,9 +500,9 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="options.lastSelected" value="editor" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/script.coffee" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -433,17 +516,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.avajschrom">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://prodgame21.lordofultima.com/249/index.aspx">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <configuration default="false" name="avajschrom" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://prodgame21.lordofultima.com/249/index.aspx">
@@ -499,6 +572,7 @@
       <workItem from="1381061870384" duration="184000" />
       <workItem from="1381062089466" duration="1321000" />
       <workItem from="1381063985012" duration="9047000" />
+      <workItem from="1381367761899" duration="13000" />
     </task>
     <task id="LOCAL-00001" summary="Rejected commit: Default">
       <created>1380935532453</created>
@@ -543,7 +617,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24543000" />
+    <option name="totallyTimeSpent" value="24556000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -569,36 +643,36 @@
     <frame x="-8" y="0" width="2576" height="1394" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24900557" sideWeight="0.36953" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2529833" sideWeight="0.20016207" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2529833" sideWeight="0.46920583" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5434426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121795" sideWeight="0.3204918" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24900557" sideWeight="0.36953" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121795" sideWeight="0.13606557" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.49960223" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32983872" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -614,6 +688,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="true" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <confirmMoveToFailedCommit value="2" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="MAXIMUM_HISTORY_ROWS" value="11000" />
     <option name="USE_COMMIT_MESSAGE_MARGIN" value="true" />
@@ -651,116 +726,69 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/script.js">
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260066">
+        <state line="10158" column="15" selection-start="338028" selection-end="338028" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="259607">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="4284">
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="36" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="4032">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="248896">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4032">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.0" vertical-offset="53056" max-vertical-offset="53248">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.0" vertical-offset="53056" max-vertical-offset="53248">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9536" column="21" selection-start="321404" selection-end="321404" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="260066">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260066" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9536" column="21" selection-start="321404" selection-end="321404" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="260066" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
@@ -785,134 +813,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="0" selection-end="522736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260355">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381087430810" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/avaCoffee.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="205649">
-          <folding>
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1381175592871" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gg/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="223" selection-end="223" vertical-scroll-proportion="0.14358108" vertical-offset="0" max-vertical-offset="1184">
-          <folding>
-            <marker date="1381174271349" expanded="true" signature="-1:-1" placeholder="{&quot;name&quot;: &quot;vendor_name/package_name&quot;...}" />
-          </folding>
-        </state>
+        <state line="12" column="15" selection-start="0" selection-end="522736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260355" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gg/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.50187266" vertical-offset="172471" max-vertical-offset="264911">
+        <state line="10442" column="15" selection-start="348715" selection-end="348715" vertical-scroll-proportion="0.0" vertical-offset="177514" max-vertical-offset="264452">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.01378751" vertical-offset="238" max-vertical-offset="4284">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

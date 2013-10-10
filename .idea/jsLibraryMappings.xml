@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{azure-mobile-services-client-DefinitelyTyped, qxEA, script1, winjs-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{script1}" />
     <excludedPredefinedLibrary name="HTML" />
     <excludedPredefinedLibrary name="HTML5 / EcmaScript 5" />
   </component>
