@@ -7,86 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14ea2118-356d-443b-9722-15692e43735e" name="Default" comment="Hello">
-      <change type="DELETED" beforePath="C:\source\avaJs\avaCoffee.coffee" afterPath="" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp71\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp71\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\net45\Microsoft.WindowsAzure.Mobile.Ext.XML" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\net45\Microsoft.WindowsAzure.Mobile.Ext.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.IO.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.UI.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.UI.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4\System.IO.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net45\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net45\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.ServiceBus.2.1.3.0\lib\net40-full\Microsoft.ServiceBus.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.ServiceBus.2.1.3.0\lib\net40-full\Microsoft.ServiceBus.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.min.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.min.js" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.Silverlight.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.UI.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\wp8\Microsoft.WindowsAzure.Mobile.UI.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\netcore45\Newtonsoft.Json.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\win8\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net40\Newtonsoft.Json.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net45+win8\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net45+win8\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.IO.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.intellisense.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.intellisense.js" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+win8+wp8\System.IO.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl4-windowsphone71\System.IO.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\portable-net40+sl5+wp8+win8\Microsoft.Data.Edm.Portable.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\portable-net40+sl5+wp8+win8\Microsoft.Data.Edm.Portable.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl4+win8+wp8\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.xml" />
+      <change type="DELETED" beforePath="C:\source\avaJs\gg\composer.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qxEaTrim.js" afterPath="$PROJECT_DIR$/qxEaTrim.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script.js" afterPath="$PROJECT_DIR$/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gg/script.js" afterPath="$PROJECT_DIR$/gg/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Primitives.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.Primitives.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.Ext.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\sl4-windowsphone71\Microsoft.WindowsAzure.Mobile.Ext.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\net40\System.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\portable-net40+sl4+win8+wp71\System.Net.Http.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\sl4\Microsoft.Data.Edm.SL.xml" afterPath="C:\source\avaJs\packages\Microsoft.Data.Edm.5.6.0\lib\sl4\Microsoft.Data.Edm.SL.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avajs.sln" afterPath="$PROJECT_DIR$/avajs.sln" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net45\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net45\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.Extensions.Phone.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\sl5\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/packages.config" afterPath="$PROJECT_DIR$/packages.config" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Runtime.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.1.1.3\lib\portable-net40+sl5+win8+wp8\System.Runtime.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/avajs.csproj" afterPath="$PROJECT_DIR$/avajs.csproj" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\win8\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.Extensions.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\sl4\System.Spatial.SL.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\sl4\System.Spatial.SL.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net45+win8+wp8\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4-windowsphone71\Microsoft.Threading.Tasks.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.WebRequest.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.js" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.WinJS.1.0.1\content\js\MobileServices.js" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Primitives.XML" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\sl4-windowsphone71\System.Net.Http.Primitives.XML" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\sl4\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.xml" afterPath="C:\source\avaJs\packages\Microsoft.Net.Http.2.2.15\lib\net40\System.Net.Http.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.xml" afterPath="C:\source\avaJs\packages\WindowsAzure.MobileServices.1.0.2\lib\netcore45\Microsoft.WindowsAzure.Mobile.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" afterPath="C:\source\avaJs\packages\Newtonsoft.Json.5.0.6\lib\net35\Newtonsoft.Json.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\portable-net40+sl4+win8+wp71\Microsoft.Threading.Tasks.Extensions.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\portable-net40+sl5+wp8+win8\System.Spatial.Portable.xml" afterPath="C:\source\avaJs\packages\System.Spatial.5.6.0\lib\portable-net40+sl5+wp8+win8\System.Spatial.Portable.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.xml" />
-      <change type="MODIFICATION" beforePath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.xml" afterPath="C:\source\avaJs\packages\Microsoft.Bcl.Async.1.0.16\lib\wp8\Microsoft.Threading.Tasks.Extensions.xml" />
     </list>
     <list id="06ba6c9e-faff-4c68-8d39-dcb58f59a5de" name="Revert: Rejected commit: Default (d2c135b)" comment="" />
     <list id="8da68047-9178-49df-b81e-980944949c69" name="Failed commit: Default" comment="Hello" />
@@ -199,22 +124,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="script.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="script.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gg/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10442" column="15" selection-start="348715" selection-end="348715" vertical-scroll-proportion="0.0" vertical-offset="177514" max-vertical-offset="264452">
+            <state line="14" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.12423874" vertical-offset="0" max-vertical-offset="821">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.01378751" vertical-offset="238" max-vertical-offset="4284">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -260,10 +174,11 @@
       <list>
         <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/gg/out1.xml" />
-        <option value="$PROJECT_DIR$/gg/script.js" />
         <option value="$PROJECT_DIR$/script.js" />
         <option value="$PROJECT_DIR$/avaCoffee.coffee" />
         <option value="$PROJECT_DIR$/gg/composer.json" />
+        <option value="$PROJECT_DIR$/../qxEa.ts" />
+        <option value="$PROJECT_DIR$/gg/script.js" />
       </list>
     </option>
   </component>
@@ -449,31 +364,12 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="avajs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="winjs-DefinitelyTyped" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="avajs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.jetbrains.php.config.PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -488,6 +384,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -500,20 +397,20 @@
     <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="editor" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="JavaScriptLanguageLevel" value="ES5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/script.coffee" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../avaX" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.avajschrom">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" uri="http://prodgame21.lordofultima.com/249/index.aspx">
@@ -573,6 +470,9 @@
       <workItem from="1381062089466" duration="1321000" />
       <workItem from="1381063985012" duration="9047000" />
       <workItem from="1381367761899" duration="13000" />
+      <workItem from="1381713820232" duration="77000" />
+      <workItem from="1381713943799" duration="44000" />
+      <workItem from="1381713999249" duration="290000" />
     </task>
     <task id="LOCAL-00001" summary="Rejected commit: Default">
       <created>1380935532453</created>
@@ -617,7 +517,7 @@
     </servers>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24556000" />
+    <option name="totallyTimeSpent" value="24967000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -641,38 +541,38 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="2576" height="1394" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5434426" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3087028" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32884312" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868853" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26531425" sideWeight="0.69775677" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26531425" sideWeight="0.3022432" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121795" sideWeight="0.3204918" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24900557" sideWeight="0.36953" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26121795" sideWeight="0.13606557" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26602563" sideWeight="0.30081967" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.49960223" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32922825" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32983872" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Get Gist" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.49960223" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -706,7 +606,7 @@
           <properties uncaughtOnly="true" />
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="11" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -728,27 +628,35 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/gg/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10158" column="15" selection-start="338028" selection-end="338028" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="259607">
+        <state line="38" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="612">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="20" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="264248">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gg/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="20" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="277568">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="4284">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="4032">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="9" column="36" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="4032" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gg/script.js">
@@ -760,11 +668,7 @@
     </entry>
     <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4032">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4032" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gg/script.js">
@@ -779,16 +683,6 @@
         <state line="10158" column="15" selection-start="340526" selection-end="340526" vertical-scroll-proportion="0.0" vertical-offset="53056" max-vertical-offset="53248">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260066" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9536" column="21" selection-start="321404" selection-end="321404" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="260066" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt">
@@ -811,24 +705,20 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="801" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script.js">
+    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="15" selection-start="0" selection-end="522736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="260355" />
+        <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.030018762" vertical-offset="224" max-vertical-offset="4032" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../qxEa.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.3500612" vertical-offset="1920" max-vertical-offset="15840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gg/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10442" column="15" selection-start="348715" selection-end="348715" vertical-scroll-proportion="0.0" vertical-offset="177514" max-vertical-offset="264452">
+        <state line="14" column="0" selection-start="381" selection-end="381" vertical-scroll-proportion="0.12423874" vertical-offset="0" max-vertical-offset="821">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_winjs_winjs.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="22" selection-start="840" selection-end="840" vertical-scroll-proportion="0.01378751" vertical-offset="238" max-vertical-offset="4284">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

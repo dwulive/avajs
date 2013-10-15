@@ -240,8 +240,7 @@
 				//  addMessage(e);
 			}
 		}
-
-		function paError(e) {
+function paError(e) {
 			if(window.console && typeof console.error == "function") {
 				console.error(e);
 				console.assert(0);
